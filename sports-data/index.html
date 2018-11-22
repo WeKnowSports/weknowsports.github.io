@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Introduction </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Introduction ">
+    <meta name="generator" content="docfx 2.40.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h2 id="introduction">Introduction</h2>
+
+<p>The Sports Data is a <strong>push-based queriable API</strong>. You compose a query to target a specific data set and the API creates a <strong>Subscription</strong> and starts sending updates as they happen.</p>
+<p>For defining a query the API use <a href="https://en.wikipedia.org/wiki/Open_Data_Protocol">OData</a> as a query format <em>(more info about OData supports you can find here)</em>.</p>
+<p>The API supports these protocols:</p>
+<ul>
+<li>HTTP (for pull, to query data)</li>
+<li><a href="https://en.wikipedia.org/wiki/Server-sent_events">SSE</a> (for push, to subscribe and listen to a stream of updates, it works over HTTP).</li>
+</ul>
+<p>Logically the API is divided into two parts: Pull and Push. The Pull API should be used to query data, to retrieve an initial snapshot of data. The Push API should be used to subscribe on a stream of updates by a specific query.</p>
+<p>The Sports Data API is a way for our clients to build great real-time user experiences, specifically tailored for their needs. The API provides five endpoints returning five types of objects covering different levels of the offer hierarchy:</p>
+<ul>
+<li>Sports</li>
+<li>Leagues</li>
+<li>Events</li>
+<li>Markets</li>
+<li>Regions</li>
+</ul>
+<p>Objects come with a comprehensive amount of attributes describing all of their significant features and parameter. Based on these, you can build a wide range of presentations and experiences. Some examples of features which can be built using the Sports data API include various navigational widgets, league coupons presenting all events from a league, full live betting section, live betting schedule, event view for both pre-match and in-play events, list of upcoming events, optionally grouped by sport, league etc., list of most popular events (ordered by total amount of stakes or total number of bets) and many more.</p>
+<p>In short, we aim to provide support for any use case which can be part of a complete user-facing sportsbook solution.</p>
+<p><em>Usage of Sports Data API is a subject to a contractual agreement between SBTech and a partnering organization. Authentication is required for the API to be used in development and production environments.</em></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

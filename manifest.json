@@ -1,0 +1,160 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/anton.mo/Desktop/work/docfx/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "LNV6j6d2lAi88Pi8GpE53Q=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "lookup/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "lookup/index.html",
+          "hash": "tYNOOvaHud9iBXgNqibZrQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "lookup/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "lookup/toc.html",
+          "hash": "EnzuqCb+6Tvc/ySA7w1xSQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "search/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "search/index.html",
+          "hash": "UuXbbFaeuWkRZLQctUonhg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "search/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "search/toc.html",
+          "hash": "EnzuqCb+6Tvc/ySA7w1xSQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/index.html",
+          "hash": "nT7IV2cdk58TGFnX84SSSA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/pull_api.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/pull_api.html",
+          "hash": "axWZ8Ykycw2ptYTq+PUjmw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/push_api.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/push_api.html",
+          "hash": "HqyNhw+GOEsc6l0L2koEbQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "sports-data/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/toc.html",
+          "hash": "pim5G4iPSQdb2PsTGdrJNg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "d+hRn0DtAMkqutQOnVVoHQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

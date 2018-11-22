@@ -84,6 +84,9 @@ With Pull API you can build complex OData query since it supports operators like
 <blockquote>
 <p>Any OData query should be URL encoded before being sent. Note that we will not encode the samples in this documentation to improve readability, but you should remember to do it consistently in your code.</p>
 </blockquote>
+<p>URL path structure:</p>
+<pre><code class="lang-http">GET /api/sportsdata/v2/{entity}/?query=...&amp;locale=...
+</code></pre>
 <p>Parameters:</p>
 <ul>
 <li><strong>query</strong> (mandatory) - target OData query. Here is a list of supported OData operators:

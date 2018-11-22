@@ -1,8 +1,14 @@
 ## Pull API
+
 The Pull API should be used to query data, to retrieve an initial snapshot of data. For defining a query the API use OData as a query format (more info about OData supports you can find here).
 With Pull API you can build complex OData query since it supports operators like: **Top, Skip, OrderBy** which is not supported in Push API.
 
 > Any OData query should be URL encoded before being sent. Note that we will not encode the samples in this documentation to improve readability, but you should remember to do it consistently in your code.
+
+URL path structure:
+```http
+GET /api/sportsdata/v2/{entity}/?query=...&locale=...
+```
 
 Parameters:
 - **query** (mandatory) - target OData query. Here is a list of supported OData operators:

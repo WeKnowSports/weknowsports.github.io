@@ -77,8 +77,82 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="push-api">Push API</h1>
+<h2 id="push-api">Push API</h2>
 
+<p>The Push API should be used to create a subscription based on query and listen on updates. For defining a query the API use OData as a query format (more info about OData supports you can find here). In addition to creating a subscription you also can retrieve initial data and then subscribe on updates in one request, you will find more info about this in the last section.</p>
+<blockquote>
+<p>Any OData query should be URL encoded before being sent. Note that we will not encode the samples in this documentation to improve readability, but you should remember to do it consistently in your code.</p>
+</blockquote>
+<p>URL path structure:</p>
+<pre><code class="lang-http">GET /api/sportsdata/v2/stream/{entity}/?query=...&amp;locale=...
+</code></pre>
+<p>Parameters:</p>
+<ul>
+<li><strong>query</strong> (mandatory) - target OData filter. Here is a list of supported OData operators:
+<ul>
+<li><strong>$filter</strong> - allows clients to filter a collection of resources that are addressed by a request URL.</li>
+</ul>
+</li>
+<li><strong>from</strong> (optional)</li>
+<li><strong>timeRange</strong> (optional)</li>
+<li><strong>includeMarkets</strong> (optional) - additional OData query parameter to include markets for events (<em>could be used only for Events endpoint)</em>.</li>
+<li><strong>includeSelections</strong> (optional) - additional OData query parameter to include selections for markets <em>(could be used only for Markets endpoint)</em></li>
+<li><strong>initialData</strong> - let you get initial snapshot with subscription in one request.</li>
+<li><strong>locale</strong> (optional) - let you specify locale to get translated response.</li>
+<li><strong>projection</strong> (optional) - let you specify what model view to return:
+<ul>
+<li>onlyId - returns only id</li>
+<li>default - returns default contract</li>
+<li>details - returns full contract</li>
+</ul>
+</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li>in case if <strong>initialData=true</strong> the Push API can't return more than 100 elements in one request.</li>
+</ul>
+<p>Defaults:</p>
+<ul>
+<li>if <strong>locale</strong> is not specified, the API will use &quot;en&quot;.</li>
+<li>if <strong>projection</strong> is not specified, the API will use &quot;default&quot;</li>
+</ul>
+<p>Accepting formats:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Server-sent_events">SSE</a> (text/event-stream) - is enabling a browser to receive automatic updates from a server via HTTP connection</li>
+<li><a href="https://en.wikipedia.org/wiki/JSON">JSON</a> (application/json) - is a default format which API is using if <strong>Accept</strong> header is omitted.</li>
+<li><a href="https://msgpack.org/index.html">MsgPack</a> - (application/msgpack) - is an efficient binary serialization format. It's faster and smaller than JSON and we encourage you use it for production purposes.</li>
+</ul>
+<p>Accepting encodings:</p>
+<ul>
+<li>gzip</li>
+<li>deflate</li>
+<li>lz4 - fast compression algorithm <em>(can be used only for MsgPack)</em></li>
+</ul>
+<p>Examples:
+Let's try to subscribe on Events endpoint</p>
+<pre><code class="lang-http">GET /api/sportsdata/v2/events?query=$filter=sportId eq '1' and isLive eq true&amp;locale=en
+Accept: text/event-stream, application/json
+Accept-Encoding: gzip
+Authorization: Bearer {JWT token}
+</code></pre>
+<p>After establishing the subscription you will start receiving updates. The response will provide the list of collections: add, remove, change.</p>
+<pre><code>{
+    data: {
+        add: {
+            events: [],
+            markets: []
+        },
+        remove: {
+            events: [&quot;id1&quot;, &quot;id2&quot;],
+            markets: [&quot;id1&quot;, &quot;id2&quot;]
+        },
+        change: {
+            events: [],
+            markets: []
+        }
+    }
+}
+</code></pre>
 </article>
           </div>
           

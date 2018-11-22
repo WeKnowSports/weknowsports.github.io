@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/pull_api.html",
-          "hash": "cHa0/HnmUDepCVDX4C7xkA=="
+          "hash": "+ijozluxH1MqSMYV4hiWtQ=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/push_api.html",
-          "hash": "u/iL42Ce9FDSG1w9vIs6BQ=="
+          "hash": "WdSCD2t+l30mKUMHldhtDg=="
         }
       },
       "is_incremental": false,
@@ -136,8 +136,7 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": false,
-        "details": "Cannot build incrementally because last build info is missing.",
+        "can_incremental": true,
         "incrementalPhase": "build"
       },
       "processors": {
@@ -147,7 +146,7 @@
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
-          "can_incremental": false,
+          "can_incremental": true,
           "incrementalPhase": "build"
         }
       }

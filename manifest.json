@@ -1,18 +1,27 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/anton.mo/Desktop/work/docfx/docfx_project",
+  "source_base_path": "C:/Users/anton.mo/Desktop/work/weknowsports.github.io/src",
   "xrefmap": "xrefmap.yml",
   "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
     {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "LNV6j6d2lAi88Pi8GpE53Q=="
+          "hash": "QOT1UoK7sV2DQ/xyUXwwRQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -21,10 +30,10 @@
       "output": {
         ".html": {
           "relative_path": "lookup/index.html",
-          "hash": "tYNOOvaHud9iBXgNqibZrQ=="
+          "hash": "64gUvQXCkS3SxiVly75rJg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -45,10 +54,10 @@
       "output": {
         ".html": {
           "relative_path": "search/index.html",
-          "hash": "UuXbbFaeuWkRZLQctUonhg=="
+          "hash": "x9SRijRmWzIM0VNxCEi4WQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -69,10 +78,10 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/index.html",
-          "hash": "nT7IV2cdk58TGFnX84SSSA=="
+          "hash": "Hg2lSWusHfd6h33Z8G1WKg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -81,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/pull_api.html",
-          "hash": "axWZ8Ykycw2ptYTq+PUjmw=="
+          "hash": "cHa0/HnmUDepCVDX4C7xkA=="
         }
       },
       "is_incremental": false,
@@ -93,10 +102,10 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/push_api.html",
-          "hash": "HqyNhw+GOEsc6l0L2koEbQ=="
+          "hash": "u/iL42Ce9FDSG1w9vIs6BQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -127,7 +136,8 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
         "incrementalPhase": "build"
       },
       "processors": {
@@ -137,15 +147,15 @@
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build"
         }
       }
     },
     {
       "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
         "incrementalPhase": "postProcessing"
       },
       "processors": {}

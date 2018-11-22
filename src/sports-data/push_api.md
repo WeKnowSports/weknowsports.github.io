@@ -9,6 +9,13 @@ URL path structure:
 GET /api/sportsdata/v2/stream/{entity}/?query=...&locale=...
 ```
 
+Possible entities:
+- events
+- markets
+- sports
+- leagues
+- regions
+
 Parameters:
 - **query** (mandatory) - target OData filter. Here is a list of supported OData operators:
     - **$filter** - allows clients to filter a collection of resources that are addressed by a request URL.     

@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "QOT1UoK7sV2DQ/xyUXwwRQ=="
+          "hash": "uNj5LgDMyI5iaCqwUVs5Yw=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/pull_api.html",
-          "hash": "+ijozluxH1MqSMYV4hiWtQ=="
+          "hash": "7E1wXIIFgSaFA6cYRFqaZw=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/push_api.html",
-          "hash": "WdSCD2t+l30mKUMHldhtDg=="
+          "hash": "DRSGJunljwL01gcN3kIOOQ=="
         }
       },
       "is_incremental": false,

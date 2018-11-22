@@ -8,7 +8,7 @@ The API supports these protocols:
 * HTTP (for pull, to query data) 
 * [SSE](https://en.wikipedia.org/wiki/Server-sent_events) (for push, to subscribe and listen to a stream of updates, it works over HTTP).
 
-Logically the API is divided into two parts: Pull and Push. The Pull API should be used to query data, to retrieve an initial snapshot of data. The Push API should be used to subscribe on a stream of updates by a specific query.
+Logically the API is divided into two parts: Pull and Push. The [Pull API](pull_api.md) should be used to query data, to retrieve an initial snapshot of data. The [Push API](push_api.md) should be used to subscribe on a stream of updates by a specific query.
 
 The Sports Data API is a way for our clients to build great real-time user experiences, specifically tailored for their needs. The API provides five endpoints returning five types of objects covering different levels of the offer hierarchy:
 

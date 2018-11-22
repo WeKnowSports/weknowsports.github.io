@@ -12,6 +12,7 @@ GET /api/sportsdata/v2/stream/{entity}/?query=...&locale=...
 Possible entities:
 - events
 - markets
+- selections
 - sports
 - leagues
 - regions

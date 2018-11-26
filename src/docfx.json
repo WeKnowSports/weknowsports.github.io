@@ -70,7 +70,8 @@
     "globalMetadata": {
       "_appTitle": "SBTech API",
       "_appFooter": "Copyright © 2018 SBTech" ,
-      "_enableSearch": true     
+      "_enableSearch": true,
+	  "_appLogoPath": "images/logo.png"
     }
   }
 }

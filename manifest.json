@@ -13,12 +13,34 @@
       "is_incremental": false
     },
     {
+      "type": "Resource",
+      "source_relative_path": "images/logo.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/logo.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/sbtech-big-logo.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/sbtech-big-logo.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "uNj5LgDMyI5iaCqwUVs5Yw=="
+          "hash": "lI2i/pZYWVX1JWSvJryFvg=="
         }
       },
       "is_incremental": false,
@@ -30,7 +52,7 @@
       "output": {
         ".html": {
           "relative_path": "lookup/index.html",
-          "hash": "64gUvQXCkS3SxiVly75rJg=="
+          "hash": "bMskQNqCvjlmXdyYxzvVRw=="
         }
       },
       "is_incremental": false,
@@ -54,7 +76,7 @@
       "output": {
         ".html": {
           "relative_path": "search/index.html",
-          "hash": "x9SRijRmWzIM0VNxCEi4WQ=="
+          "hash": "GJzdj6pDpaU3ZMSa2ebDrw=="
         }
       },
       "is_incremental": false,
@@ -74,11 +96,38 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "sports-data/basic_concepts/pull_api.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/basic_concepts/pull_api.html",
+          "hash": "nA73MjWLQSa4WmdpeVXp7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/basic_concepts/push_api.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/basic_concepts/push_api.html",
+          "hash": "O9HBnlVeJ5HwG/ToCttMUw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
       "source_relative_path": "sports-data/index.md",
       "output": {
         ".html": {
           "relative_path": "sports-data/index.html",
-          "hash": "vzrYehIywFccvhG1rJfF8g=="
+          "hash": "hecC/xq0NMf3TNjeRMF2JQ=="
         }
       },
       "is_incremental": false,
@@ -86,11 +135,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "sports-data/pull_api.md",
+      "source_relative_path": "sports-data/querying_data/odata_query.md",
       "output": {
         ".html": {
-          "relative_path": "sports-data/pull_api.html",
-          "hash": "e0al4wgEE1F/vDfA37TdLw=="
+          "relative_path": "sports-data/querying_data/odata_query.html",
+          "hash": "B/IDVHoBJ88mfUvQTuYYkQ=="
         }
       },
       "is_incremental": false,
@@ -98,11 +147,23 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "sports-data/push_api.md",
+      "source_relative_path": "sports-data/querying_data/projections.md",
       "output": {
         ".html": {
-          "relative_path": "sports-data/push_api.html",
-          "hash": "nOF0jepXRuTLZYY0SVaueg=="
+          "relative_path": "sports-data/querying_data/projections.html",
+          "hash": "KWCZ966fTEBufkWEpO3Lgw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/querying_data/time_range_queries.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/querying_data/time_range_queries.html",
+          "hash": "zLRvCMjy+E8jJQVEC9bV5Q=="
         }
       },
       "is_incremental": false,
@@ -114,7 +175,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/toc.html",
-          "hash": "pim5G4iPSQdb2PsTGdrJNg=="
+          "hash": "HXs257VPU2w52WpeGKRiTQ=="
         }
       },
       "is_incremental": false,
@@ -143,6 +204,11 @@
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {

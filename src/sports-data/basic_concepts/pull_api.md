@@ -27,7 +27,6 @@ Parameters:
 - **from** (optional)
 - **timeRange** (optional)
 - **includeMarkets** (optional) - additional OData query parameter to include markets for events (*could be used only for Events endpoint)*.
-- **includeSelections** (optional) - additional OData query parameter to include selections for markets *(could be used only for Markets endpoint)*
 - **locale** (optional) - let you specify locale to get translated response.
 - **projection** (optional) - let you specify what model view to return:
     - onlyId - returns only id
@@ -48,8 +47,7 @@ Accepting formats:
 - [MsgPack](https://msgpack.org/index.html) - (application/msgpack) - is an efficient binary serialization format. It's faster and smaller than JSON and we encourage you use it for production purposes.
 
 Accepting encodings:
-- gzip
-- deflate
+- gzip  
 - lz4 - fast compression algorithm *(can be used only for MsgPack)*
 
 Examples:

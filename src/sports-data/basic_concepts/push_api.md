@@ -1,6 +1,8 @@
 ## Push API
 
-The Push API should be used to create a subscription based on query and listen on updates. For defining a query the API use OData as a query format (more info about OData supports you can find here). In addition to creating a subscription you also can retrieve initial data and then subscribe on updates in one request, you will find more info about this in the last section.
+The Push API should be used to create a subscription based on query and listen on updates. For defining a query the API use OData as a query format (more info about OData supports you can find here). In addition to creating a subscription you also can retrieve initial data and then subscribe on updates in one request, you will find more info about this in the last section. 
+
+> The main difference in terms of querying between Pull API and Push API is that in Push API the query is limited to **$filter** only, you can send the only **$filter** which is a query without **$top, $skip, $orderBy** operators.
 
 > Any OData query should be URL encoded before being sent. Note that we will not encode the samples in this documentation to improve readability, but you should remember to do it consistently in your code.
 
@@ -23,7 +25,6 @@ Parameters:
 - **from** (optional)
 - **timeRange** (optional)
 - **includeMarkets** (optional) - additional OData query parameter to include markets for events (*could be used only for Events endpoint)*.
-- **includeSelections** (optional) - additional OData query parameter to include selections for markets *(could be used only for Markets endpoint)*
 - **initialData** - let you get initial snapshot with subscription in one request. 
 - **locale** (optional) - let you specify locale to get translated response.
 - **projection** (optional) - let you specify what model view to return:
@@ -45,13 +46,12 @@ Accepting formats:
 
 Accepting encodings:
 - gzip
-- deflate
 - lz4 - fast compression algorithm *(can be used only for MsgPack)*
 
 Examples:
 Let's try to subscribe on Events endpoint
 ```http
-GET /api/sportsdata/v2/events?query=$filter=sportId eq '1' and isLive eq true&locale=en
+GET /api/sportsdata/v2/stream/events?query=$filter=sportId eq '1' and isLive eq true&locale=en
 Accept: text/event-stream, application/json
 Accept-Encoding: gzip
 Authorization: Bearer {JWT token}

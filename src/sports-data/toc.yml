@@ -1,9 +1,9 @@
 - name: Introduction
   href: index.md
 
-- name: Pull API
-  href: pull_api.md
+- name: Basic concepts
+  href: basic_concepts/toc.yml
 
-- name: Push API
-  href: push_api.md  
+- name: Querying Data
+  href: querying_data/toc.yml
 

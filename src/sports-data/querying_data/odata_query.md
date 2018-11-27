@@ -35,6 +35,7 @@ Allows clients to filter a collection of resources that are addressed by a reque
 | ge | Greater than or equal (>=) | - |
 | and | Logical and (&&) | $filter=sportId eq '1' and leagueId eq '13761' |
 | or  | Logical or (\|\|) | $filter=sportId eq '1' or sportId eq '5'  |
+| in | In operator | $filter=id in ('1234_3', '2345_54') |
 
 ### $top operator
 Allows requesting a specific number of top results to be included in the result.

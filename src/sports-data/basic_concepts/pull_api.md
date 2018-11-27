@@ -19,14 +19,14 @@ Possible entities:
 - regions
 
 Parameters:
-- **query** (mandatory) - target OData query. Here is a list of supported OData operators:
+- **query** (mandatory) - the URL encoded target OData query. Here is a list of supported OData operators:
     - **$filter** - allows clients to filter a collection of resources that are addressed by a request URL. 
     - **$top** - number of items in the queried collection to be included in the result. 
     - **$skip** - number of items in the queried collection that are to be skipped and not included in the result.
     - **$orderBy** - allows clients to request resources in either ascending order using asc or descending order using desc.
 - **from** (optional)
 - **timeRange** (optional)
-- **includeMarkets** (optional) - additional OData query parameter to include markets for events (*could be used only for Events endpoint)*.
+- **includeMarkets** (optional) - the URL encoded additional OData query to include markets for events (*could be used only for Events endpoint)*.
 - **locale** (optional) - let you specify locale to get translated response.
 - **projection** (optional) - let you specify what model view to return:
     - onlyId - returns only id
@@ -59,11 +59,13 @@ Accept-Encoding: gzip
 Authorization: Bearer {JWT token}
 ```
 The response will provide the current snapshot of the targeted data.
-```
+```json
 {
     "data": {
-        "events": [{...}, {...}, {...}, {...}, {...}, {...}, {...}, {...}],
-        "markets": [{...}, {...}, {...}, {...}, {...}, {...}, {...}, {...}]
+        "events": Event[],
+        "markets": Market[]
     }
 }
 ```
+
+The definition of Event, Market entities you will find in section Entities Contracts.

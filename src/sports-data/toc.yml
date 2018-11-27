@@ -7,3 +7,5 @@
 - name: Querying Data
   href: querying_data/toc.yml
 
+- name: Entities Contracts
+  href: entities_contracts/toc.yml

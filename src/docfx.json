@@ -18,13 +18,13 @@
       {
         "files": [
           "lookup/**.yml",
-          "lookup/index.md"
+          "lookup/**.md"
         ]
       },
       {
         "files": [
           "search/**.yml",
-          "search/index.md"
+          "search/**.md"          
         ]
       },
       {

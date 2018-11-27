@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>PLACEHOLDER | SBTech API </title>
+    <title>Search API | SBTech API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="PLACEHOLDER | SBTech API ">
+    <meta name="title" content="Search API | SBTech API ">
     <meta name="generator" content="docfx 2.40.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -77,9 +77,59 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="placeholder">PLACEHOLDER</h1>
+<h2 id="search-api">Search API</h2>
 
-<p>TODO: Add .NET projects to the <em>src</em> folder and run <code>docfx</code> to generate <strong>REAL</strong> <em>API Documentation</em>!</p>
+<h3 id="general-overview">General overview</h3>
+<p>Search API provides simple multi-language search capabilities over sports data content. You will be able to search for event.name, league.name, sport.name in one request. Search API is applying 'startWith' for the whole sentence. For example we have a team <strong>&quot;Real Madrid&quot;</strong>:</p>
+<ul>
+<li>user entered <strong>&quot;Mad&quot;</strong> - <strong>&quot;Real Madrid&quot;</strong> will be found</li>
+<li>user entered <strong>&quot;Rea&quot;</strong> - <strong>&quot;Real Madrid&quot;</strong> will be found</li>
+<li>user entered <strong>&quot;drid&quot;</strong> - not found</li>
+<li>user entered <strong>&quot;Medrid&quot;</strong> - not found</li>
+</ul>
+<h3 id="search-api-endpoint">Search API endpoint</h3>
+<p>URL path structure:</p>
+<pre><code class="lang-http">GET /api/sportsdata/v2/search?query=...&amp;locale=...
+</code></pre>
+<p>Parameters:</p>
+<ul>
+<li><strong>query</strong> (mandatory) - the URL encoded query string, will be applied to eventName, leagueName, sportName.</li>
+<li><strong>locale</strong> (mandatory) - the locale for translation. If the locale is not supported for the specific operator then a HTTP (400) BadRequest is returned.</li>
+<li><strong>top</strong> (optional) - the number of entities to return.</li>
+</ul>
+<p>Limitations:</p>
+<ul>
+<li><strong>query</strong> - 50 characters is maximum and 3 characters is minimum query length.</li>
+<li><strong>top</strong> - 40 elements per array is maximum to return.</li>
+</ul>
+<p>Defaults:</p>
+<ul>
+<li>if <strong>top</strong> is not specified, the API will use 20.</li>
+</ul>
+<p>Accepting formats:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/JSON">JSON</a> (application/json) - is a default format which API is using if <strong>Accept</strong> header is omitted.</li>
+</ul>
+<p>Accepting encodings:</p>
+<ul>
+<li>gzip</li>
+</ul>
+<p>Examples:
+Let's try to search: Real Madrid. First, we need to URL encode the query: Real Madrid -&gt; Real20%Madrid. Now, we are ready to send a query with specified locale.</p>
+<pre><code class="lang-http">GET /api/sportsdata/v2/search?query=Real20%Madrid&amp;top=10&amp;locale=en
+Accept: application/json
+Accept-Encoding: gzip
+Authorization: Bearer {JWT token}
+</code></pre>
+<p>The response is:</p>
+<pre><code class="lang-json">{
+    &quot;data&quot;: {
+        &quot;events&quot;: Event[],
+        &quot;sports&quot;: Sport[],   
+        &quot;leagues&quot;: League[]
+    }
+}
+</code></pre>
 </article>
           </div>
           

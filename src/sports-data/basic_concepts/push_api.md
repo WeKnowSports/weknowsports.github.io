@@ -20,11 +20,11 @@ Possible entities:
 - regions
 
 Parameters:
-- **query** (mandatory) - target OData filter. Here is a list of supported OData operators:
+- **query** (mandatory) - the URL encoded target OData filter. Here is a list of supported OData operators:
     - **$filter** - allows clients to filter a collection of resources that are addressed by a request URL.     
 - **from** (optional)
 - **timeRange** (optional)
-- **includeMarkets** (optional) - additional OData query parameter to include markets for events (*could be used only for Events endpoint)*.
+- **includeMarkets** (optional) - the URL encoded additional OData filter to include markets for events (*could be used only for Events endpoint)*.
 - **initialData** - let you get initial snapshot with subscription in one request. 
 - **locale** (optional) - let you specify locale to get translated response.
 - **projection** (optional) - let you specify what model view to return:
@@ -57,20 +57,20 @@ Accept-Encoding: gzip
 Authorization: Bearer {JWT token}
 ```
 After establishing the subscription you will start receiving updates. The response will provide the list of collections: add, remove, change.
-```
+```json
 {
-    data: {
-        add: {
-            events: [],
-            markets: []
+    "data": {
+        "add": {
+            "events": Event[],
+            "markets": Market[]
         },
-        remove: {
-            events: ["id1", "id2"],
-            markets: ["id1", "id2"]
+        "remove": {
+            "events": ["id1", "id2"],
+            "markets": ["id1", "id2"]
         },
-        change: {
-            events: [],
-            markets: []
+        "change": {
+            "events": Event[],
+            "markets": Market[]
         }
     }
 }

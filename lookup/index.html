@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>PLACEHOLDER | SBTech API </title>
+    <title>Lookup API | SBTech API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="PLACEHOLDER | SBTech API ">
+    <meta name="title" content="Lookup API | SBTech API ">
     <meta name="generator" content="docfx 2.40.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -77,9 +77,43 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="placeholder">PLACEHOLDER</h1>
+<h2 id="lookup-api">Lookup API</h2>
 
-<p>TODO: Add .NET projects to the <em>src</em> folder and run <code>docfx</code> to generate <strong>REAL</strong> <em>API Documentation</em>!</p>
+<h3 id="lookup-api-endpoint">Lookup API endpoint</h3>
+<p>URL path structure:</p>
+<pre><code class="lang-http">GET /api/sportsdata/v2/lookup?sportName=...&amp;locale=...
+</code></pre>
+<p>Parameters:</p>
+<ul>
+<li><strong>sportName</strong> (optional) - name of sport.</li>
+<li><strong>leagueName</strong> (optional) - name of league.</li>
+<li><strong>eventName</strong> (optional) - name of event.</li>
+<li><strong>startEventDate</strong> (optional) - start event date, format is yyyyMMdd.</li>
+<li><strong>locale</strong> (mandatory) - name of sport.</li>
+</ul>
+<p>Accepting formats:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/JSON">JSON</a> (application/json) - is a default format which API is using if <strong>Accept</strong> header is omitted.</li>
+</ul>
+<p>Accepting encodings:</p>
+<ul>
+<li>gzip</li>
+</ul>
+<p>Examples:</p>
+<pre><code class="lang-http">GET /api/sportsdata/v2/lookup?sportName=football&amp;leagueName=mythical-matches&amp;eventName=watford-vs-newcastle&amp;startEventDate=20180829 
+Accept: application/json
+Accept-Encoding: gzip
+Authorization: Bearer {JWT token}
+</code></pre>
+<p>The response structure is:</p>
+<pre><code class="lang-json">{
+    &quot;data&quot;: {
+        &quot;events&quot;: [&quot;id_42&quot;],
+        &quot;sports&quot;: [&quot;id_1&quot;],
+        &quot;leagues&quot;: [&quot;id_5&quot;]
+    }
+}
+</code></pre>
 </article>
           </div>
           

@@ -5,19 +5,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Lookup API | SBTech API </title>
+    <title>Validation rules | SBTech API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Lookup API | SBTech API ">
+    <meta name="title" content="Validation rules | SBTech API ">
     <meta name="generator" content="docfx 2.40.2.0">
     
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="stylesheet" href="../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../styles/docfx.css">
-    <link rel="stylesheet" href="../styles/main.css">
-    <meta property="docfx:navrel" content="../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
     
-    <meta property="docfx:rel" content="../">
+    <meta property="docfx:rel" content="../../">
     
   </head>
   <body data-spy="scroll" data-target="#affix" data-offset="120">
@@ -34,8 +34,8 @@
                 <span class="icon-bar"></span>
               </button>
               
-              <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../images/logo.png" alt="">
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../images/logo.png" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -77,45 +77,97 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h2 id="lookup-api">Lookup API</h2>
+<h2 id="validation-rules">Validation rules</h2>
 
-<h3 id="lookup-api-endpoint">Lookup API endpoint</h3>
-<p>URL path structure:</p>
-<pre><code class="lang-http">GET /api/sportsdata/v2/lookup?sportName=...&amp;locale=...
-</code></pre>
-<p>Parameters:</p>
-<ul>
-<li><strong>sportName</strong> (optional) - name of sport.</li>
-<li><strong>leagueName</strong> (optional) - name of league.</li>
-<li><strong>eventName</strong> (optional) - name of event.</li>
-<li><strong>startEventDate</strong> (optional) - start event date, format is yyyyMMdd.</li>
-<li><strong>locale</strong> (mandatory) - name of sport.</li>
-</ul>
-<p>Accepting formats:</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/JSON">JSON</a> (application/json) - is a default format which API is using if <strong>Accept</strong> header is omitted.</li>
-<li><a href="https://msgpack.org/index.html">MsgPack</a> - (application/msgpack) - is an efficient binary serialization format. It's faster and smaller than JSON and we encourage you use it for production purposes.</li>
-</ul>
-<p>Accepting encodings:</p>
-<ul>
-<li>gzip</li>
-<li>lz4 - fast compression algorithm <em>(can be used only for MsgPack)</em></li>
-</ul>
-<p>Examples:</p>
-<pre><code class="lang-http">GET /api/sportsdata/v2/lookup?sportName=football&amp;leagueName=mythical-matches&amp;eventName=watford-vs-newcastle&amp;startEventDate=20180829 
-Accept: application/json
-Accept-Encoding: gzip
-Authorization: Bearer {JWT token}
-</code></pre>
-<p>The response structure is:</p>
-<pre><code class="lang-json">{
-    &quot;data&quot;: {
-        &quot;events&quot;: [&quot;id_42&quot;],
-        &quot;sports&quot;: [&quot;id_1&quot;],
-        &quot;leagues&quot;: [&quot;id_5&quot;]
-    }
-}
-</code></pre>
+<h3 id="global-rules">global rules</h3>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>the maximum possible length of a whole query string is 1500 chars</td>
+<td>/events?query=...&amp;includeMarkets...&amp;projection=...</td>
+</tr>
+</tbody>
+</table>
+<h3 id="query-parameter">query parameter</h3>
+<table>
+<thead>
+<tr>
+<th>OData operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>$filter</strong></td>
+<td>can't be empty</td>
+<td>$filter=</td>
+</tr>
+<tr>
+<td><strong>$filter</strong></td>
+<td>can have no more than 2 <strong>or</strong> operators</td>
+<td>$filter=id eq '1' or id eq '2' or id eq '3'</td>
+</tr>
+<tr>
+<td><strong>$filter</strong></td>
+<td>can have no more than 2 <strong>in</strong> operators</td>
+<td>$filter=id in('1', '2') or id in ('3', '4')</td>
+</tr>
+<tr>
+<td><strong>$top</strong></td>
+<td>100 is max value</td>
+<td>$top=200</td>
+</tr>
+</tbody>
+</table>
+<h3 id="includemarkets-parameter">includeMarkets parameter</h3>
+<table>
+<thead>
+<tr>
+<th>OData operator</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>$filter</strong></td>
+<td>can be empty ($filter=) only in case if client query Event by id, in this case the API will return all markets for specific event without <strong>$top=100</strong> limitation</td>
+<td>$filter=</td>
+</tr>
+<tr>
+<td><strong>$filter</strong></td>
+<td>can query only marketType.id and marketType.name</td>
+<td>$filter=marketType/id eq '1_39' or marketType/name eq 'Live Betting 1X2'</td>
+</tr>
+<tr>
+<td><strong>$filter</strong></td>
+<td>can't query no more than 3 market types</td>
+<td>$filter=marketType/id in ('1', '2', '3')</td>
+</tr>
+<tr>
+<td><strong>$filter</strong></td>
+<td>can't return more than 300 markets in one response</td>
+<td>$filter=marketType/id in ('1', '2', '3')</td>
+</tr>
+<tr>
+<td><strong>$top</strong></td>
+<td>can't be specified</td>
+<td>$top=10</td>
+</tr>
+<tr>
+<td><strong>$skip</strong></td>
+<td>can't be specified</td>
+<td>$skip=10</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           
@@ -124,7 +176,7 @@ Authorization: Bearer {JWT token}
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/WeKnowSports/weknowsports.github.io/blob/master/src/lookup/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/WeKnowSports/weknowsports.github.io/blob/master/src/sports-data/querying_data/validation_rules.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -150,8 +202,8 @@ Authorization: Bearer {JWT token}
       </footer>
     </div>
     
-    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../styles/docfx.js"></script>
-    <script type="text/javascript" src="../styles/main.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
   </body>
 </html>

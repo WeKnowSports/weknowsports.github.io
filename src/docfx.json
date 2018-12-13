@@ -29,6 +29,12 @@
       },
       {
         "files": [
+          "your-bet/**.yml",
+          "your-bet/**.md"          
+        ]
+      },
+      {
+        "files": [
           "sports-data/**.md",
           "sports-data/**/toc.yml",          
           "toc.yml",

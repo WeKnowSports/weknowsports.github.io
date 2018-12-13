@@ -1,8 +1,11 @@
 - name: Sports Data API
   href: sports-data/
 
+- name: YourBet API
+  href: your-bet/ 
+
 - name: Search API
   href: search/
 
 - name: Lookup API
-  href: lookup/  
+  href: lookup/ 

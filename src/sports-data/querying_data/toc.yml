@@ -6,3 +6,6 @@
 
 - name: Projections
   href: projections.md
+
+- name: Validation rules
+  href: validation_rules.md

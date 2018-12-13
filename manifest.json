@@ -52,7 +52,7 @@
       "output": {
         ".html": {
           "relative_path": "lookup/index.html",
-          "hash": "wFwYZSv4Cn/u26e4jEZclg=="
+          "hash": "8a1slYbIBzTOdxGXiKJTyQ=="
         }
       },
       "is_incremental": false,
@@ -88,7 +88,7 @@
       "output": {
         ".html": {
           "relative_path": "search/index.html",
-          "hash": "umEowaQLCtwAHNOdnEVhNQ=="
+          "hash": "C1ldxPvH04R4xWTiNydniw=="
         }
       },
       "is_incremental": false,
@@ -112,7 +112,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/basic_concepts/pull_api.html",
-          "hash": "0hptgHKU+XRLVyLPlEqwdQ=="
+          "hash": "pLJrG53AUBb+gvjx3i9iUQ=="
         }
       },
       "is_incremental": false,
@@ -254,12 +254,24 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/querying_data/validation_rules.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/querying_data/validation_rules.html",
+          "hash": "ectBMjGjXA4xx3pbk5FcNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "sports-data/toc.yml",
       "output": {
         ".html": {
           "relative_path": "sports-data/toc.html",
-          "hash": "lqqO/tyiGot/i64X+VM26A=="
+          "hash": "ZDjA/4GHo0iIwFBaP4IU3Q=="
         }
       },
       "is_incremental": false,
@@ -271,7 +283,31 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "d+hRn0DtAMkqutQOnVVoHQ=="
+          "hash": "cKaTVM+0mwPoY8RhLVGnfw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "your-bet/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "your-bet/index.html",
+          "hash": "IpEEqECdGVzGfoz/8+zAtA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "your-bet/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "your-bet/toc.html",
+          "hash": "EnzuqCb+6Tvc/ySA7w1xSQ=="
         }
       },
       "is_incremental": false,
@@ -290,13 +326,13 @@
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
           "incrementalPhase": "build"
         }
       }

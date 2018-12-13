@@ -16,9 +16,11 @@ Parameters:
 
 Accepting formats:
 - [JSON](https://en.wikipedia.org/wiki/JSON) (application/json) - is a default format which API is using if **Accept** header is omitted.
+- [MsgPack](https://msgpack.org/index.html) - (application/msgpack) - is an efficient binary serialization format. It's faster and smaller than JSON and we encourage you use it for production purposes.
 
 Accepting encodings:
-- gzip
+- gzip  
+- lz4 - fast compression algorithm *(can be used only for MsgPack)*
 
 Examples:
 ```http

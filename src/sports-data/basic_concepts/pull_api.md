@@ -30,8 +30,12 @@ Parameters:
 - **locale** (optional) - let you specify locale to get translated response.
 - **projection** (optional) - let you specify what model view to return:
     - onlyId - returns only id
-    - default - returns default contract
+    - compact - is default argument, returns compacted contract
     - details - returns full contract
+- **count** (optional) - allows to get the number of records for specified $filter:
+    - true - returns number of records. 
+        - **$top** and **$skip** will affect on count.        
+    - false - is default argument, to do not apply count
 
 Limitations:
 - **$top** 100 is max value - the Pull API can't return more than 100 elements in one request.
@@ -40,7 +44,7 @@ Defaults:
 - if **locale** is not specified, the API will use "en".
 - if **$top** operator is not specified, the API set 100
 - if **$orderBy** operator is not specified, the API applies default order for specific entity *(more info about possible order you can find here)*. If asc or desc not specified, then the resources will be ordered in ascending order.
-- if **projection** is not specified, the API will use "default"
+- if **projection** is not specified, the API will use "compact"
 
 Accepting formats:
 - [JSON](https://en.wikipedia.org/wiki/JSON) (application/json) - is a default format which API is using if **Accept** header is omitted.

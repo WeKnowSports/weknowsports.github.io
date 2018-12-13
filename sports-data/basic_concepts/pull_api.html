@@ -113,8 +113,18 @@ With Pull API you can build complex OData query since it supports operators like
 <li><strong>projection</strong> (optional) - let you specify what model view to return:
 <ul>
 <li>onlyId - returns only id</li>
-<li>default - returns default contract</li>
+<li>compact - is default argument, returns compacted contract</li>
 <li>details - returns full contract</li>
+</ul>
+</li>
+<li><strong>count</strong> (optional) - allows to get the number of records for specified $filter:
+<ul>
+<li>true - returns number of records.
+<ul>
+<li><strong>$top</strong> and <strong>$skip</strong> will affect on count.</li>
+</ul>
+</li>
+<li>false - is default argument, to do not apply count</li>
 </ul>
 </li>
 </ul>
@@ -127,7 +137,7 @@ With Pull API you can build complex OData query since it supports operators like
 <li>if <strong>locale</strong> is not specified, the API will use &quot;en&quot;.</li>
 <li>if <strong>$top</strong> operator is not specified, the API set 100</li>
 <li>if <strong>$orderBy</strong> operator is not specified, the API applies default order for specific entity <em>(more info about possible order you can find here)</em>. If asc or desc not specified, then the resources will be ordered in ascending order.</li>
-<li>if <strong>projection</strong> is not specified, the API will use &quot;default&quot;</li>
+<li>if <strong>projection</strong> is not specified, the API will use &quot;compact&quot;</li>
 </ul>
 <p>Accepting formats:</p>
 <ul>

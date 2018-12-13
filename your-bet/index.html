@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Search API | SBTech API </title>
+    <title>Your Bet API | SBTech API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Search API | SBTech API ">
+    <meta name="title" content="Your Bet API | SBTech API ">
     <meta name="generator" content="docfx 2.40.2.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -77,34 +77,16 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h2 id="search-api">Search API</h2>
+<h2 id="your-bet-api">Your Bet API</h2>
 
-<h3 id="general-overview">General overview</h3>
-<p>Search API provides simple multi-language search capabilities over sports data content. You will be able to search for event.name, league.name, sport.name in one request. Search API is applying 'startWith' for the whole sentence. For example we have a team <strong>&quot;Real Madrid&quot;</strong>:</p>
-<ul>
-<li>user entered <strong>&quot;Mad&quot;</strong> - <strong>&quot;Real Madrid&quot;</strong> will be found</li>
-<li>user entered <strong>&quot;Rea&quot;</strong> - <strong>&quot;Real Madrid&quot;</strong> will be found</li>
-<li>user entered <strong>&quot;drid&quot;</strong> - not found</li>
-<li>user entered <strong>&quot;Medrid&quot;</strong> - not found</li>
-</ul>
-<h3 id="search-api-endpoint">Search API endpoint</h3>
+<h3 id="your-bet-api-endpoint">Your Bet API endpoint</h3>
 <p>URL path structure:</p>
-<pre><code class="lang-http">GET /api/sportsdata/v2/search?query=...&amp;locale=...
+<pre><code class="lang-http">GET /api/sportsdata/v2/yourbet?eventId=...&amp;selections=...
 </code></pre>
 <p>Parameters:</p>
 <ul>
-<li><strong>query</strong> (mandatory) - the URL encoded query string, will be applied to eventName, leagueName, sportName.</li>
-<li><strong>locale</strong> (mandatory) - the locale for translation. If the locale is not supported for the specific operator then a HTTP (400) BadRequest is returned.</li>
-<li><strong>top</strong> (optional) - the number of entities to return.</li>
-</ul>
-<p>Limitations:</p>
-<ul>
-<li><strong>query</strong> - 50 characters is maximum and 3 characters is minimum query length.</li>
-<li><strong>top</strong> - 40 elements per array is maximum to return.</li>
-</ul>
-<p>Defaults:</p>
-<ul>
-<li>if <strong>top</strong> is not specified, the API will use 20.</li>
+<li><strong>eventId</strong> (mandatory) - id of event.</li>
+<li><strong>selections</strong> (mandatory) - array of selections id's.</li>
 </ul>
 <p>Accepting formats:</p>
 <ul>
@@ -116,20 +98,46 @@
 <li>gzip</li>
 <li>lz4 - fast compression algorithm <em>(can be used only for MsgPack)</em></li>
 </ul>
-<p>Examples:
-Let's try to search: Real Madrid. First, we need to URL encode the query: Real Madrid -&gt; Real20%Madrid. Now, we are ready to send a query with specified locale.</p>
-<pre><code class="lang-http">GET /api/sportsdata/v2/search?query=Real20%Madrid&amp;top=10&amp;locale=en
+<p>Examples:</p>
+<pre><code class="lang-http">GET /api/sportsdata/v2/yourbet?eventId=12107641&amp;selections=0ML32377171_2,0ML32377151_3
 Accept: application/json
 Accept-Encoding: gzip
 Authorization: Bearer {JWT token}
 </code></pre>
 <p>The response is:</p>
 <pre><code class="lang-json">{
-    &quot;data&quot;: {
-        &quot;events&quot;: Event[],
-        &quot;sports&quot;: Sport[],   
-        &quot;leagues&quot;: League[]
+  &quot;data&quot;: {
+    &quot;eligibleMarkets&quot;: [
+        {
+            &quot;id&quot;: &quot;52884113&quot;,
+            &quot;selectionIds&quot;: [
+                &quot;0QA52884113#612339879_2L41410Q13Q23&quot;,
+                &quot;0QA52884113#612339857_2L41410Q11Q21&quot;,
+                &quot;0QA52884113#612339846_2L41410Q10Q20&quot;,
+                &quot;0QA52884113#612339868_2L41410Q12Q22&quot;
+            ]
+        },
+        {
+            &quot;id&quot;: &quot;3_32641323&quot;,
+            &quot;selectionIds&quot;: [
+                &quot;0OU32641323U350_3&quot;,
+                &quot;0OU32641323O350_1&quot;
+            ]
+        }        
+    ],    
+    &quot;selectionsMapped&quot;: [
+      &quot;0ML32377171_2&quot;
+    ],
+    &quot;trueOdds&quot;: 3.5,
+    &quot;displayOdds&quot;: {
+      &quot;american&quot;: &quot;+250&quot;,
+      &quot;decimal&quot;: &quot;3.50&quot;,
+      &quot;fractional&quot;: &quot;5/2&quot;,
+      &quot;hk&quot;: &quot;2.50&quot;,
+      &quot;indo&quot;: &quot;2.50&quot;,
+      &quot;malay&quot;: &quot;-0.40&quot;
     }
+  }
 }
 </code></pre>
 </article>
@@ -140,7 +148,7 @@ Authorization: Bearer {JWT token}
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/WeKnowSports/weknowsports.github.io/blob/master/src/search/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/WeKnowSports/weknowsports.github.io/blob/master/src/your-bet/index.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

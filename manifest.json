@@ -136,7 +136,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/entities_contracts/event.html",
-          "hash": "wJmtZt7UO0XZ+6hKC0wvZw=="
+          "hash": "lYtLJ++DPTRb95KhM+ydZA=="
         }
       },
       "is_incremental": false,
@@ -148,7 +148,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/entities_contracts/league.html",
-          "hash": "x6Fgmj9+JgGKLUp8a19E0w=="
+          "hash": "EN3HQO/y9myJVFPz8+JKiQ=="
         }
       },
       "is_incremental": false,
@@ -160,7 +160,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/entities_contracts/market.html",
-          "hash": "OX1rgafAGCNInDgmjaIPUQ=="
+          "hash": "PXyBOcW8qk7SYgw5DUX0rw=="
         }
       },
       "is_incremental": false,
@@ -172,7 +172,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/entities_contracts/region.html",
-          "hash": "6l1CQIsOS5OyfNhD+AiwpQ=="
+          "hash": "5+1kNxHgTDvm5EV/Fk58LQ=="
         }
       },
       "is_incremental": false,
@@ -184,7 +184,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/entities_contracts/selection.html",
-          "hash": "80wqJK7MTSS0pjCVWFtDsg=="
+          "hash": "3R55j2r3rvtRPk7IF53B2Q=="
         }
       },
       "is_incremental": false,
@@ -196,7 +196,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/entities_contracts/sport.html",
-          "hash": "84hHt98bQ8Hn5ZzL7+RG6A=="
+          "hash": "5mj3AuYswbTk/5IjfPyAWA=="
         }
       },
       "is_incremental": false,
@@ -321,14 +321,14 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ConceptualDocumentProcessor": {

@@ -79,20 +79,69 @@
             <article class="content wrap" id="_content" data-uid="">
 <h2 id="selection">Selection</h2>
 
-<pre><code class="lang-typescript">type Selection = {
+<pre><code class="lang-typescript">export interface Selection {
     id: string
-    outcomeType?: string
-    betslipLine: string
+
+    outcomeType: OutcomeType | null
+
     group: number
+
     name: string
-    title?: string
-    displayOdds?: Dictionary&lt;string&gt;
+
+    title: string | null
+
+    betslipLine: string
+
+    participantMapping: string | null
+
+    displayOdds: Dictionary&lt;string&gt;
+
     trueOdds: number
-    points: number
-    participantMapping?: string
-    isDisabled: Boolean
+
+    points: number | null
+
+    /* Win or Place for outrights */
     tags: string[]
-    metadata: Dictionary
+
+    /* idsbtech: string */
+    metadata: Dictionary&lt;any&gt;
+
+    isDisabled: boolean
+
+    entityType: EntityType
+
+    marketId: string
+}
+
+export interface SelectionChange {
+    id: string,    
+    displayOdds: Dictionary&lt;string&gt;,
+    trueOdds: number,
+    isDisabled: boolean,
+    metadata: Dictionary&lt;any&gt;
+}
+
+export enum OutcomeType {
+    Home = &quot;Home&quot;,
+    Tie = &quot;Tie&quot;,
+    Draw = &quot;Draw&quot;,
+    Away = &quot;Away&quot;,
+    OneOrX = &quot;1X&quot;,
+    XOrTwo = &quot;X2&quot;,
+    OneTwo = &quot;12&quot;,
+    Over = &quot;Over&quot;,
+    Exactly = &quot;Exactly&quot;,
+    Under = &quot;Under&quot;,
+    Yes = &quot;Yes&quot;,
+    No = &quot;No&quot;,
+    Odd = &quot;Odd&quot;,
+    Even = &quot;Even&quot;,
+    ToScoreFirst = &quot;ToScoreFirst&quot;,
+    ToScoreLast = &quot;ToScoreLast&quot;,
+    ToScoreAnyTime = &quot;ToScoreAnyTime&quot;,
+    ToScoreFirstOrLast = &quot;ToScoreFirstOrLast&quot;,
+    ToScore2OrMore = &quot;ToScore2OrMore&quot;,
+    ToScore3OrMore = &quot;ToScore3OrMore&quot;
 }
 </code></pre>
 </article>

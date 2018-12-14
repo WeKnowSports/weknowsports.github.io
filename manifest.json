@@ -112,7 +112,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/basic_concepts/pull_api.html",
-          "hash": "pLJrG53AUBb+gvjx3i9iUQ=="
+          "hash": "P4JtbbJob5WlrG0TJOabxw=="
         }
       },
       "is_incremental": false,
@@ -259,7 +259,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/querying_data/validation_rules.html",
-          "hash": "ectBMjGjXA4xx3pbk5FcNw=="
+          "hash": "RgMhO008QqGShKe38mvqyw=="
         }
       },
       "is_incremental": false,
@@ -326,13 +326,13 @@
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build"
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
           "incrementalPhase": "build"
         }
       }

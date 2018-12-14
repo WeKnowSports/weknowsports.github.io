@@ -1,11 +1,11 @@
 ## Validation rules
 
-### global rules
+### Global rules
 | Description | Example |
 |---|---|---|
 | the maximum possible length of a whole query string is 1500 chars | /events?query=...&includeMarkets...&projection=... |
 
-### query parameter
+### HTTP parameter: query 
 
 | OData operator | Description | Example | 
 |---|---|---|
@@ -15,7 +15,7 @@
 | **$top**    | 100 is max value                         | $top=200 |
 
 
-### includeMarkets parameter
+### HTTP parameter: includeMarkets
 
 | OData operator | Description | Example | 
 |---|---|---|
@@ -25,3 +25,20 @@
 | **$filter** | can't return more than 300 markets in one response | $filter=marketType/id in ('1', '2', '3') |
 | **$top**    | can't be specified | $top=10 |
 | **$skip**   | can't be specified | $skip=10 |
+
+### Supported OData operators
+| OData operator | Status | 
+|---|---|
+| $filter        | Supported |
+| $top           | Supported |
+| $skip          | Supported |
+| $orderBy       | Supported |
+| $expand        | Not supported |
+| $inlinecount   | Not supported |
+| $select        | Not supported |
+| $search        | Not supported |
+| $format        | Not supported |
+| $compute       | Not supported |
+| $index         | Not supported |
+| $schemaversion | Not supported |
+| $count         | Not supported |

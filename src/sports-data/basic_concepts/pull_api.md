@@ -44,7 +44,7 @@ Defaults:
 - if **locale** is not specified, the API will use "en".
 - if **$top** operator is not specified, the API set 100
 - if **$orderBy** operator is not specified, the API applies default order for specific entity *(more info about possible order you can find here)*. If asc or desc not specified, then the resources will be ordered in ascending order.
-- if **projection** is not specified, the API will use "compact"
+- if **projection** is not specified, the API will use "details"
 
 Accepting formats:
 - [JSON](https://en.wikipedia.org/wiki/JSON) (application/json) - is a default format which API is using if **Accept** header is omitted.

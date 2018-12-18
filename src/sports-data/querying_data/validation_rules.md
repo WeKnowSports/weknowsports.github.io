@@ -2,7 +2,7 @@
 
 ### Global rules
 | Description | Example |
-|---|---|---|
+|---|---|
 | the maximum possible length of a whole query string is 1500 chars | /events?query=...&includeMarkets...&projection=... |
 
 ### HTTP parameter: query 

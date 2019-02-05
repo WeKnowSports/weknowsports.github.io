@@ -8,7 +8,7 @@
     <title>OData query | SBTech API </title>
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="OData query | SBTech API ">
-    <meta name="generator" content="docfx 2.40.2.0">
+    <meta name="generator" content="docfx 2.40.9.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
@@ -146,6 +146,11 @@ $filter={expression}&amp;$top={int}&amp;$skip={int}&amp;$orderBy={expression}
 <td>or</td>
 <td>Logical or (||)</td>
 <td>$filter=sportId eq '1' or sportId eq '5'</td>
+</tr>
+<tr>
+<td>not</td>
+<td>Not operator</td>
+<td>$filter=not (sportId in ('1', '2', '8'))</td>
 </tr>
 <tr>
 <td>in</td>

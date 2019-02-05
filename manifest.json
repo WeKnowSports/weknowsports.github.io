@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/Users/anton.mo/Desktop/work/weknowsports.github.io/src",
+  "source_base_path": "C:/wc/Sweknowsports.github.io_15/src",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -40,7 +40,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "/MCHn3TNQB9K83/owAJMmg=="
+          "hash": "GMWnDSN0qKysuZfFvAxi7w=="
         }
       },
       "is_incremental": false,
@@ -52,19 +52,7 @@
       "output": {
         ".html": {
           "relative_path": "lookup/index.html",
-          "hash": "8a1slYbIBzTOdxGXiKJTyQ=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "lookup/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "lookup/toc.html",
-          "hash": "EnzuqCb+6Tvc/ySA7w1xSQ=="
+          "hash": "jf2//ORET3F853nBVEZUgg=="
         }
       },
       "is_incremental": false,
@@ -76,7 +64,7 @@
       "output": {
         ".html": {
           "relative_path": "search/entities_contracts.html",
-          "hash": "xdfe7vD9q0UG/diLzePNtA=="
+          "hash": "NjbpHwdC/EZwMizm7Zb9ew=="
         }
       },
       "is_incremental": false,
@@ -88,19 +76,7 @@
       "output": {
         ".html": {
           "relative_path": "search/index.html",
-          "hash": "C1ldxPvH04R4xWTiNydniw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "search/toc.yml",
-      "output": {
-        ".html": {
-          "relative_path": "search/toc.html",
-          "hash": "4qCewyLSCsPZ/qhxLrNZtA=="
+          "hash": "441vRbbSMn8OEYVpe2nhFQ=="
         }
       },
       "is_incremental": false,
@@ -112,7 +88,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/basic_concepts/pull_api.html",
-          "hash": "P4JtbbJob5WlrG0TJOabxw=="
+          "hash": "Pc/7zintIBynh3TGxchcvQ=="
         }
       },
       "is_incremental": false,
@@ -124,7 +100,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/basic_concepts/push_api.html",
-          "hash": "767Vhpx1r3r/w0dfVv0euA=="
+          "hash": "bGrJXlaB700pBC4b5+koTg=="
         }
       },
       "is_incremental": false,
@@ -136,7 +112,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/entities_contracts/event.html",
-          "hash": "lYtLJ++DPTRb95KhM+ydZA=="
+          "hash": "3hReaa0UTLtVIwtg1I9q0Q=="
         }
       },
       "is_incremental": false,
@@ -148,7 +124,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/entities_contracts/league.html",
-          "hash": "EN3HQO/y9myJVFPz8+JKiQ=="
+          "hash": "tpqMn9IAOsgJU9uvAs3qjg=="
         }
       },
       "is_incremental": false,
@@ -160,7 +136,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/entities_contracts/market.html",
-          "hash": "PXyBOcW8qk7SYgw5DUX0rw=="
+          "hash": "suDleDUML+m9WebRm+ROPQ=="
         }
       },
       "is_incremental": false,
@@ -172,7 +148,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/entities_contracts/region.html",
-          "hash": "5+1kNxHgTDvm5EV/Fk58LQ=="
+          "hash": "ZoE9Q5vxJRX0k5eZ26fdSA=="
         }
       },
       "is_incremental": false,
@@ -184,7 +160,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/entities_contracts/selection.html",
-          "hash": "3R55j2r3rvtRPk7IF53B2Q=="
+          "hash": "Vf4kooYL/O0N0HdOhjDLXg=="
         }
       },
       "is_incremental": false,
@@ -196,7 +172,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/entities_contracts/sport.html",
-          "hash": "5mj3AuYswbTk/5IjfPyAWA=="
+          "hash": "egfclvbY4vlPCHQKDfBHSA=="
         }
       },
       "is_incremental": false,
@@ -211,7 +187,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/index.html",
-          "hash": "/lHYXDRpO1AFPVn0/Eu0gw=="
+          "hash": "nqUQrGTnAzfOsa9JdGbp4A=="
         }
       },
       "is_incremental": false,
@@ -223,7 +199,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/querying_data/odata_query.html",
-          "hash": "kZEqQfCccKAkItsgzmfIIQ=="
+          "hash": "LI/tDu31T9igCKzhj+qDrw=="
         }
       },
       "is_incremental": false,
@@ -235,7 +211,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/querying_data/projections.html",
-          "hash": "KWCZ966fTEBufkWEpO3Lgw=="
+          "hash": "y/yZrvlwn9ynPuI2T1EbZw=="
         }
       },
       "is_incremental": false,
@@ -247,7 +223,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/querying_data/time_range_queries.html",
-          "hash": "zLRvCMjy+E8jJQVEC9bV5Q=="
+          "hash": "/zdT/yHy6N0EoFEjbidbag=="
         }
       },
       "is_incremental": false,
@@ -259,7 +235,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/querying_data/validation_rules.html",
-          "hash": "RgMhO008QqGShKe38mvqyw=="
+          "hash": "ZSJ4I2rSUZ/XxM+mXtwuWw=="
         }
       },
       "is_incremental": false,
@@ -283,7 +259,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "cKaTVM+0mwPoY8RhLVGnfw=="
+          "hash": "Qga3r6zoKEowNIAE1FuZnw=="
         }
       },
       "is_incremental": false,
@@ -295,7 +271,7 @@
       "output": {
         ".html": {
           "relative_path": "your-bet/index.html",
-          "hash": "IpEEqECdGVzGfoz/8+zAtA=="
+          "hash": "8YWhoBckDRkTktJ0kwVJBQ=="
         }
       },
       "is_incremental": false,
@@ -317,23 +293,32 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
-        "incrementalPhase": "build"
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
       },
       "processors": {
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 18,
+          "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build"
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
         }
       }
     },
@@ -341,7 +326,9 @@
       "status": {
         "can_incremental": false,
         "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
-        "incrementalPhase": "postProcessing"
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
       },
       "processors": {}
     }

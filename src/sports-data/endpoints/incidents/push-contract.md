@@ -1,15 +1,19 @@
-## Sport
+## Region
 
 ```typescript
-export interface Sport {
-    /** sport ID */
+export interface Region {
+    /** region ID */
     id: string
 
-    /** sorting order */
-    order: number
+    /** ISO country code or (for regions in country) region code */
+    code: string
 
-    /** translated sport name */
+    /** translated region name */
     name: string
+
+    activeSports: string[]
+
+    activeSportsCount: number
 
     /** number of live (in-game) active games */
     liveFixturesTotalCount: number
@@ -17,20 +21,19 @@ export interface Sport {
     /** total number of games, both live and pre-live */
     fixturesTotalCount: number
 
-    /** number of games, both live and pre-live filtered by time range */
+    /** number of games, both live and pre-live filtered by time range*/
     fixturesCount: number
 
     /** number of active outrights league bound markets */
     outrightsTotalCount: number
 
     entityType: EntityType
-
-    /** array based on tags of events belonging to sport*/
-    tags: string[]
 }
 
-export interface SportChange {
+export interface RegionChange {
     id: string,
+    activeSports: string[],
+    activeSportsCount: number,
     liveFixturesTotalCount: number,
     fixturesTotalCount: number,
     fixturesCount: number,

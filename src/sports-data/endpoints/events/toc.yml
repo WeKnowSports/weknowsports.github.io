@@ -1,0 +1,8 @@
+- name: Pull contract
+  href: pull-contract.md
+
+- name: Push contract
+  href: push-contract.md
+  
+- name: Filtering and querying
+  href: filtering-and-querying.md

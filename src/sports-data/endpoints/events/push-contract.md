@@ -1,30 +1,19 @@
-## League
+## Region
 
 ```typescript
-export interface League {
-    /** league ID */
+export interface Region {
+    /** region ID */
     id: string
 
-    /** translated league name */
+    /** ISO country code or (for regions in country) region code */
+    code: string
+
+    /** translated region name */
     name: string
 
-    /** link to sport */
-    sportId: string
+    activeSports: string[]
 
-    /** sport name */
-    sportName: string
-
-    /** link to region */
-    regionId: string
-
-    /** ISO country code or (for regions in country) region code */
-    regionCode: string
-
-    /** Sorting order */
-    defaultOrder: number
-
-    /** is league marked with hot flag */
-    isTopLeague: boolean
+    activeSportsCount: number
 
     /** number of live (in-game) active games */
     liveFixturesTotalCount: number
@@ -39,15 +28,12 @@ export interface League {
     outrightsTotalCount: number
 
     entityType: EntityType
-
-    /** array based on tags of events belonging to league*/
-    tags: string[]
-
-    masterLeagueId: string
 }
 
-export interface LeagueChange {
+export interface RegionChange {
     id: string,
+    activeSports: string[],
+    activeSportsCount: number,
     liveFixturesTotalCount: number,
     fixturesTotalCount: number,
     fixturesCount: number,

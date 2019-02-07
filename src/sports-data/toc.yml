@@ -3,9 +3,10 @@
 
 - name: Basic concepts
   href: basic_concepts/toc.yml
+  
+- name: Endpoints
+  href: endpoints/toc.yml
 
-- name: Querying Data
-  href: querying_data/toc.yml
-
-- name: Entities Contracts
-  href: entities_contracts/toc.yml
+- name: Best Practices
+  href: best-practices/toc.yml  
+  

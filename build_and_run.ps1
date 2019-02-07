@@ -1,6 +1,7 @@
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 if (![System.IO.File]::Exists("docfx.zip"))
-    {Invoke-WebRequest https://github.com/dotnet/docfx/releases/download/v2.40.10/docfx.zip -OutFile docfx.zip}
+    {[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    Invoke-WebRequest https://github.com/dotnet/docfx/releases/download/v2.40.10/docfx.zip -OutFile docfx.zip}
 if (![System.IO.Directory]::Exists("docfx"))
     {[System.IO.Compression.ZipFile]::ExtractToDirectory("docfx.zip", "docfx")}
 

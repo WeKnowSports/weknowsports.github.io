@@ -93,7 +93,9 @@ type Participant = {
 
 
 
-### Possible `Event.Participant.metadata` dictionary entries for Horse racing events
+### Participant.metadata for Horse racing events
+
+Possible `Event.Participant.metadata` dictionary entries for Horse racing events
 
 | Parameter | Description | Format | Queryable | Returnable |
 | --- | --- | --- | --- | --- |
@@ -114,9 +116,12 @@ type Participant = {
 |rpDiomedComment| The race prediction for a horse, as provided by Racing post. | string | No | Yes |
 
 
-### Possible Event.Participant.metadata dictionary entries for Greyhounds events
+### Participant.metadata  for Greyhounds events
 
-| Parameter | Description | *Format* | *Queryable* | *Returnable* |
+Possible Event.Participant.metadata dictionary entries for Greyhounds events
+
+| Parameter | Description | Format | Queryable | Returnable |
+| --- | --- | --- | --- | --- |
 |trapNumber| Specifies the trap number of the hound. | string |	No | Yes |
 |runnerStatus| Specifies the horse's runner status. Possible values are “Ante-post” (for hounds participating in an Ante-post race), “DOE” (for hounds participating in a DOE race), “NR” (for hounds withdrawn from the race). | string | No | Yes |
 |paFeedId| Specifies value provided by the PA feed. | string |	No | Yes |

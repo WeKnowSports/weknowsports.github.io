@@ -36,7 +36,7 @@ type Event = {
 ```
 
 | *Name* | *Description* | *Format* | *Returnable* | *Queryable* | *Example* |
-| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+| --- | ----------- | --- | --- | --- | ----- |
 |id| Specifies the identifier of the sports event. | string | Yes | query (using eq, ne, or, and, in) | $filter=Id eq '11754652' |
 |entityType| Specifies the type of the entity. Always 0 for events. | number | Yes | No | -- |
 |type| Specifies the type of the sports event. Possible values are "Fixture" and "Outright" for most sports and "AntePostRace" and "DayOfEventRace" for racing sports. | string | Yes | query (using eq, ne, or, and, in) | $filter=type eq (ne) 'Fixture' |

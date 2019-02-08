@@ -34,47 +34,45 @@ type Event = {
     metadata: Dictionary<any> // Described in a separate table below.
 }
 ```
-<br>
+
 | Name | Description | Format | Returnable | Queryable | Example |
 | --- | ----------- | --- | --- | --- | ----- |
-|id| Specifies the identifier of the sports event. | string | Yes | query (using eq, ne, or, and, in) | $filter=Id eq '11754652' |
-|entityType| Specifies the type of the entity. Always 0 for events. | number | Yes | No | -- |
-|type| Specifies the type of the sports event. Possible values are "Fixture" and "Outright" for most sports and "AntePostRace" and "DayOfEventRace" for racing sports. | string | Yes | query (using eq, ne, or, and, in) | $filter=type eq (ne) 'Fixture' |
-|sportId| Specifies the identifier of the sport. | string | Yes | query (using eq, ne, or, and, in) | $filter=sportId eq (ne) '12' |
-|sportName| Specifies the name of the sport (translated). | string | Yes | query (using eq, ne, or, and, in) | $filter=sportName eq 'Soccer' |
-|sportOrder| Specifies the sorting order of the sport. | number | Yes | $orderby (only *asc*) | $orderby=sportOrder asc |
-|regionId| Specifies the identifier of the region. | string | Yes | query (using eq, ne, or, and, in) | $filter=regionId eq '260' |
-|regionCode| Specifies ISO country code or (for regions in country) region code. | string | Yes | query (using eq, ne, or, and, in) | $filter=regionCode eq 'EN' |
-|regionName| Specifies the name of the region. | string | Yes | query (using eq, ne, or, and, in) | $filter=regionName eq 'England' |
-|leagueId| Specifies the identifier of the league. | string | Yes | query (using eq, ne, or, and, in) | $filter=leagueId eq '36690' |
-|leagueName| Specifies the name (translated) of the league. | string | Yes | query (using eq, ne, or, and, in) | $filter=leagueName eq 'English Football League Cup' |
-|leagueOrder| Specifies the sorting order of the league. | number | Yes | (using eq, ne, or, and, in) | $filter=leagueOrder eq 580150 |
-|isTopLeague| Specifies if the league is marked with a top flag. | Boolean | Yes | query (using eq, ne) | $filter=isTopLeague eq false |
-|participants| Specifies the participants in the event. Parameters of the Participant object are described in a separate table below. | Array | Yes | query (using lambda, eq, ne, or, and, in) | $filter=participants/any(p: p/id eq '357') |
-|eventName| Specifies the name of the event. For events of type "Fixture" it is composed of participants name, e.g. "ParticipantHome vs ParticipantAway". Order of teams is reversed if `swapTeams: true`. If you want, you can ignore this value and compose it locally in a different format. | string | Yes | query (using eq, ne, or, and, in) | $filter=eventName eq 'Chelsea vs Bournemouth' |
-|betslipLine| Specifies the presentation of the event in the bet slip in the context of each of its selections. To be used in conjunction with the respective `Market.selections[].betslipLine` and `Market.betslipLine` values.| string | Yes | query (using eq, ne, or, and, in) | $filter=betslipLine eq 'Clonmel: 12:15' |
-|marketGroups| Specifies the market groups defined within the event. | MarketGroup | Yes | query (using lambda, eq, ne, or, and, in) 
+| id | Specifies the identifier of the sports event. | string | Yes | query (using eq, ne, or, and, in) | $filter=Id eq '11754652' |
+| entityType | Specifies the type of the entity. Always 0 for events. | number | Yes | No | -- |
+| type | Specifies the type of the sports event. Possible values are "Fixture" and "Outright" for most sports and "AntePostRace" and "DayOfEventRace" for racing sports. | string | Yes | query (using eq, ne, or, and, in) | $filter=type eq (ne) 'Fixture' |
+| sportId | Specifies the identifier of the sport. | string | Yes | query (using eq, ne, or, and, in) | $filter=sportId eq (ne) '12' |
+| sportName | Specifies the name of the sport (translated). | string | Yes | query (using eq, ne, or, and, in) | $filter=sportName eq 'Soccer' |
+| sportOrder | Specifies the sorting order of the sport. | number | Yes | $orderby (only *asc*) | $orderby=sportOrder asc |
+| regionId | Specifies the identifier of the region. | string | Yes | query (using eq, ne, or, and, in) | $filter=regionId eq '260' |
+| regionCode | Specifies ISO country code or (for regions in country) region code. | string | Yes | query (using eq, ne, or, and, in) | $filter=regionCode eq 'EN' |
+| regionName | Specifies the name of the region. | string | Yes | query (using eq, ne, or, and, in) | $filter=regionName eq 'England' |
+| leagueId | Specifies the identifier of the league. | string | Yes | query (using eq, ne, or, and, in) | $filter=leagueId eq '36690' |
+| leagueName | Specifies the name (translated) of the league. | string | Yes | query (using eq, ne, or, and, in) | $filter=leagueName eq 'English Football League Cup' |
+| leagueOrder | Specifies the sorting order of the league. | number | Yes | (using eq, ne, or, and, in) | $filter=leagueOrder eq 580150 |
+| isTopLeague | Specifies if the league is marked with a top flag. | Boolean | Yes | query (using eq, ne) | $filter=isTopLeague eq false |
+| participants | Specifies the participants in the event. Parameters of the Participant object are described in a separate table below. | Array | Yes | query (using lambda, eq, ne, or, and, in) | $filter=participants/any(p: p/id eq '357') |
+| eventName | Specifies the name of the event. For events of type "Fixture" it is composed of participants name, e.g. "ParticipantHome vs ParticipantAway". Order of teams is reversed if `swapTeams: true`. If you want, you can ignore this value and compose it locally in a different format. | string | Yes | query (using eq, ne, or, and, in) | $filter=eventName eq 'Chelsea vs Bournemouth' |
+| betslipLine | Specifies the presentation of the event in the bet slip in the context of each of its selections. To be used in conjunction with the respective `Market.selections[].betslipLine` and `Market.betslipLine` values.| string | Yes | query (using eq, ne, or, and, in) | $filter=betslipLine eq 'Clonmel: 12:15' |
+| marketGroups | Specifies the market groups defined within the event. | MarketGroup | Yes | query (using lambda, eq, ne, or, and, in) 
 Сan't query this together with marketTypes.| $filter=marketGroups/any(p: p/name eq 'Corners') |
-|totalMarketsCount| Specifies the total markets count. Not affected by the IncludeMarkets filter, i.e. always returns the total count of available markets for the event. | number | Yes | $orderby (only desc) | $orderby=totalMarketsCount desc |
-|marketLinesCount| Specifies the total number of markets, with point lines counted as separate markets. Not affected by the IncludeMarkets filter, i.e. always returns the total count of available markets for the event. | number | Yes | query (using lambda, eq, ne, or, and, in) | $filter=marketLinesCount eq 0 |
-|totalBets| Number of bets placed for entity. | number | No | $orderby (only desc) | $orderby=totalBets desc |
-|totalDeposit| Total deposit of all bets placed for entity. | number | No | $orderby (only asc) | $orderby=startEventDate asc |
-|startEventDate| Specifies the date and time of the beginning of the event. | ISODateTimeString | Yes | $orderby (only asc) | $orderby=startEventDate asc |
-|status| Specifies the status of the event. Possible values are "NotStarted", "InProgress" (for most sports), "RaceOff" (for racing sports), "Resulted" (supported only for racing sports got now; events from other sports will be removed before moving into this status). | string | Yes | query (using eq, ne, or, and, in) | $filter=status eq 'NotStarted' |
-|score|	Specifies the current score of the event. | GameScore |	Yes | query (using lambda, eq, ne, or, and, in) | $filter=score/awayScore eq '0' |
-|isLive| Specifies if the event is currently traded live. | Boolean | Yes | query (using eq, ne) | $filter=isLive eq false |
-|isGoingLive| Specifies if the event is going live when started, can be true for pre-match events only. | Boolean | Yes | query (using eq, ne) | $filter=isGoingLive eq false |
-|liveGameState|	Specifies additional information on the event such as status, score, current time. See all parameters in a table below. | LiveGameState | Yes | query (using lambda, eq, ne, or, and, in) | $filter=liveGameState/gamePart eq 'SecondHalf' |
-|tags| Specifies additional information on the event. | string | Yes |	query (using lambda, eq, ne, or, and, in) | $filter=tags/any(s: s eq 'LiveStream') |
-|media|	Specifies list of available mapping data to external media providers for the event, such us live streaming, statistics, match tracker widgets etc. | Media | Yes | query (using lambda, eq, ne, or, and, in) | $filter=media/any(p: p/mediaType eq 'LiveStreaming') |
-|metadata| Specifies additional information on the event. | string | Yes | No | -- |
-|isSuspended| Specifies if the event is suspended. | boolean | Yes | query (using eq, ne) | $filter=isSuspended eq false |
-|isTeamSwap| Specifies if the suggested presentation of the event implies to show the away team first. Relevant only for Fixture events. | boolean | Yes	| query (using eq, ne) | $filter=isTeamSwap eq false |
-<br>
-<br>
-<br>
+| totalMarketsCount | Specifies the total markets count. Not affected by the IncludeMarkets filter, i.e. always returns the total count of available markets for the event. | number | Yes | $orderby (only desc) | $orderby=totalMarketsCount desc |
+| marketLinesCount | Specifies the total number of markets, with point lines counted as separate markets. Not affected by the IncludeMarkets filter, i.e. always returns the total count of available markets for the event. | number | Yes | query (using lambda, eq, ne, or, and, in) | $filter=marketLinesCount eq 0 |
+| totalBets | Number of bets placed for entity. | number | No | $orderby (only desc) | $orderby=totalBets desc |
+| totalDeposit | Total deposit of all bets placed for entity. | number | No | $orderby (only asc) | $orderby=startEventDate asc |
+| startEventDate | Specifies the date and time of the beginning of the event. | ISODateTimeString | Yes | $orderby (only asc) | $orderby=startEventDate asc |
+| status | Specifies the status of the event. Possible values are "NotStarted", "InProgress" (for most sports), "RaceOff" (for racing sports), "Resulted" (supported only for racing sports got now; events from other sports will be removed before moving into this status). | string | Yes | query (using eq, ne, or, and, in) | $filter=status eq 'NotStarted' |
+| score |	Specifies the current score of the event. | GameScore |	Yes | query (using lambda, eq, ne, or, and, in) | $filter=score/awayScore eq '0' |
+| isLive | Specifies if the event is currently traded live. | Boolean | Yes | query (using eq, ne) | $filter=isLive eq false |
+| isGoingLive | Specifies if the event is going live when started, can be true for pre-match events only. | Boolean | Yes | query (using eq, ne) | $filter=isGoingLive eq false |
+| liveGameState |	Specifies additional information on the event such as status, score, current time. See all parameters in a table below. | LiveGameState | Yes | query (using lambda, eq, ne, or, and, in) | $filter=liveGameState/gamePart eq 'SecondHalf' |
+| tags | Specifies additional information on the event. | string | Yes |	query (using lambda, eq, ne, or, and, in) | $filter=tags/any(s: s eq 'LiveStream') |
+| media |	Specifies list of available mapping data to external media providers for the event, such us live streaming, statistics, match tracker widgets etc. | Media | Yes | query (using lambda, eq, ne, or, and, in) | $filter=media/any(p: p/mediaType eq 'LiveStreaming') |
+| metadata | Specifies additional information on the event. | string | Yes | No | -- |
+| isSuspended | Specifies if the event is suspended. | boolean | Yes | query (using eq, ne) | $filter=isSuspended eq false |
+| isTeamSwap | Specifies if the suggested presentation of the event implies to show the away team first. Relevant only for Fixture events. | boolean | Yes	| query (using eq, ne) | $filter=isTeamSwap eq false |
+
 ## Participant
-<br>
+ 
 ```json
 type Participant = {
     id: string
@@ -84,7 +82,7 @@ type Participant = {
     metadata: Dictionary<any> 
 }
 ```
-<br>
+ 
 | Name | Description | Format | Queryable | Returnable |
 | --- | --- | --- | --- | --- |
 |id| Specifies the identifier of the participant. | string | Yes | Yes |
@@ -92,10 +90,11 @@ type Participant = {
 |venueRole| Specifies the relation of the participant to the venue (home or away). Note that these will follow the customary designations, but in some cases could be fictitious. Also, no value will be assigned to participants in Outright events, even if one or more participants are considered to be competing on their "home" ground. This parameter is mostly intended to be used as a display signal for Fixture events. | VenueRole: Home or Away | Yes | Yes |
 |country| Specifies the ISO code of the country. | String | Yes | Yes |
 |metadata| Specifies additional information on the participant, such as runnerNumber: number, imageUrl: string, weight: string, age: number. | Dictionary |	Yes | Yes |
-<br>
-<br>
+
+
+
 ### Possible `Event.Participant.metadata` dictionary entries for Horse racing events
-<br>
+
 | Parameter | Description | Format | Queryable | Returnable |
 | --- | --- | --- | --- | --- |
 |age| Specifies the horse's rage. | string | No | Yes |
@@ -113,10 +112,10 @@ type Participant = {
 |rule4| "Rule 4" statement for the horse, if it becomes non-runner. | string | No | Yes |
 |rpr| Horse rating, as provided by Racing post. | string | No | Yes |
 |rpDiomedComment| The race prediction for a horse, as provided by Racing post. | string | No | Yes |
-<br>
-<br>
+
+
 ### Possible Event.Participant.metadata dictionary entries for Greyhounds events
-<br>
+
 | Parameter | Description | *Format* | *Queryable* | *Returnable* |
 |trapNumber| Specifies the trap number of the hound. | string |	No | Yes |
 |runnerStatus| Specifies the horse's runner status. Possible values are “Ante-post” (for hounds participating in an Ante-post race), “DOE” (for hounds participating in a DOE race), “NR” (for hounds withdrawn from the race). | string | No | Yes |
@@ -125,11 +124,11 @@ type Participant = {
 |resultingPosition| Specifies the position of every participant after a racing event has resulted. | string | No | Yes |
 |resultingStartingPrice| States the starting price of the participant at the start of the event, used to settle the “starting price” bets. Always provided in fractional odds. | string |No | Yes |
 |rpDiomedComment| The race prediction for a horse, as provided by Racing post. | string | No | Yes |
-<br>
-<br>
-<br>
+
+
+
 ## LiveGameState
-<br>
+
 ```json
 type LiveGameState = {
     clockRunning: Boolean
@@ -138,22 +137,22 @@ type LiveGameState = {
     gamePart: string
 }
 ```
-<br>
+
 | Parameter | Description | Format | Queryable | Returmable |
 | --- | --- | --- | --- | -- |
 |clockRunning| Specifies if the in-game clock is currently running. | Boolean | Yes | Yes |
 |clockDirection| Specifies the clock direction. Two values are possible: "Stopwatch" (default, counting starts from 0 and continues until the clock is reset or the game ends) and "Timer" (counting starts from some specific value and goes down to 0) | string | Yes | Yes |
 |gameTime| Specifies the current in-game time in seconds. Note that presentation needs might differ depending on the sport. | number | Yes | Yes |
 |gamePart| Specifies the current part of the game. Note that this will differ per sport. | string | Yes	| Yes |
-<br>
-<br>
+
+
 ### Possible Event.LiveGameState.gamePart values per sport
-<br>
+
 _NB: These values are intended as keys or identifiers, not as display values. They are not localised and they cannot be modified to serve specific display needs (like full or shortened/abbreviated presentation). Such issues have to be addressed client side._
-<br>
-<br>
+
+
 #### Soccer
-<br>
+
 FirstHalf
 BreakAfterFirstHalf
 SecondHalf
@@ -163,9 +162,9 @@ FirstOvertime
 BreakAfterFirstOvertime
 SecondOvertime
 -->
-<br>
+
 #### Basketball
-<br>
+
 FirstQuarter
 BreakAfterFirstQuarter
 SecondQuarter
@@ -177,23 +176,23 @@ BreakAfterFourthQuarter
 FirstOvertime
 BreakAfterFirstOvertime
 SecondOvertime
-<br>
+
 #### Tennis
-<br>
+
 FirstSet
 SecondSet
 ThirdSet
 FourthSet
 FifthSet
-<br>
+
 #### Handball
-<br>
+
 FirstHalf
 BreakAfterFirstHalf
 SecondHalf
-<br>
+
 #### Ice hockey
-<br>
+
 FirstPeriod
 BreakAfterFirstPeriod
 SecondPeriod
@@ -201,9 +200,9 @@ BreakAfterSecondPeriod
 ThirdPeriod
 BreakAfterThirdPeriod
 Overtime
-<br>
+
 #### American Football
-<br>
+
 FirstQuarter
 BreakAfterFirstQuarter
 SecondQuarter
@@ -213,31 +212,31 @@ BreakAfterThirdQuarter
 FourthQuarter
 BreakAfterFourthQuarter
 Overtime
-<br>
+
 #### Rugby League
-<br>
+
 FirstHalf
 BreakAfterFirstHalf
 SecondHalf
-<br>
+
 #### Rugby Union
-<br>
+
 FirstHalf
 BreakAfterFirstHalf
 SecondHalf
 <br>
 #### Volleyball
-<br>
+
 FirstSet
 SecondSet
 ThirdSet
 FourthSet
 FifthSet
-<br>
-<br>
-<br>
+
+
+
 ## MarketGroup
-<br>
+
 ```json
 type MarketGroup = {
     id: string
@@ -245,17 +244,17 @@ type MarketGroup = {
     order: number
 }
 ```
-<br>
+
 | Parameter | Description | Format | Queryable | Returnable |
 | --- | --- | --- | --- | --- |
 |id| Specifies the identifier of the group. Will be referred from the [[Markets]] to help organize the layout of the event view. | string | Yes | Yes |
 |name| Specifies the name of the group. Note that this field is currently NOT localized. | string | Yes | Yes |
 |order| Specifies the order key for the group. | number | No | Yes |
-<br>
-<br>
-<br>
+
+
+
 ## GameScore
-<br>
+
 ```json
 type GameScore = {
     homeScore: string
@@ -264,25 +263,25 @@ type GameScore = {
     additionalScores: Dictionary<any>
 }
 ```
-<br>
+
 | Parameter | Description | Format | Queryable | Returmable |
 | --- | --- | --- | --- | --- |
 |homeScore| Specifies the score for the home team. Only a single value, representing the "main" score for the respective sport will be included. Usually, this would be the total number of points or goals for the respective team. For tennis the value will represent total sets won. For cricket the value will represent the "runs for wickets" score of the team. | string | Yes | Yes |
 |awayScore| Specifies the score for the away team. Same general format as @scoreHome@. | string | Yes |	Yes |
 |combinedSecondTierScores| Will include an array of "second tier" (usually game part) scores. Facilitates displaying comprehensive score on coupon views. | array | Yes | Yes |
 |additionalScores| Provides a list of additional scores, e.g. per game part. Specific per sport. | Dictionary | Yes | Yes |
-<br>
-<br>
+
+
 ### Possible "AdditionalScores" properties per sport
-<br>
+
 Below is a list of possible parameters which will appear under the additionalScores dictionary, depending on the sport of the event. A few general patterns and rules have to be taken into account:
 - All values are in *string* format.
 - Almost all properties will have an appendix or 1 or 2 in the name. These indicate score for the Home or Away team, respectively. For example, `FirstHalfScore1` is the score of the Home team for the first half of a soccer game.
 - The only exception is the `onServe" property, which will appear for several sports and will have a _value_ of 1 or 2. The pattern is the same -- `onServe: 1` for a Volleyball game means that the Home team is serving. We use the `onServe` parameter also for Baseball and Cricket events to allow easier, more generalised implementation, realising that it is not the correct technical term.
 - Not all properties will be always returned. Missing pair of properties means that there is no score of the respective game part or (in rare cases) that we don't have the respective data. For example, during the third quarter of a basketball game, we will not return `BasketballFourthQuarterScore1` and `BasketballFourthQuarterScore2` parameters.
-<br>
+
 #### Soccer
-<br>
+
 - FirstHalfScore1
 - FirstHalfScore2
 - SecondHalfScore1
@@ -297,9 +296,9 @@ Below is a list of possible parameters which will appear under the additionalSco
 - CornersTeam2
 - PenaltiesTeam1
 - PenaltiesTeam2
-<br>
+
 #### Basketball
-<br>
+
 - BasketballFirstQuarterScore1
 - BasketballFirstQuarterScore2
 - BasketballSecondQuarterScore1
@@ -316,9 +315,9 @@ Below is a list of possible parameters which will appear under the additionalSco
 - InputForPeriod
 - BasketballOverTimeScore1
 - BasketballOverTimeScore2
-<br>
+
 #### Tennis
-<br>
+
 - onServe
 - FirstSetScore1
 - FirstSetScore2
@@ -332,9 +331,9 @@ Below is a list of possible parameters which will appear under the additionalSco
 - FifthSetScore2
 - CurrentGameScore1
 - CurrentGameScore2
-<br>
+
 #### American Football
-<br>
+
 - AmericanFootball1QScore1
 - AmericanFootball1QScore2
 - AmericanFootball2QScore1
@@ -347,9 +346,9 @@ Below is a list of possible parameters which will appear under the additionalSco
 - AmericanFootball1HScore2
 - AmericanFootball2HScore1
 - AmericanFootball2HScore2
-<br>
+
 #### Baseball
-<br>
+
 - onServe
 - FirstInningScore1
 - FirstInningScore2
@@ -369,18 +368,18 @@ Below is a list of possible parameters which will appear under the additionalSco
 - EighthInningScore2
 - NinthInningScore1
 - NinthInningScore2
-<br>
+
 #### Ice hockey
-<br>
+
 - IceHockeyFirstPeriodScore1
 - IceHockeyFirstPeriodScore2
 - IceHockeySecondPeriodScore1
 - IceHockeySecondPeriodScore2
 - IceHockeyThirdPeriodScore1
 - IceHockeyThirdPeriodScore2
-<br>
+
 #### Volleyball
-<br>
+
 - onServe
 - VolleyballFirstSetScore1
 - VolleyballFirstSetScore2
@@ -392,9 +391,9 @@ Below is a list of possible parameters which will appear under the additionalSco
 - VolleyballFourthSetScore2
 - VolleyballFifthSetScore1
 - VolleyballFifthSetScore2
-<br>
+
 #### Aussie rules
-<br>
+
 - AussieRules1HScore1
 - AussieRules1HScore2
 - AussieRules2HScore1
@@ -427,9 +426,9 @@ Below is a list of possible parameters which will appear under the additionalSco
 - AussieRulesBehindsTotal1
 - AussieRulesGoalScoreTotal2
 - AussieRulesBehindsTotal2
-<br>
+
 #### Rugby league
-<br>
+
 - RugbyLeague1HScore1
 - RugbyLeague1HScore2
 - RugbyLeague2HScore1
@@ -440,15 +439,15 @@ Below is a list of possible parameters which will appear under the additionalSco
 - RugbyLeagueTries1HScore2
 - RugbyLeagueTries2HScore1
 - RugbyLeagueTries2HScore2
-<br>
+
 #### Cricket
-<br>
+
 - onServe
-<br>
-<br>
-<br>
+
+
+
 ## Tags
-<br>
+
 | Name | Description |
 | --- | --- |
 |Stats| Integration with statistics provider is available for the event. |
@@ -463,11 +462,11 @@ Below is a list of possible parameters which will appear under the additionalSco
 |Pulse| Pulse markets are available for the event. |
 |BestOddsGuaranteed| BOG parameter is activated for the event. |
 |Vidiprinter| Specifies availability vidiprinter/incidents feed for a given event. |
-<br>
-<br>
-<br>
+
+
+
 ## Media
-<br>
+
 ```json
 type Media = {
     providerName: string
@@ -475,16 +474,16 @@ type Media = {
     providerEventId: string
 }
 ```
-<br>
+
 | Name | Description | Format | Returnable | Queryable |
 | --- | --- | --- | --- | --- |
 |providerName| Specifies the provider for the mapping information. | string | Yes | Yes |
 |mediaType| Specifies the type of media content being mapped. | string | Yes | Yes |
 |providerEventId| Specifies the provider ID for this event to allow mapping to the respective provider content. | string | Yes | No |
-<br>
-<br>
+
+
 ### Possible `providerName` values
-<br>
+
 These are providers for which mapping data is currently supported in the SBTech system. Note that access to data linked to the listed providers is usually subject to additional licencing agreements. Data will be served in the API only if these are cleared and access to this content is activated in the SBTech system for the respective operator.
 - ATRWB
 - BetRadarStats
@@ -494,9 +493,9 @@ These are providers for which mapping data is currently supported in the SBTech 
 - RacingUKWB
 - Unas
 - UnasMobile
-<br>
+
 ### Possible `mediaType` values
-<br>
+
 | Name | Description |
 | --- | --- |
 |Stats| Integration with statistics provider is available for the event. |
@@ -504,11 +503,11 @@ These are providers for which mapping data is currently supported in the SBTech 
 |MatchTracker| MatchTracker widget is switched on for the event. |
 |Scoreboard| Scoreboard widget is switched on for the event. |
 |Vidiprinter| Specifies availability vidiprinter/incidents feed for a given event. |
-<br>
-<br>
-<br>
+
+
+
 ## Metadata
-<br>
+
 | Parameter | Description | Format | Returnable | Queryable |
 | --- | --- | --- | --- | --- |
 |tennisMatchtype| Indicates the format of a tennis match. Possible values are 3 and 5. | String | Yes | No |
@@ -526,4 +525,4 @@ These are providers for which mapping data is currently supported in the SBTech 
 |rpRaceDistance| For racing events only, the race distance, as provided by Racing post. | String | Yes | No |
 |rpRaceType| For racing events only, the race type, as provided by Racing post. | String | Yes | No |
 |rpDiomedVerdict| For racing events only, the race description, as provided by Racing post. | String | Yes | No |
-<br>
+

@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/wc/Sweknowsports.github.io_70/src",
+  "source_base_path": "C:/wc/Sweknowsports.github.io_74/src",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -124,7 +124,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/events/pull-contract.html",
-          "hash": "lDWVwqDaxWPL/0SYlPadfg=="
+          "hash": "Zd90Nb69lcQqzJbWkDiXTQ=="
         }
       },
       "is_incremental": false,

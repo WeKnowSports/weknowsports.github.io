@@ -1,5 +1,5 @@
 # Event
-<br>
+
 ```json
 type Event = {
     id: string

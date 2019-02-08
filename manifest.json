@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/wc/Sweknowsports.github.io_61/src",
+  "source_base_path": "C:/wc/Sweknowsports.github.io_70/src",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -84,11 +84,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "sports-data/basic_concepts/pull_api.md",
+      "source_relative_path": "sports-data/basic_concepts/authentication.md",
       "output": {
         ".html": {
-          "relative_path": "sports-data/basic_concepts/pull_api.html",
-          "hash": "Pc/7zintIBynh3TGxchcvQ=="
+          "relative_path": "sports-data/basic_concepts/authentication.html",
+          "hash": "JqjMRBKUOSbxqhVGu3PpVA=="
         }
       },
       "is_incremental": false,
@@ -96,11 +96,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "sports-data/basic_concepts/push_api.md",
+      "source_relative_path": "sports-data/best-practices/serialization-format.md",
       "output": {
         ".html": {
-          "relative_path": "sports-data/basic_concepts/push_api.html",
-          "hash": "bGrJXlaB700pBC4b5+koTg=="
+          "relative_path": "sports-data/best-practices/serialization-format.html",
+          "hash": "Zrs/qw0yGyslTZnkFKrAyQ=="
         }
       },
       "is_incremental": false,
@@ -108,11 +108,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "sports-data/entities_contracts/event.md",
+      "source_relative_path": "sports-data/endpoints/events/filtering-and-querying.md",
       "output": {
         ".html": {
-          "relative_path": "sports-data/entities_contracts/event.html",
-          "hash": "3hReaa0UTLtVIwtg1I9q0Q=="
+          "relative_path": "sports-data/endpoints/events/filtering-and-querying.html",
+          "hash": "C0S+NxGCPfF8CyFBAdbNuA=="
         }
       },
       "is_incremental": false,
@@ -120,11 +120,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "sports-data/entities_contracts/league.md",
+      "source_relative_path": "sports-data/endpoints/events/pull-contract.md",
       "output": {
         ".html": {
-          "relative_path": "sports-data/entities_contracts/league.html",
-          "hash": "tpqMn9IAOsgJU9uvAs3qjg=="
+          "relative_path": "sports-data/endpoints/events/pull-contract.html",
+          "hash": "lDWVwqDaxWPL/0SYlPadfg=="
         }
       },
       "is_incremental": false,
@@ -132,11 +132,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "sports-data/entities_contracts/market.md",
+      "source_relative_path": "sports-data/endpoints/events/push-contract.md",
       "output": {
         ".html": {
-          "relative_path": "sports-data/entities_contracts/market.html",
-          "hash": "suDleDUML+m9WebRm+ROPQ=="
+          "relative_path": "sports-data/endpoints/events/push-contract.html",
+          "hash": "aTuU8l5Dl2imkmvwkH+1Xg=="
         }
       },
       "is_incremental": false,
@@ -144,11 +144,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "sports-data/entities_contracts/region.md",
+      "source_relative_path": "sports-data/endpoints/incidents/filtering-and-querying.md",
       "output": {
         ".html": {
-          "relative_path": "sports-data/entities_contracts/region.html",
-          "hash": "ZoE9Q5vxJRX0k5eZ26fdSA=="
+          "relative_path": "sports-data/endpoints/incidents/filtering-and-querying.html",
+          "hash": "a2gecQYCf/Y2IAl7SGnqwg=="
         }
       },
       "is_incremental": false,
@@ -156,11 +156,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "sports-data/entities_contracts/selection.md",
+      "source_relative_path": "sports-data/endpoints/incidents/pull-contract.md",
       "output": {
         ".html": {
-          "relative_path": "sports-data/entities_contracts/selection.html",
-          "hash": "Vf4kooYL/O0N0HdOhjDLXg=="
+          "relative_path": "sports-data/endpoints/incidents/pull-contract.html",
+          "hash": "EGSjf+2LPj83QytA4gMTMw=="
         }
       },
       "is_incremental": false,
@@ -168,11 +168,191 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "sports-data/entities_contracts/sport.md",
+      "source_relative_path": "sports-data/endpoints/incidents/push-contract.md",
       "output": {
         ".html": {
-          "relative_path": "sports-data/entities_contracts/sport.html",
-          "hash": "egfclvbY4vlPCHQKDfBHSA=="
+          "relative_path": "sports-data/endpoints/incidents/push-contract.html",
+          "hash": "aU+3n2v1Po+z9P8OdTGCgg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/endpoints/leagues/filtering-and-querying.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/endpoints/leagues/filtering-and-querying.html",
+          "hash": "sjjHjyF2Tq3cuqYlIZxT7g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/endpoints/leagues/pull-contract.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/endpoints/leagues/pull-contract.html",
+          "hash": "kH9x/Csa0d5Fh72IFMmo3Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/endpoints/leagues/push-contract.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/endpoints/leagues/push-contract.html",
+          "hash": "Ve6bEkAbqNxcRqbY7F8ACA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/endpoints/markets/filtering-and-querying.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/endpoints/markets/filtering-and-querying.html",
+          "hash": "g5ybConTHv79TMEe/qa60g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/endpoints/markets/pull-contract.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/endpoints/markets/pull-contract.html",
+          "hash": "Qms/f3uy81cuvzqAa2LawA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/endpoints/markets/push-contract.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/endpoints/markets/push-contract.html",
+          "hash": "2cOPGbZ6t4bvycgrFU+NMA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/endpoints/regions/filtering-and-querying.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/endpoints/regions/filtering-and-querying.html",
+          "hash": "N5SE5Ctd54BfOrYd+Acqmg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/endpoints/regions/pull-contract.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/endpoints/regions/pull-contract.html",
+          "hash": "pVVtzEK1kXNukcz+PdUZWA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/endpoints/regions/push-contract.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/endpoints/regions/push-contract.html",
+          "hash": "k2+JgsQnxr1ro+nld8d7mA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/endpoints/selections/filtering-and-querying.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/endpoints/selections/filtering-and-querying.html",
+          "hash": "I2xnUIKzgJ0jezZxoaK7jw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/endpoints/selections/pull-contract.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/endpoints/selections/pull-contract.html",
+          "hash": "7GzBkNijQccIhyuD6DQE6w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/endpoints/selections/push-contract.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/endpoints/selections/push-contract.html",
+          "hash": "CN9bYS6aFHGaT0RxVTN1Ag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/endpoints/sports/filtering-and-querying.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/endpoints/sports/filtering-and-querying.html",
+          "hash": "iyooBKXCfXvWvZ/d1DQ/Nw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/endpoints/sports/pull-contract.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/endpoints/sports/pull-contract.html",
+          "hash": "U5Dv9K+rECAvoqBQAQrHpQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "sports-data/endpoints/sports/push-contract.md",
+      "output": {
+        ".html": {
+          "relative_path": "sports-data/endpoints/sports/push-contract.html",
+          "hash": "AtrzhvZ9fUPtxousqV3pYQ=="
         }
       },
       "is_incremental": false,
@@ -187,55 +367,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/index.html",
-          "hash": "nqUQrGTnAzfOsa9JdGbp4A=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "sports-data/querying_data/odata_query.md",
-      "output": {
-        ".html": {
-          "relative_path": "sports-data/querying_data/odata_query.html",
-          "hash": "LI/tDu31T9igCKzhj+qDrw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "sports-data/querying_data/projections.md",
-      "output": {
-        ".html": {
-          "relative_path": "sports-data/querying_data/projections.html",
-          "hash": "y/yZrvlwn9ynPuI2T1EbZw=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "sports-data/querying_data/time_range_queries.md",
-      "output": {
-        ".html": {
-          "relative_path": "sports-data/querying_data/time_range_queries.html",
-          "hash": "/zdT/yHy6N0EoFEjbidbag=="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "sports-data/querying_data/validation_rules.md",
-      "output": {
-        ".html": {
-          "relative_path": "sports-data/querying_data/validation_rules.html",
-          "hash": "ZSJ4I2rSUZ/XxM+mXtwuWw=="
+          "hash": "R2ErGmhyxbQmR0M0USUJkw=="
         }
       },
       "is_incremental": false,
@@ -247,7 +379,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/toc.html",
-          "hash": "ZDjA/4GHo0iIwFBaP4IU3Q=="
+          "hash": "cVifQCKTVVXlauoFm6xzQA=="
         }
       },
       "is_incremental": false,
@@ -300,13 +432,6 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -317,7 +442,14 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 18,
+          "total_file_count": 29,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
           "skipped_file_count": 0
         }
       }

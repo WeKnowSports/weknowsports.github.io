@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Event | SBTech API </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Event | SBTech API ">
+    <meta name="generator" content="docfx 2.40.9.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h2 id="event">Event</h2>
+
+<pre><code class="lang-typescript">export type EventType = &quot;Fixture&quot; | &quot;Outright&quot;
+
+/**
+    * Queryable entity
+    */
+export interface SportEvent {
+    id: string
+    /** Type of SportEvent. */
+    type: EventType
+    /** Sport ID. */
+    sportId: string
+    /** Sport name (translated). */
+    sportName: string
+    /** Sorting order of Sport. */
+    sportOrder: number
+    /** Region ID. */
+    regionId: string
+    /** ISO country code or (for regions in country) region code. */
+    regionCode: string
+    /** Region name (translated). */
+    regionName: string
+    /** League ID. */
+    leagueId: string
+    /** League name (translated). */
+    leagueName: string
+    /** Sorting order of League. */
+    leagueOrder: number
+    /** Is league marked with top flag. */
+    isTopLeague: boolean
+    /** participants in the event. */
+    participants: Participant[]
+    /** Name of event, for league events */
+    eventName: string
+    // betslipLine
+    betslipLine: string
+    // not queriable
+    totalMarketsCount: number
+
+    marketLinesCount: number
+    // not queriable
+    marketGroups: MarketGroup[]
+    /** date/time of game start */
+    startEventDate: ISODateTimeString
+    /**  Status of game serving*/
+    status: GameStatus
+    /**  Score in game*/
+    score: GameScore | null
+    /** is it live game */
+    isLive: boolean
+    /** will this game go live when started, for pre-live only and eventType = Game */
+    isGoingLive: boolean
+
+    liveGameState: LiveGameState | null
+
+    /** Is event suspended for some reason */
+    isSuspended: boolean
+
+    isTeamSwap: boolean
+
+    tags: string[]
+
+    entityType: EntityType
+
+    metadata: Dictionary&lt;any&gt;
+
+    media: MediaProvider[]
+}
+
+export interface SportEventChange {
+    id: string,
+    participants: Participant[],
+    totalMarketsCount: number,
+    marketLinesCount: number,
+    status: GameStatus,
+    score: GameScore | null,
+    isLive: boolean,
+    liveGameState: LiveGameState | null,
+    isSuspended: boolean,
+    metadata: Dictionary&lt;any&gt;
+}
+
+export interface MediaProvider {
+    providerName: string
+    providerEventId: string
+    mediaType: string
+}
+
+export interface MarketGroup {
+    id: string
+    name: string
+    order: number
+}
+
+export type VenueRole = &quot;Home&quot; | &quot;Away&quot;
+
+export interface Participant {
+    id: string
+    name: string
+    /** Home | Away */
+    venueRole: VenueRole | null
+    /** ISO code */
+    country: string | null
+    /** runnerNumber: number, imageUrl: string, weight: string, age: number, form: string */
+    metadata: Dictionary&lt;any&gt;
+}
+
+export interface ParticipantChange {
+    metadata: Dictionary&lt;any&gt;
+}
+
+export enum GameStatus {
+    NotStarted = &quot;NotStarted&quot;,
+    InProgress = &quot;InProgress&quot;
+}
+
+export enum ClockDirection {
+    Stopwatch = &quot;Stopwatch&quot;,
+    Timer = &quot;Timer&quot;
+}
+
+export interface GameScore {
+    /** Home team/player top level score */
+    homeScore: string
+
+    /** Away team/player top level score */
+    awayScore: string
+
+    additionalScores: Dictionary&lt;string&gt;
+
+    combinedSecondTierScores: string[]
+}
+
+export interface LiveGameState {
+    clockRunning: boolean
+    clockDirection: ClockDirection
+    gameTime: number | null
+    gamePart: GamePart | null
+}
+
+export enum GamePart {
+    FirstOvertime = &quot;FirstOvertime&quot;,
+    BreakAfterFirstOvertime = &quot;BreakAfterFirstOvertime&quot;,
+    SecondOvertime = &quot;SecondOvertime&quot;,
+    FirstSet = &quot;FirstSet&quot;,
+    SecondSet = &quot;SecondSet&quot;,
+    ThirdSet = &quot;ThirdSet&quot;,
+    FourthSet = &quot;FourthSet&quot;,
+    FifthSet = &quot;FifthSet&quot;,
+    FirstPeriod = &quot;FirstPeriod&quot;,
+    BreakAfterFirstPeriod = &quot;BreakAfterFirstPeriod&quot;,
+    SecondPeriod = &quot;SecondPeriod&quot;,
+    BreakAfterSecondPeriod = &quot;BreakAfterSecondPeriod&quot;,
+    ThirdPeriod = &quot;ThirdPeriod&quot;,
+    BreakAfterThirdPeriod = &quot;BreakAfterThirdPeriod&quot;,
+    FirstQuarter = &quot;FirstQuarter&quot;,
+    BreakAfterFirstQuarter = &quot;BreakAfterFirstQuarter&quot;,
+    SecondQuarter = &quot;SecondQuarter&quot;,
+    BreakAfterSecondQuarter = &quot;BreakAfterSecondQuarter&quot;,
+    ThirdQuarter = &quot;ThirdQuarter&quot;,
+    BreakAfterThirdQuarter = &quot;BreakAfterThirdQuarter&quot;,
+    FourthQuarter = &quot;FourthQuarter&quot;,
+    BreakAfterFourthQuarter = &quot;BreakAfterFourthQuarter&quot;,
+    Overtime = &quot;Overtime&quot;,
+    FirstHalf = &quot;FirstHalf&quot;,
+    SecondHalf = &quot;SecondHalf&quot;,
+    BreakAfterFirstHalf = &quot;BreakAfterFirstHalf&quot;,
+    FirstInning = &quot;FirstInning&quot;,
+    SecondInning = &quot;SecondInning&quot;,
+    ThirdInning = &quot;ThirdInning&quot;,
+    FourthInning = &quot;FourthInning&quot;,
+    FifthInning = &quot;FifthInning&quot;,
+    SixthInning = &quot;SixthInning&quot;,
+    SeventhInning = &quot;SeventhInning&quot;,
+    EighthInning = &quot;EighthInning&quot;,
+    NinthInning = &quot;NinthInning&quot;,
+    BreakAfterFirstInning = &quot;BreakAfterFirstInning&quot;,
+    BreakAfterSecondInning = &quot;BreakAfterSecondInning&quot;,
+    BreakAfterThirdInning = &quot;BreakAfterThirdInning&quot;,
+    BreakAfterFourthInning = &quot;BreakAfterFourthInning&quot;,
+    BreakAfterFifthInning = &quot;BreakAfterFifthInning&quot;,
+    BreakAfterSixthInning = &quot;BreakAfterSixthInning&quot;,
+    BreakAfterSeventhInning = &quot;BreakAfterSeventhInning&quot;,
+    BreakAfterEighthInning = &quot;BreakAfterEighthInning&quot;,
+    BreakAfterNinthInning = &quot;BreakAfterNinthInning&quot;
+}
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/WeKnowSports/weknowsports.github.io/blob/master/src/sports-data/endpoints/regions/pull-contract.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright © 2018 SBTech
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

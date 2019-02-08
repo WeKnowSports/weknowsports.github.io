@@ -447,7 +447,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="possible-eventparticipantmetadata-dictionary-entries-for-horse-racing-events">Possible <code>Event.Participant.metadata</code> dictionary entries for Horse racing events</h3>
+<h3 id="participantmetadata-for-horse-racing-events">Participant.metadata for Horse racing events</h3>
+<p>Possible <code>Event.Participant.metadata</code> dictionary entries for Horse racing events</p>
 <table>
 <thead>
 <tr>
@@ -566,15 +567,70 @@
 </tr>
 </tbody>
 </table>
-<h3 id="possible-eventparticipantmetadata-dictionary-entries-for-greyhounds-events">Possible Event.Participant.metadata dictionary entries for Greyhounds events</h3>
-<p>| Parameter | Description | <em>Format</em> | <em>Queryable</em> | <em>Returnable</em> |
-|trapNumber| Specifies the trap number of the hound. | string |	No | Yes |
-|runnerStatus| Specifies the horse's runner status. Possible values are “Ante-post” (for hounds participating in an Ante-post race), “DOE” (for hounds participating in a DOE race), “NR” (for hounds withdrawn from the race). | string | No | Yes |
-|paFeedId| Specifies value provided by the PA feed. | string |	No | Yes |
-|iconUrl| Populated only for participants in racing events for now. Specifies the URL from which to fetch the silk icon for a horse or the trap icon for a hound. | string | No | Yes |
-|resultingPosition| Specifies the position of every participant after a racing event has resulted. | string | No | Yes |
-|resultingStartingPrice| States the starting price of the participant at the start of the event, used to settle the “starting price” bets. Always provided in fractional odds. | string |No | Yes |
-|rpDiomedComment| The race prediction for a horse, as provided by Racing post. | string | No | Yes |</p>
+<h3 id="participantmetadata--for-greyhounds-events">Participant.metadata  for Greyhounds events</h3>
+<p>Possible Event.Participant.metadata dictionary entries for Greyhounds events</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Format</th>
+<th>Queryable</th>
+<th>Returnable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trapNumber</td>
+<td>Specifies the trap number of the hound.</td>
+<td>string</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>runnerStatus</td>
+<td>Specifies the horse's runner status. Possible values are “Ante-post” (for hounds participating in an Ante-post race), “DOE” (for hounds participating in a DOE race), “NR” (for hounds withdrawn from the race).</td>
+<td>string</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>paFeedId</td>
+<td>Specifies value provided by the PA feed.</td>
+<td>string</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>iconUrl</td>
+<td>Populated only for participants in racing events for now. Specifies the URL from which to fetch the silk icon for a horse or the trap icon for a hound.</td>
+<td>string</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>resultingPosition</td>
+<td>Specifies the position of every participant after a racing event has resulted.</td>
+<td>string</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>resultingStartingPrice</td>
+<td>States the starting price of the participant at the start of the event, used to settle the “starting price” bets. Always provided in fractional odds.</td>
+<td>string</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>rpDiomedComment</td>
+<td>The race prediction for a horse, as provided by Racing post.</td>
+<td>string</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
 <h2 id="livegamestate">LiveGameState</h2>
 <pre><code class="lang-json">type LiveGameState = {
     clockRunning: Boolean

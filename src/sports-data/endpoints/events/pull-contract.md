@@ -1,189 +1,72 @@
 ## Event
 
 ```typescript
-export type EventType = "Fixture" | "Outright"
-
-/**
-    * Queryable entity
-    */
-export interface SportEvent {
+type Event = {
     id: string
-    /** Type of SportEvent. */
-    type: EventType
-    /** Sport ID. */
+    type: string
     sportId: string
-    /** Sport name (translated). */
     sportName: string
-    /** Sorting order of Sport. */
     sportOrder: number
-    /** Region ID. */
     regionId: string
-    /** ISO country code or (for regions in country) region code. */
     regionCode: string
-    /** Region name (translated). */
     regionName: string
-    /** League ID. */
     leagueId: string
-    /** League name (translated). */
     leagueName: string
-    /** Sorting order of League. */
     leagueOrder: number
-    /** Is league marked with top flag. */
     isTopLeague: boolean
-    /** participants in the event. */
-    participants: Participant[]
-    /** Name of event, for league events */
+    participants: Participant[] // Described in a separate table below.
     eventName: string
-    // betslipLine
     betslipLine: string
-    // not queriable
     totalMarketsCount: number
-
     marketLinesCount: number
-    // not queriable
-    marketGroups: MarketGroup[]
-    /** date/time of game start */
+    marketGroups: MarketGroup[] // Described in a separate table below.
     startEventDate: ISODateTimeString
-    /**  Status of game serving*/
-    status: GameStatus
-    /**  Score in game*/
-    score: GameScore | null
-    /** is it live game */
+    status: string
+    score: GameScore | null // Described in a separate table below.
     isLive: boolean
-    /** will this game go live when started, for pre-live only and eventType = Game */
     isGoingLive: boolean
-
-    liveGameState: LiveGameState | null
-
-    /** Is event suspended for some reason */
-    isSuspended: boolean
-
+    liveGameState?: LiveGameState // Described in a separate table below.
     isTeamSwap: boolean
-
-    tags: string[]
-
+    isSuspended: boolean
+    tags: string[] // Described in a separate table below.
     entityType: EntityType
-
-    metadata: Dictionary<any>
-
-    media: MediaProvider[]
-}
-
-export interface SportEventChange {
-    id: string,
-    participants: Participant[],
-    totalMarketsCount: number,
-    marketLinesCount: number,
-    status: GameStatus,
-    score: GameScore | null,
-    isLive: boolean,
-    liveGameState: LiveGameState | null,
-    isSuspended: boolean,
-    metadata: Dictionary<any>
-}
-
-export interface MediaProvider {
-    providerName: string
-    providerEventId: string
-    mediaType: string
-}
-
-export interface MarketGroup {
-    id: string
-    name: string
-    order: number
-}
-
-export type VenueRole = "Home" | "Away"
-
-export interface Participant {
-    id: string
-    name: string
-    /** Home | Away */
-    venueRole: VenueRole | null
-    /** ISO code */
-    country: string | null
-    /** runnerNumber: number, imageUrl: string, weight: string, age: number, form: string */
-    metadata: Dictionary<any>
-}
-
-export interface ParticipantChange {
-    metadata: Dictionary<any>
-}
-
-export enum GameStatus {
-    NotStarted = "NotStarted",
-    InProgress = "InProgress"
-}
-
-export enum ClockDirection {
-    Stopwatch = "Stopwatch",
-    Timer = "Timer"
-}
-
-export interface GameScore {
-    /** Home team/player top level score */
-    homeScore: string
-
-    /** Away team/player top level score */
-    awayScore: string
-
-    additionalScores: Dictionary<string>
-
-    combinedSecondTierScores: string[]
-}
-
-export interface LiveGameState {
-    clockRunning: boolean
-    clockDirection: ClockDirection
-    gameTime: number | null
-    gamePart: GamePart | null
-}
-
-export enum GamePart {
-    FirstOvertime = "FirstOvertime",
-    BreakAfterFirstOvertime = "BreakAfterFirstOvertime",
-    SecondOvertime = "SecondOvertime",
-    FirstSet = "FirstSet",
-    SecondSet = "SecondSet",
-    ThirdSet = "ThirdSet",
-    FourthSet = "FourthSet",
-    FifthSet = "FifthSet",
-    FirstPeriod = "FirstPeriod",
-    BreakAfterFirstPeriod = "BreakAfterFirstPeriod",
-    SecondPeriod = "SecondPeriod",
-    BreakAfterSecondPeriod = "BreakAfterSecondPeriod",
-    ThirdPeriod = "ThirdPeriod",
-    BreakAfterThirdPeriod = "BreakAfterThirdPeriod",
-    FirstQuarter = "FirstQuarter",
-    BreakAfterFirstQuarter = "BreakAfterFirstQuarter",
-    SecondQuarter = "SecondQuarter",
-    BreakAfterSecondQuarter = "BreakAfterSecondQuarter",
-    ThirdQuarter = "ThirdQuarter",
-    BreakAfterThirdQuarter = "BreakAfterThirdQuarter",
-    FourthQuarter = "FourthQuarter",
-    BreakAfterFourthQuarter = "BreakAfterFourthQuarter",
-    Overtime = "Overtime",
-    FirstHalf = "FirstHalf",
-    SecondHalf = "SecondHalf",
-    BreakAfterFirstHalf = "BreakAfterFirstHalf",
-    FirstInning = "FirstInning",
-    SecondInning = "SecondInning",
-    ThirdInning = "ThirdInning",
-    FourthInning = "FourthInning",
-    FifthInning = "FifthInning",
-    SixthInning = "SixthInning",
-    SeventhInning = "SeventhInning",
-    EighthInning = "EighthInning",
-    NinthInning = "NinthInning",
-    BreakAfterFirstInning = "BreakAfterFirstInning",
-    BreakAfterSecondInning = "BreakAfterSecondInning",
-    BreakAfterThirdInning = "BreakAfterThirdInning",
-    BreakAfterFourthInning = "BreakAfterFourthInning",
-    BreakAfterFifthInning = "BreakAfterFifthInning",
-    BreakAfterSixthInning = "BreakAfterSixthInning",
-    BreakAfterSeventhInning = "BreakAfterSeventhInning",
-    BreakAfterEighthInning = "BreakAfterEighthInning",
-    BreakAfterNinthInning = "BreakAfterNinthInning"
+    media?: MediaProvider[] // Described in a separate table below.
+    metadata: Dictionary<any> // Described in a separate table below.
 }
 ```
+
+| *Name* | *Description* | *Format* | *Returnable* | *Queryable* | *Example* |
+| ----------- | ----------- | ----------- | ----------- | ----------- | ----------- |
+|id| Specifies the identifier of the sports event. | string | Yes | query (using eq, ne, or, and, in) | $filter=Id eq '11754652' |
+|entityType| Specifies the type of the entity. Always 0 for events. | number | Yes | No | -- |
+|type| Specifies the type of the sports event. Possible values are "Fixture" and "Outright" for most sports and "AntePostRace" and "DayOfEventRace" for racing sports. | string | Yes | query (using eq, ne, or, and, in) | $filter=type eq (ne) 'Fixture' |
+|sportId| Specifies the identifier of the sport. | string | Yes | query (using eq, ne, or, and, in) | $filter=sportId eq (ne) '12' |
+|sportName| Specifies the name of the sport (translated). | string | Yes | query (using eq, ne, or, and, in) | $filter=sportName eq 'Soccer' |
+|sportOrder| Specifies the sorting order of the sport. | number | Yes | $orderby (only *asc*) | $orderby=sportOrder asc |
+|regionId| Specifies the identifier of the region. | string | Yes | query (using eq, ne, or, and, in) | $filter=regionId eq '260' |
+|regionCode| Specifies ISO country code or (for regions in country) region code. | string | Yes | query (using eq, ne, or, and, in) | $filter=regionCode eq 'EN' |
+|regionName| Specifies the name of the region. | string | Yes | query (using eq, ne, or, and, in) | $filter=regionName eq 'England' |
+|leagueId| Specifies the identifier of the league. | string | Yes | query (using eq, ne, or, and, in) | $filter=leagueId eq '36690' |
+|leagueName| Specifies the name (translated) of the league. | string | Yes | query (using eq, ne, or, and, in) | $filter=leagueName eq 'English Football League Cup' |
+|leagueOrder| Specifies the sorting order of the league. | number | Yes | (using eq, ne, or, and, in) | $filter=leagueOrder eq 580150 |
+|isTopLeague| Specifies if the league is marked with a top flag. | Boolean | Yes | query (using eq, ne) | $filter=isTopLeague eq false |
+|participants| Specifies the participants in the event. Parameters of the Participant object are described in a separate table below. | Array | Yes | query (using lambda, eq, ne, or, and, in) | $filter=participants/any(p: p/id eq '357') |
+|eventName| Specifies the name of the event. For events of type "Fixture" it is composed of participants name, e.g. "ParticipantHome vs ParticipantAway". Order of teams is reversed if `swapTeams: true`. If you want, you can ignore this value and compose it locally in a different format. | string | Yes | query (using eq, ne, or, and, in) | $filter=eventName eq 'Chelsea vs Bournemouth' |
+|betslipLine| Specifies the presentation of the event in the bet slip in the context of each of its selections. To be used in conjunction with the respective `Market.selections[].betslipLine` and `Market.betslipLine` values.| string | Yes | query (using eq, ne, or, and, in) | $filter=betslipLine eq 'Clonmel: 12:15' |
+|marketGroups| Specifies the market groups defined within the event. | MarketGroup | Yes | query (using lambda, eq, ne, or, and, in) 
+Сan't query this together with marketTypes.| $filter=marketGroups/any(p: p/name eq 'Corners') |
+|totalMarketsCount| Specifies the total markets count. Not affected by the IncludeMarkets filter, i.e. always returns the total count of available markets for the event. | number | Yes | $orderby (only desc) | $orderby=totalMarketsCount desc |
+|marketLinesCount| Specifies the total number of markets, with point lines counted as separate markets. Not affected by the IncludeMarkets filter, i.e. always returns the total count of available markets for the event. | number | Yes | query (using lambda, eq, ne, or, and, in) | $filter=marketLinesCount eq 0 |
+|totalBets| Number of bets placed for entity. | number | No | $orderby (only desc) | $orderby=totalBets desc |
+|totalDeposit| Total deposit of all bets placed for entity. | number | No | $orderby (only asc) | $orderby=startEventDate asc |
+|startEventDate| Specifies the date and time of the beginning of the event. | ISODateTimeString | Yes | $orderby (only asc) | $orderby=startEventDate asc |
+|status| Specifies the status of the event. Possible values are "NotStarted", "InProgress" (for most sports), "RaceOff" (for racing sports), "Resulted" (supported only for racing sports got now; events from other sports will be removed before moving into this status). | string | Yes | query (using eq, ne, or, and, in) | $filter=status eq 'NotStarted' |
+|score|	Specifies the current score of the event. | GameScore |	Yes | query (using lambda, eq, ne, or, and, in) | $filter=score/awayScore eq '0' |
+|isLive| Specifies if the event is currently traded live. | Boolean | Yes | query (using eq, ne) | $filter=isLive eq false |
+|isGoingLive| Specifies if the event is going live when started, can be true for pre-match events only. | Boolean | Yes | query (using eq, ne) | $filter=isGoingLive eq false |
+|liveGameState|	Specifies additional information on the event such as status, score, current time. See all parameters in a table below. | LiveGameState | Yes | query (using lambda, eq, ne, or, and, in) | $filter=liveGameState/gamePart eq 'SecondHalf' |
+|tags| Specifies additional information on the event. | string | Yes |	query (using lambda, eq, ne, or, and, in) | $filter=tags/any(s: s eq 'LiveStream') |
+|media|	Specifies list of available mapping data to external media providers for the event, such us live streaming, statistics, match tracker widgets etc. | Media | Yes | query (using lambda, eq, ne, or, and, in) | $filter=media/any(p: p/mediaType eq 'LiveStreaming') |
+|metadata| Specifies additional information on the event. | string | Yes | No | -- |
+|isSuspended| Specifies if the event is suspended. | boolean | Yes | query (using eq, ne) | $filter=isSuspended eq false |
+|isTeamSwap| Specifies if the suggested presentation of the event implies to show the away team first. Relevant only for Fixture events. | boolean | Yes	| query (using eq, ne) | $filter=isTeamSwap eq false |

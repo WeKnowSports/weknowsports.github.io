@@ -79,7 +79,7 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="event">Event</h1>
 
-<pre><code class="lang-json">type Event = {
+<pre><code class="lang-typescript">type Event = {
     id: string
     type: string
     sportId: string
@@ -391,7 +391,7 @@
 </tbody>
 </table>
 <h2 id="participant">Participant</h2>
-<pre><code class="lang-json">type Participant = {
+<pre><code class="lang-typescript">type Participant = {
     id: string
     name: string
     venueRole?: VenueRole
@@ -632,7 +632,7 @@
 </tbody>
 </table>
 <h2 id="livegamestate">LiveGameState</h2>
-<pre><code class="lang-json">type LiveGameState = {
+<pre><code class="lang-typescript">type LiveGameState = {
     clockRunning: Boolean
     clockDirection: string
     gameTime: number //In seconds
@@ -748,7 +748,7 @@ ThirdSet
 FourthSet
 FifthSet</p>
 <h2 id="marketgroup">MarketGroup</h2>
-<pre><code class="lang-json">type MarketGroup = {
+<pre><code class="lang-typescript">type MarketGroup = {
     id: string
     name: string
     order: number
@@ -789,7 +789,7 @@ FifthSet</p>
 </tbody>
 </table>
 <h2 id="gamescore">GameScore</h2>
-<pre><code class="lang-json">type GameScore = {
+<pre><code class="lang-typescript">type GameScore = {
     homeScore: string
     awayScore: string
     combinedSecondTierScores: array
@@ -1069,7 +1069,7 @@ FifthSet</p>
 </tbody>
 </table>
 <h2 id="media">Media</h2>
-<pre><code class="lang-json">type Media = {
+<pre><code class="lang-typescript">type Media = {
     providerName: string
     mediaType: string
     providerEventId: string

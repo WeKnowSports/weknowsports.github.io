@@ -1,6 +1,6 @@
 # Event
 
-```json
+```typescript
 type Event = {
     id: string
     type: string
@@ -73,7 +73,7 @@ type Event = {
 
 ## Participant
  
-```json
+```typescript
 type Participant = {
     id: string
     name: string
@@ -134,7 +134,7 @@ Possible Event.Participant.metadata dictionary entries for Greyhounds events
 
 ## LiveGameState
 
-```json
+```typescript
 type LiveGameState = {
     clockRunning: Boolean
     clockDirection: string
@@ -242,7 +242,7 @@ FifthSet
 
 ## MarketGroup
 
-```json
+```typescript
 type MarketGroup = {
     id: string
     name: string
@@ -260,7 +260,7 @@ type MarketGroup = {
 
 ## GameScore
 
-```json
+```typescript
 type GameScore = {
     homeScore: string
     awayScore: string
@@ -472,7 +472,7 @@ Below is a list of possible parameters which will appear under the additionalSco
 
 ## Media
 
-```json
+```typescript
 type Media = {
     providerName: string
     mediaType: string

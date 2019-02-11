@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Selection | SBTech API </title>
+    <title>Filtering and querying Sports | SBTech API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Selection | SBTech API ">
+    <meta name="title" content="Filtering and querying Sports | SBTech API ">
     <meta name="generator" content="docfx 2.40.9.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -77,73 +77,144 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h2 id="selection">Selection</h2>
+<h1 id="filtering-and-querying-sports">Filtering and querying Sports</h1>
 
-<pre><code class="lang-typescript">export interface Selection {
-    id: string
-
-    outcomeType: OutcomeType | null
-
-    group: number
-
-    name: string
-
-    title: string | null
-
-    betslipLine: string
-
-    participantMapping: string | null
-
-    displayOdds: Dictionary&lt;string&gt;
-
-    trueOdds: number
-
-    points: number | null
-
-    /* Win or Place for outrights */
-    tags: string[]
-
-    /* idsbtech: string */
-    metadata: Dictionary&lt;any&gt;
-
-    isDisabled: boolean
-
-    entityType: EntityType
-
-    marketId: string
-}
-
-export interface SelectionChange {
-    id: string,    
-    displayOdds: Dictionary&lt;string&gt;,
-    trueOdds: number,
-    isDisabled: boolean,
-    metadata: Dictionary&lt;any&gt;
-}
-
-export enum OutcomeType {
-    Home = &quot;Home&quot;,
-    Tie = &quot;Tie&quot;,
-    Draw = &quot;Draw&quot;,
-    Away = &quot;Away&quot;,
-    OneOrX = &quot;1X&quot;,
-    XOrTwo = &quot;X2&quot;,
-    OneTwo = &quot;12&quot;,
-    Over = &quot;Over&quot;,
-    Exactly = &quot;Exactly&quot;,
-    Under = &quot;Under&quot;,
-    Yes = &quot;Yes&quot;,
-    No = &quot;No&quot;,
-    Odd = &quot;Odd&quot;,
-    Even = &quot;Even&quot;,
-    ToScoreFirst = &quot;ToScoreFirst&quot;,
-    ToScoreLast = &quot;ToScoreLast&quot;,
-    ToScoreAnyTime = &quot;ToScoreAnyTime&quot;,
-    ToScoreFirstOrLast = &quot;ToScoreFirstOrLast&quot;,
-    ToScore2OrMore = &quot;ToScore2OrMore&quot;,
-    ToScore3OrMore = &quot;ToScore3OrMore&quot;
-}
-</code></pre>
+<h2 id="http-parameter-query">HTTP parameter: query</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$filter</td>
+<td>$filter=sportId eq '12'</td>
+<td>Allows clients to filter a collection of resources that are addressed by a request URL.</td>
+</tr>
+<tr>
+<td>$top</td>
+<td>$top=10</td>
+<td>The $top system query option requests the number of items in the queried collection to be included in the result. <br><strong>100</strong> is max value.</td>
+</tr>
+<tr>
+<td>$skip</td>
+<td>$skip=3</td>
+<td>The $skip query option requests the number of items in the queried collection that are to be skipped and not included in the result.</td>
+</tr>
+<tr>
+<td>$orderby</td>
+<td>$orderby=order asc</td>
+<td>The $orderby system query option allows clients to request resources in either ascending order using asc or descending order using desc. If asc or desc not specified, then the resources will be ordered in ascending order. <br> We can <strong>sort only by 1</strong> field at once.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="time-range-queries">Time range queries</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from</td>
+<td>from=2018-02-28</td>
+<td>When 'from' field is not empty, we should specify the value of 'timerange'.</td>
+</tr>
+<tr>
+<td>timeRange</td>
+<td>timeRange=SixHours</td>
+<td>The timeRange query option requests the data for specified period.  <br><strong>Available values:</strong> OneHour, TwoHours, ThreeHours, SixHours, TwelveHours, OneDay, TwoDays, ThreeDays, SevenDays, FourDays, FiveDays, SixDays</td>
+</tr>
+</tbody>
+</table>
+<h2 id="http-parameter-projection-only-for-pull-api">HTTP parameter: projection (only for Pull API)</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>projection</td>
+<td>projection=onlyid</td>
+<td>With such query, the response should contain only ids</td>
+</tr>
+</tbody>
+</table>
+<h2 id="http-parameter-count-only-for-pull-api">HTTP parameter: count (only for Pull API)</h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>count</td>
+<td>count=true</td>
+<td>Calculates count to corresponding top and skip values (OData operator like $orderBy is ignored and not applied).</td>
+</tr>
+<tr>
+<td></td>
+<td>count=false</td>
+<td>By default. It doesn't make any impact on the response.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section"></h2>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+<th>Example</th>
+<th>Value Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>in</td>
+<td>in</td>
+<td>$filter=sportId in (‘1’,'2')</td>
+<td>string</td>
+</tr>
+<tr>
+<td>eq</td>
+<td>Equal</td>
+<td>$filter=sportId eq '1'</td>
+<td>boolean, string, int</td>
+</tr>
+<tr>
+<td>ne</td>
+<td>Not equal</td>
+<td>$filter=sportId ne ‘1’</td>
+<td>boolean, string, int</td>
+</tr>
+<tr>
+<td>and</td>
+<td>Logical and</td>
+<td>$filter=sportId eq ‘1’ and leagueId eq ‘13761’</td>
+<td>boolean, string, int</td>
+</tr>
+<tr>
+<td>or</td>
+<td>Logical or</td>
+<td>$filter=sportId eq ‘1’ or sportId eq ‘5’</td>
+<td>boolean, string, int</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           

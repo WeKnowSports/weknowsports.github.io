@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/wc/Sweknowsports.github.io_82/src",
+  "source_base_path": "C:/wc/Sweknowsports.github.io_84/src",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -112,7 +112,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/events/filtering-and-querying.html",
-          "hash": "7YjLfzYXOXYpxR8U2XNd4g=="
+          "hash": "Ac2SZmENE0EifJcoee3dww=="
         }
       },
       "is_incremental": false,

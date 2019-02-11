@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Region | SBTech API </title>
+    <title>Markets Push contract | SBTech API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Region | SBTech API ">
+    <meta name="title" content="Markets Push contract | SBTech API ">
     <meta name="generator" content="docfx 2.40.9.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -77,47 +77,180 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h2 id="region">Region</h2>
+<h1 id="markets-push-contract">Markets Push contract</h1>
 
-<pre><code class="lang-typescript">export interface Region {
-    /** region ID */
+<pre><code class="lang-typescript">type Market = {
+    //The properties with value null are not returning in contract.
     id: string
-
-    /** ISO country code or (for regions in country) region code */
-    code: string
-
-    /** translated region name */
     name: string
-
-    activeSports: string[]
-
-    activeSportsCount: number
-
-    /** number of live (in-game) active games */
-    liveFixturesTotalCount: number
-
-    /** total number of games, both live and pre-live */
-    fixturesTotalCount: number
-
-    /** number of games, both live and pre-live filtered by time range*/
-    fixturesCount: number
-
-    /** number of active outrights league bound markets */
-    outrightsTotalCount: number
-
-    entityType: EntityType
+    betslipLine: string
+    marketType: MarketType
+    selections: Selection[] 
+    eventId: string
+    isSuspended: boolean
+    liveData: LiveData
+    metadata: Dictionary&lt;string&gt;
 }
 
-export interface RegionChange {
-    id: string,
-    activeSports: string[],
-    activeSportsCount: number,
-    liveFixturesTotalCount: number,
-    fixturesTotalCount: number,
-    fixturesCount: number,
-    outrightsTotalCount: number
-}
 </code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Format</th>
+<th>Returnable</th>
+<th>Queryable</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>Specifies the identifier of the market.</td>
+<td>string</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=id eq '129'</td>
+</tr>
+<tr>
+<td><strong>name</strong></td>
+<td>Specifies the name of the market. Intended to be displayed as the title (or header) of the market's presentation block.</td>
+<td>string</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=name eq 'FT Winner'</td>
+</tr>
+<tr>
+<td><strong>betslipLine</strong></td>
+<td>Specifies the presentation of the market in the bet slip in the context of each of its selections. To be used in conjunction with the respective <code>Market.selections[].betslipLine</code> and <code>Event.betslipLine</code> values.</td>
+<td>string</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=betslipLine eq 'FT Winner'</td>
+</tr>
+<tr>
+<td>sportId</td>
+<td>Specifies the identifier of the sport.</td>
+<td>number</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=sportId eq '8'</td>
+</tr>
+<tr>
+<td>leagueId</td>
+<td>Specifies the identifier of the league.</td>
+<td>number</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=leagueId eq '42133'</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Specifies the title of the market.</td>
+<td>string</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=title eq 'World Cup 2019 - Winner'</td>
+</tr>
+<tr>
+<td>groups</td>
+<td>List of groups (by ID) to which the market is included. See &quot;Event # Market groups&quot;:https://github.com/WeKnowSports/SportsDataAPI/wiki/Events#marketgroup for details. Note that one market can belong to none, one, or more than one group.</td>
+<td>Array</td>
+<td>No</td>
+<td>query (using lambda, eq, ne, or, and, in)</td>
+<td>$filter=groups/any(s: s eq '1495')</td>
+</tr>
+<tr>
+<td>inMarketGroups</td>
+<td>List of groups (as objects) to which the market is included.</td>
+<td>Array</td>
+<td>No</td>
+<td>query (using lambda, eq, ne, or, and, in)</td>
+<td>$filter=inMarketGroups/any(s: s/id eq '1495')</td>
+</tr>
+<tr>
+<td>participantMapping</td>
+<td>Specifies a relation of the entire market (with all of its selection) to a specific participant in the parent event. The value matches <code>Event.participants.id</code>.</td>
+<td>string</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=participantMapping eq '8400'</td>
+</tr>
+<tr>
+<td><strong>selections</strong></td>
+<td>Lists the selections in the market.</td>
+<td>Selection[]</td>
+<td>Yes</td>
+<td>query (using lambda, eq, ne, or, and, in)</td>
+<td>$filter=selections/any(s: s/id eq '0ML32475199_2')</td>
+</tr>
+<tr>
+<td><strong>eventId</strong></td>
+<td>Specifies the identifier of the event.</td>
+<td>string</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=eventId eq '100'</td>
+</tr>
+<tr>
+<td>isLive</td>
+<td>Specifies if the market refers to a live event.</td>
+<td>Boolean</td>
+<td>No</td>
+<td>query (using eq, ne)</td>
+<td>$filter=isLive eq false</td>
+</tr>
+<tr>
+<td><strong>isSuspended</strong></td>
+<td>Specifies if the market is suspended. No bets are accepted for suspended markets, therefore interaction with them should be disabled or they should be removed from view altogether.</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td>query (using eq, ne)</td>
+<td>$filter=isSuspended eq false</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Specifies additional information on different aspects of the market.</td>
+<td>array</td>
+<td>No</td>
+<td>query (using lambda, eq, ne, or, and, in)</td>
+<td>$filter=tags/any(s: s eq 'Cashout')</td>
+</tr>
+<tr>
+<td><strong>marketType</strong></td>
+<td>Contains parameters for the market type. The marketType parameters are described in a separate table below.</td>
+<td>MarketType</td>
+<td>Yes</td>
+<td>query (using lambda, eq, ne, or, and, in)</td>
+<td>$filter=marketType/id eq '1_0'</td>
+</tr>
+<tr>
+<td><strong>liveData</strong></td>
+<td>Provides information on the score for the two teams and if the event is suspended. The LiveData parameters are described in a separate table.</td>
+<td>LiveData</td>
+<td>Yes</td>
+<td>query (using lambda, eq, ne, or, and, in)</td>
+<td>$filter=liveData/scoreHome eq '40'</td>
+</tr>
+<tr>
+<td>castMarkets</td>
+<td>List of IDs of markets which are cast into this market. Data provided only if this is a cast market. If selections from one listed market can be combined with other selections from the same market, the respective market ID is repeated for the corresponding number of times (e.g. twice for Forecast, thrice for Tricast).</td>
+<td>Array</td>
+<td>No</td>
+<td>query (using lambda, eq, ne, or, and, in)</td>
+<td>$filter=castMarkets/any(s: s eq 44147679)</td>
+</tr>
+<tr>
+<td><strong>metadata</strong></td>
+<td>Dictionary of ad hoc parameters which are not part of the general object model.</td>
+<td>Dictionary</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           

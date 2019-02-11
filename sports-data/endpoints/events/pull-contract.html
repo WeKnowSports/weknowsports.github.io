@@ -79,6 +79,7 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="event">Event</h1>
 
+<h2 id="event-object">Event object</h2>
 <pre><code class="lang-typescript">type Event = {
     id: string
     type: string
@@ -682,18 +683,16 @@
 </table>
 <h3 id="possible-eventlivegamestategamepart-values-per-sport">Possible Event.LiveGameState.gamePart values per sport</h3>
 <p><em>NB: These values are intended as keys or identifiers, not as display values. They are not localised and they cannot be modified to serve specific display needs (like full or shortened/abbreviated presentation). Such issues have to be addressed client side.</em></p>
-<h4 id="soccer">Soccer</h4>
-<p>FirstHalf
+<details>
+<summary><b>Soccer</b></summary>
+FirstHalf
 BreakAfterFirstHalf
 SecondHalf
-Overtime</p>
-<!--
-FirstOvertime
-BreakAfterFirstOvertime
-SecondOvertime
--->
-<h4 id="basketball">Basketball</h4>
-<p>FirstQuarter
+Overtime
+</details>
+<details>  
+<summary><b>Basketball</b></summary>
+FirstQuarter
 BreakAfterFirstQuarter
 SecondQuarter
 BreakAfterSecondQuarter
@@ -703,27 +702,35 @@ FourthQuarter
 BreakAfterFourthQuarter
 FirstOvertime
 BreakAfterFirstOvertime
-SecondOvertime</p>
-<h4 id="tennis">Tennis</h4>
-<p>FirstSet
+SecondOvertime
+</details>
+<details>
+<summary><b>Tennis</b></summary>
+FirstSet
 SecondSet
 ThirdSet
 FourthSet
-FifthSet</p>
-<h4 id="handball">Handball</h4>
-<p>FirstHalf
+FifthSet
+</details>
+<details>
+<summary><b>Handball</b></summary>
+FirstHalf
 BreakAfterFirstHalf
-SecondHalf</p>
-<h4 id="ice-hockey">Ice hockey</h4>
-<p>FirstPeriod
+SecondHalf
+</details>
+<details>
+<summary><b>Ice hockey</b></summary>
+FirstPeriod
 BreakAfterFirstPeriod
 SecondPeriod
 BreakAfterSecondPeriod
 ThirdPeriod
 BreakAfterThirdPeriod
-Overtime</p>
-<h4 id="american-football">American Football</h4>
-<p>FirstQuarter
+Overtime
+</details>
+<details>
+<summary><b>American Football</b></summary>
+FirstQuarter
 BreakAfterFirstQuarter
 SecondQuarter
 BreakAfterFirstHalf
@@ -731,22 +738,28 @@ ThirdQuarter
 BreakAfterThirdQuarter
 FourthQuarter
 BreakAfterFourthQuarter
-Overtime</p>
-<h4 id="rugby-league">Rugby League</h4>
-<p>FirstHalf
-BreakAfterFirstHalf
-SecondHalf</p>
-<h4 id="rugby-union">Rugby Union</h4>
-<p>FirstHalf
+Overtime
+</details>
+<details>
+<summary><b>Rugby League</b></summary>
+FirstHalf
 BreakAfterFirstHalf
 SecondHalf
-<br></p>
-<h4 id="volleyball">Volleyball</h4>
-<p>FirstSet
+</details>
+<details>
+<summary><b>Rugby Union</b></summary>
+FirstHalf
+BreakAfterFirstHalf
+SecondHalf
+</details>
+<details>
+<summary><b>Volleyball</b></summary>
+FirstSet
 SecondSet
 ThirdSet
 FourthSet
-FifthSet</p>
+FifthSet
+</details>
 <h2 id="marketgroup">MarketGroup</h2>
 <pre><code class="lang-typescript">type MarketGroup = {
     id: string
@@ -845,170 +858,170 @@ FifthSet</p>
 <li>The only exception is the <code>onServe&quot; property, which will appear for several sports and will have a _value_ of 1 or 2. The pattern is the same --</code>onServe: 1<code>for a Volleyball game means that the Home team is serving. We use the</code>onServe` parameter also for Baseball and Cricket events to allow easier, more generalised implementation, realising that it is not the correct technical term.</li>
 <li>Not all properties will be always returned. Missing pair of properties means that there is no score of the respective game part or (in rare cases) that we don't have the respective data. For example, during the third quarter of a basketball game, we will not return <code>BasketballFourthQuarterScore1</code> and <code>BasketballFourthQuarterScore2</code> parameters.</li>
 </ul>
-<h4 id="soccer-1">Soccer</h4>
-<ul>
-<li>FirstHalfScore1</li>
-<li>FirstHalfScore2</li>
-<li>SecondHalfScore1</li>
-<li>SecondHalfScore2</li>
-<li>ExtraTimeScore1</li>
-<li>ExtraTimeScore2</li>
-<li>YellowCardsTeam1</li>
-<li>YellowCardsTeam2</li>
-<li>RedCardsTeam1</li>
-<li>RedCardsTeam2</li>
-<li>CornersTeam1</li>
-<li>CornersTeam2</li>
-<li>PenaltiesTeam1</li>
-<li>PenaltiesTeam2</li>
-</ul>
-<h4 id="basketball-1">Basketball</h4>
-<ul>
-<li>BasketballFirstQuarterScore1</li>
-<li>BasketballFirstQuarterScore2</li>
-<li>BasketballSecondQuarterScore1</li>
-<li>BasketballSecondQuarterScore2</li>
-<li>BasketballFirstHalfScore1</li>
-<li>BasketballFirstHalfScore2</li>
-<li>BasketballThirdQuarterScore1</li>
-<li>BasketballThirdQuarterScore2</li>
-<li>BasketballFourthQuarterScore1</li>
-<li>BasketballFourthQuarterScore2</li>
-<li>BasketballSecondHalfScore1</li>
-<li>BasketballSecondHalfScore2</li>
-<li>BasketballResultType</li>
-<li>InputForPeriod</li>
-<li>BasketballOverTimeScore1</li>
-<li>BasketballOverTimeScore2</li>
-</ul>
-<h4 id="tennis-1">Tennis</h4>
-<ul>
-<li>onServe</li>
-<li>FirstSetScore1</li>
-<li>FirstSetScore2</li>
-<li>SecondSetScore1</li>
-<li>SecondSetScore2</li>
-<li>ThirdSetScore1</li>
-<li>ThirdSetScore2</li>
-<li>FourthSetScore1</li>
-<li>FourthSetScore2</li>
-<li>FifthSetScore1</li>
-<li>FifthSetScore2</li>
-<li>CurrentGameScore1</li>
-<li>CurrentGameScore2</li>
-</ul>
-<h4 id="american-football-1">American Football</h4>
-<ul>
-<li>AmericanFootball1QScore1</li>
-<li>AmericanFootball1QScore2</li>
-<li>AmericanFootball2QScore1</li>
-<li>AmericanFootball2QScore2</li>
-<li>AmericanFootball3QScore1</li>
-<li>AmericanFootball3QScore2</li>
-<li>AmericanFootball4QScore1</li>
-<li>AmericanFootball4QScore2</li>
-<li>AmericanFootball1HScore1</li>
-<li>AmericanFootball1HScore2</li>
-<li>AmericanFootball2HScore1</li>
-<li>AmericanFootball2HScore2</li>
-</ul>
-<h4 id="baseball">Baseball</h4>
-<ul>
-<li>onServe</li>
-<li>FirstInningScore1</li>
-<li>FirstInningScore2</li>
-<li>SecondInningScore1</li>
-<li>SecondInningScore2</li>
-<li>ThirdInningScore1</li>
-<li>ThirdInningScore2</li>
-<li>FourthInningScore1</li>
-<li>FourthInningScore2</li>
-<li>FifthInningScore1</li>
-<li>FifthInningScore2</li>
-<li>SixthInningScore1</li>
-<li>SixthInningScore2</li>
-<li>SeventhInningScore1</li>
-<li>SeventhInningScore2</li>
-<li>EighthInningScore1</li>
-<li>EighthInningScore2</li>
-<li>NinthInningScore1</li>
-<li>NinthInningScore2</li>
-</ul>
-<h4 id="ice-hockey-1">Ice hockey</h4>
-<ul>
-<li>IceHockeyFirstPeriodScore1</li>
-<li>IceHockeyFirstPeriodScore2</li>
-<li>IceHockeySecondPeriodScore1</li>
-<li>IceHockeySecondPeriodScore2</li>
-<li>IceHockeyThirdPeriodScore1</li>
-<li>IceHockeyThirdPeriodScore2</li>
-</ul>
-<h4 id="volleyball-1">Volleyball</h4>
-<ul>
-<li>onServe</li>
-<li>VolleyballFirstSetScore1</li>
-<li>VolleyballFirstSetScore2</li>
-<li>VolleyballSecondSetScore1</li>
-<li>VolleyballSecondSetScore2</li>
-<li>VolleyballThirdSetScore1</li>
-<li>VolleyballThirdSetScore2</li>
-<li>VolleyballFourthSetScore1</li>
-<li>VolleyballFourthSetScore2</li>
-<li>VolleyballFifthSetScore1</li>
-<li>VolleyballFifthSetScore2</li>
-</ul>
-<h4 id="aussie-rules">Aussie rules</h4>
-<ul>
-<li>AussieRules1HScore1</li>
-<li>AussieRules1HScore2</li>
-<li>AussieRules2HScore1</li>
-<li>AussieRules2HScore2</li>
-<li>AussieRules1QScore1</li>
-<li>AussieRules1QScore2</li>
-<li>AussieRules1QGoalScore1</li>
-<li>AussieRules1QGoalScore2</li>
-<li>AussieRules1QBehinds1</li>
-<li>AussieRules1QBehinds2</li>
-<li>AussieRules2QScore1</li>
-<li>AussieRules2QScore2</li>
-<li>AussieRules2QGoalScore1</li>
-<li>AussieRules2QGoalScore2</li>
-<li>AussieRules2QBehinds1</li>
-<li>AussieRules2QBehinds2</li>
-<li>AussieRules3QScore1</li>
-<li>AussieRules3QScore2</li>
-<li>AussieRules3QGoalScore1</li>
-<li>AussieRules3QGoalScore2</li>
-<li>AussieRules3QBehinds1</li>
-<li>AussieRules3QBehinds2</li>
-<li>AussieRules4QScore1</li>
-<li>AussieRules4QScore2</li>
-<li>AussieRules4QGoalScore1</li>
-<li>AussieRules4QGoalScore2</li>
-<li>AussieRules4QBehinds1</li>
-<li>AussieRules4QBehinds2</li>
-<li>AussieRulesGoalScoreTotal1</li>
-<li>AussieRulesBehindsTotal1</li>
-<li>AussieRulesGoalScoreTotal2</li>
-<li>AussieRulesBehindsTotal2</li>
-</ul>
-<h4 id="rugby-league-1">Rugby league</h4>
-<ul>
-<li>RugbyLeague1HScore1</li>
-<li>RugbyLeague1HScore2</li>
-<li>RugbyLeague2HScore1</li>
-<li>RugbyLeague2HScore2</li>
-<li>RugbyLeagueTriesFTScore1</li>
-<li>RugbyLeagueTriesFTScore2</li>
-<li>RugbyLeagueTries1HScore1</li>
-<li>RugbyLeagueTries1HScore2</li>
-<li>RugbyLeagueTries2HScore1</li>
-<li>RugbyLeagueTries2HScore2</li>
-</ul>
-<h4 id="cricket">Cricket</h4>
-<ul>
-<li>onServe</li>
-</ul>
+<details>
+<summary><b>Soccer</b></summary>
+- FirstHalfScore1
+- FirstHalfScore2
+- SecondHalfScore1
+- SecondHalfScore2
+- ExtraTimeScore1
+- ExtraTimeScore2
+- YellowCardsTeam1
+- YellowCardsTeam2
+- RedCardsTeam1
+- RedCardsTeam2
+- CornersTeam1
+- CornersTeam2
+- PenaltiesTeam1
+- PenaltiesTeam2
+</details>
+<details>
+<summary><b>Basketball</b></summary>
+- BasketballFirstQuarterScore1
+- BasketballFirstQuarterScore2
+- BasketballSecondQuarterScore1
+- BasketballSecondQuarterScore2
+- BasketballFirstHalfScore1
+- BasketballFirstHalfScore2
+- BasketballThirdQuarterScore1
+- BasketballThirdQuarterScore2
+- BasketballFourthQuarterScore1
+- BasketballFourthQuarterScore2
+- BasketballSecondHalfScore1
+- BasketballSecondHalfScore2
+- BasketballResultType
+- InputForPeriod
+- BasketballOverTimeScore1
+- BasketballOverTimeScore2
+</details>
+<details>
+<summary><b>Tennis</b></summary>
+- onServe
+- FirstSetScore1
+- FirstSetScore2
+- SecondSetScore1
+- SecondSetScore2
+- ThirdSetScore1
+- ThirdSetScore2
+- FourthSetScore1
+- FourthSetScore2
+- FifthSetScore1
+- FifthSetScore2
+- CurrentGameScore1
+- CurrentGameScore2
+</details>
+<details>
+<summary><b>American Football</b></summary>
+- AmericanFootball1QScore1
+- AmericanFootball1QScore2
+- AmericanFootball2QScore1
+- AmericanFootball2QScore2
+- AmericanFootball3QScore1
+- AmericanFootball3QScore2
+- AmericanFootball4QScore1
+- AmericanFootball4QScore2
+- AmericanFootball1HScore1
+- AmericanFootball1HScore2
+- AmericanFootball2HScore1
+- AmericanFootball2HScore2
+</details>
+<details>
+<summary><b>Baseball</b></summary>
+- onServe
+- FirstInningScore1
+- FirstInningScore2
+- SecondInningScore1
+- SecondInningScore2
+- ThirdInningScore1
+- ThirdInningScore2
+- FourthInningScore1
+- FourthInningScore2
+- FifthInningScore1
+- FifthInningScore2
+- SixthInningScore1
+- SixthInningScore2
+- SeventhInningScore1
+- SeventhInningScore2
+- EighthInningScore1
+- EighthInningScore2
+- NinthInningScore1
+- NinthInningScore2
+</details>
+<details>
+<summary><b>Ice hockey</b></summary>
+- IceHockeyFirstPeriodScore1
+- IceHockeyFirstPeriodScore2
+- IceHockeySecondPeriodScore1
+- IceHockeySecondPeriodScore2
+- IceHockeyThirdPeriodScore1
+- IceHockeyThirdPeriodScore2
+</details>
+<details>
+<summary><b>Volleyball</b></summary>
+- onServe
+- VolleyballFirstSetScore1
+- VolleyballFirstSetScore2
+- VolleyballSecondSetScore1
+- VolleyballSecondSetScore2
+- VolleyballThirdSetScore1
+- VolleyballThirdSetScore2
+- VolleyballFourthSetScore1
+- VolleyballFourthSetScore2
+- VolleyballFifthSetScore1
+- VolleyballFifthSetScore2
+</details>
+<details>
+<summary><b>Aussie rules</b></summary>
+- AussieRules1HScore1
+- AussieRules1HScore2
+- AussieRules2HScore1
+- AussieRules2HScore2
+- AussieRules1QScore1
+- AussieRules1QScore2
+- AussieRules1QGoalScore1
+- AussieRules1QGoalScore2
+- AussieRules1QBehinds1
+- AussieRules1QBehinds2
+- AussieRules2QScore1
+- AussieRules2QScore2
+- AussieRules2QGoalScore1
+- AussieRules2QGoalScore2
+- AussieRules2QBehinds1
+- AussieRules2QBehinds2
+- AussieRules3QScore1
+- AussieRules3QScore2
+- AussieRules3QGoalScore1
+- AussieRules3QGoalScore2
+- AussieRules3QBehinds1
+- AussieRules3QBehinds2
+- AussieRules4QScore1
+- AussieRules4QScore2
+- AussieRules4QGoalScore1
+- AussieRules4QGoalScore2
+- AussieRules4QBehinds1
+- AussieRules4QBehinds2
+- AussieRulesGoalScoreTotal1
+- AussieRulesBehindsTotal1
+- AussieRulesGoalScoreTotal2
+- AussieRulesBehindsTotal2
+</details>
+<details>
+<summary><b>Rugby league</b></summary>
+- RugbyLeague1HScore1
+- RugbyLeague1HScore2
+- RugbyLeague2HScore1
+- RugbyLeague2HScore2
+- RugbyLeagueTriesFTScore1
+- RugbyLeagueTriesFTScore2
+- RugbyLeagueTries1HScore1
+- RugbyLeagueTries1HScore2
+- RugbyLeagueTries2HScore1
+- RugbyLeagueTries2HScore2
+</details>
+<details>
+<summary><b>Cricket</b></summary>
+- onServe
+</details>
 <h2 id="tags">Tags</h2>
 <table>
 <thead>

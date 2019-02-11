@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Region | SBTech API </title>
+    <title>Selections Push contract | SBTech API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Region | SBTech API ">
+    <meta name="title" content="Selections Push contract | SBTech API ">
     <meta name="generator" content="docfx 2.40.9.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -77,47 +77,114 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h2 id="region">Region</h2>
+<h1 id="selections-push-contract">Selections Push contract</h1>
 
-<pre><code class="lang-typescript">export interface Region {
-    /** region ID */
+<pre><code class="lang-typescript">{
+    //The properties with value null are not returning in contract.
     id: string
-
-    /** ISO country code or (for regions in country) region code */
-    code: string
-
-    /** translated region name */
+    outcomeType: string
+    group: number
     name: string
-
-    activeSports: string[]
-
-    activeSportsCount: number
-
-    /** number of live (in-game) active games */
-    liveFixturesTotalCount: number
-
-    /** total number of games, both live and pre-live */
-    fixturesTotalCount: number
-
-    /** number of games, both live and pre-live filtered by time range*/
-    fixturesCount: number
-
-    /** number of active outrights league bound markets */
-    outrightsTotalCount: number
-
-    entityType: EntityType
-}
-
-export interface RegionChange {
-    id: string,
-    activeSports: string[],
-    activeSportsCount: number,
-    liveFixturesTotalCount: number,
-    fixturesTotalCount: number,
-    fixturesCount: number,
-    outrightsTotalCount: number
+    displayOdds: Dictionary&lt;string&gt;
+    trueOdds: number
+    isDisabled: Boolean
+    metadata: Dictionary
 }
 </code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Format</th>
+<th>Returnable</th>
+<th>Queryable</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Specifies the identifier of the selection.</td>
+<td>number</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=id eq '0HC29147785N250_3'</td>
+</tr>
+<tr>
+<td>marketId</td>
+<td>Specifies the identifier of the selection's market.</td>
+<td>string</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=marketId eq '2_29147785'</td>
+</tr>
+<tr>
+<td>outcomeType</td>
+<td>Specifies the outcome type implied by the selection. To be used as visualisation and templating helper. For details, see below.</td>
+<td>string</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>group</td>
+<td>Relevant for Handicap and Over/Under markets. Groups the selections by point line. For example, &quot;Over 2.5&quot; and &quot;Under 2.5&quot; selections in a market will belong to the same group, &quot;Over 3.5&quot; and &quot;Under 3.5&quot; selections will belong to another group.</td>
+<td>number</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Specifies the name of the team/player in the selection.</td>
+<td>sting</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>displayOdds</td>
+<td>Specifies the odds as they should be displayed in all different styles. See the separate table below for details.</td>
+<td>Dictionary</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>trueOdds</td>
+<td>Specifies the mathematically correct odds for the selection. Will be -1 for &quot;Starting price&quot; selections, -2 for &quot;Non runner&quot; selections, - 3 for &quot;Without&quot; selections in racing markets.</td>
+<td>number</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>points</td>
+<td>Specifies the points in the event.</td>
+<td>number</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=points eq -2.5</td>
+</tr>
+<tr>
+<td>isDisabled</td>
+<td>Specifies if the selection is available for betting.</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>Dictionary of ad hoc parameters which are not part of the general object model.</td>
+<td>Dictionary</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           

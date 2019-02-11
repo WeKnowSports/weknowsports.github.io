@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Event | SBTech API </title>
+    <title>Selections Pull contract | SBTech API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Event | SBTech API ">
+    <meta name="title" content="Selections Pull contract | SBTech API ">
     <meta name="generator" content="docfx 2.40.9.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -77,194 +77,317 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h2 id="event">Event</h2>
+<h1 id="selections-pull-contract">Selections Pull contract</h1>
 
-<pre><code class="lang-typescript">export type EventType = &quot;Fixture&quot; | &quot;Outright&quot;
-
-/**
-    * Queryable entity
-    */
-export interface SportEvent {
+<h2 id="selection-object">Selection object</h2>
+<pre><code class="lang-typescript">{
     id: string
-    /** Type of SportEvent. */
-    type: EventType
-    /** Sport ID. */
-    sportId: string
-    /** Sport name (translated). */
-    sportName: string
-    /** Sorting order of Sport. */
-    sportOrder: number
-    /** Region ID. */
-    regionId: string
-    /** ISO country code or (for regions in country) region code. */
-    regionCode: string
-    /** Region name (translated). */
-    regionName: string
-    /** League ID. */
-    leagueId: string
-    /** League name (translated). */
-    leagueName: string
-    /** Sorting order of League. */
-    leagueOrder: number
-    /** Is league marked with top flag. */
-    isTopLeague: boolean
-    /** participants in the event. */
-    participants: Participant[]
-    /** Name of event, for league events */
-    eventName: string
-    // betslipLine
+    entityType: number
+    marketId: string
+    outcomeType: string
     betslipLine: string
-    // not queriable
-    totalMarketsCount: number
-
-    marketLinesCount: number
-    // not queriable
-    marketGroups: MarketGroup[]
-    /** date/time of game start */
-    startEventDate: ISODateTimeString
-    /**  Status of game serving*/
-    status: GameStatus
-    /**  Score in game*/
-    score: GameScore | null
-    /** is it live game */
-    isLive: boolean
-    /** will this game go live when started, for pre-live only and eventType = Game */
-    isGoingLive: boolean
-
-    liveGameState: LiveGameState | null
-
-    /** Is event suspended for some reason */
-    isSuspended: boolean
-
-    isTeamSwap: boolean
-
-    tags: string[]
-
-    entityType: EntityType
-
-    metadata: Dictionary&lt;any&gt;
-
-    media: MediaProvider[]
-}
-
-export interface SportEventChange {
-    id: string,
-    participants: Participant[],
-    totalMarketsCount: number,
-    marketLinesCount: number,
-    status: GameStatus,
-    score: GameScore | null,
-    isLive: boolean,
-    liveGameState: LiveGameState | null,
-    isSuspended: boolean,
-    metadata: Dictionary&lt;any&gt;
-}
-
-export interface MediaProvider {
-    providerName: string
-    providerEventId: string
-    mediaType: string
-}
-
-export interface MarketGroup {
-    id: string
+    group: number
     name: string
-    order: number
-}
-
-export type VenueRole = &quot;Home&quot; | &quot;Away&quot;
-
-export interface Participant {
-    id: string
-    name: string
-    /** Home | Away */
-    venueRole: VenueRole | null
-    /** ISO code */
-    country: string | null
-    /** runnerNumber: number, imageUrl: string, weight: string, age: number, form: string */
-    metadata: Dictionary&lt;any&gt;
-}
-
-export interface ParticipantChange {
-    metadata: Dictionary&lt;any&gt;
-}
-
-export enum GameStatus {
-    NotStarted = &quot;NotStarted&quot;,
-    InProgress = &quot;InProgress&quot;
-}
-
-export enum ClockDirection {
-    Stopwatch = &quot;Stopwatch&quot;,
-    Timer = &quot;Timer&quot;
-}
-
-export interface GameScore {
-    /** Home team/player top level score */
-    homeScore: string
-
-    /** Away team/player top level score */
-    awayScore: string
-
-    additionalScores: Dictionary&lt;string&gt;
-
-    combinedSecondTierScores: string[]
-}
-
-export interface LiveGameState {
-    clockRunning: boolean
-    clockDirection: ClockDirection
-    gameTime: number | null
-    gamePart: GamePart | null
-}
-
-export enum GamePart {
-    FirstOvertime = &quot;FirstOvertime&quot;,
-    BreakAfterFirstOvertime = &quot;BreakAfterFirstOvertime&quot;,
-    SecondOvertime = &quot;SecondOvertime&quot;,
-    FirstSet = &quot;FirstSet&quot;,
-    SecondSet = &quot;SecondSet&quot;,
-    ThirdSet = &quot;ThirdSet&quot;,
-    FourthSet = &quot;FourthSet&quot;,
-    FifthSet = &quot;FifthSet&quot;,
-    FirstPeriod = &quot;FirstPeriod&quot;,
-    BreakAfterFirstPeriod = &quot;BreakAfterFirstPeriod&quot;,
-    SecondPeriod = &quot;SecondPeriod&quot;,
-    BreakAfterSecondPeriod = &quot;BreakAfterSecondPeriod&quot;,
-    ThirdPeriod = &quot;ThirdPeriod&quot;,
-    BreakAfterThirdPeriod = &quot;BreakAfterThirdPeriod&quot;,
-    FirstQuarter = &quot;FirstQuarter&quot;,
-    BreakAfterFirstQuarter = &quot;BreakAfterFirstQuarter&quot;,
-    SecondQuarter = &quot;SecondQuarter&quot;,
-    BreakAfterSecondQuarter = &quot;BreakAfterSecondQuarter&quot;,
-    ThirdQuarter = &quot;ThirdQuarter&quot;,
-    BreakAfterThirdQuarter = &quot;BreakAfterThirdQuarter&quot;,
-    FourthQuarter = &quot;FourthQuarter&quot;,
-    BreakAfterFourthQuarter = &quot;BreakAfterFourthQuarter&quot;,
-    Overtime = &quot;Overtime&quot;,
-    FirstHalf = &quot;FirstHalf&quot;,
-    SecondHalf = &quot;SecondHalf&quot;,
-    BreakAfterFirstHalf = &quot;BreakAfterFirstHalf&quot;,
-    FirstInning = &quot;FirstInning&quot;,
-    SecondInning = &quot;SecondInning&quot;,
-    ThirdInning = &quot;ThirdInning&quot;,
-    FourthInning = &quot;FourthInning&quot;,
-    FifthInning = &quot;FifthInning&quot;,
-    SixthInning = &quot;SixthInning&quot;,
-    SeventhInning = &quot;SeventhInning&quot;,
-    EighthInning = &quot;EighthInning&quot;,
-    NinthInning = &quot;NinthInning&quot;,
-    BreakAfterFirstInning = &quot;BreakAfterFirstInning&quot;,
-    BreakAfterSecondInning = &quot;BreakAfterSecondInning&quot;,
-    BreakAfterThirdInning = &quot;BreakAfterThirdInning&quot;,
-    BreakAfterFourthInning = &quot;BreakAfterFourthInning&quot;,
-    BreakAfterFifthInning = &quot;BreakAfterFifthInning&quot;,
-    BreakAfterSixthInning = &quot;BreakAfterSixthInning&quot;,
-    BreakAfterSeventhInning = &quot;BreakAfterSeventhInning&quot;,
-    BreakAfterEighthInning = &quot;BreakAfterEighthInning&quot;,
-    BreakAfterNinthInning = &quot;BreakAfterNinthInning&quot;
+    title: string
+    displayOdds: Dictionary&lt;string&gt;
+    trueOdds: number
+    points: number
+    participantMapping: string
+    isDisabled: Boolean
+    tags: array
+    status: string
+    metadata: Dictionary
 }
 </code></pre>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Format</th>
+<th>Returnable</th>
+<th>Queryable</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Specifies the identifier of the selection.</td>
+<td>number</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=id eq '0HC29147785N250_3'</td>
+</tr>
+<tr>
+<td>entityType</td>
+<td>Specifies the entity type. Always 5 for selections.</td>
+<td>number</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>marketId</td>
+<td>Specifies the identifier of the selection's market.</td>
+<td>string</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=marketId eq '2_29147785'</td>
+</tr>
+<tr>
+<td>outcomeType</td>
+<td>Specifies the outcome type implied by the selection. To be used as visualisation and templating helper. For details, see below.</td>
+<td>string</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>betslipLine</td>
+<td>Specifies the presentation of the selection in the bet slip. To be used in conjunction with the respective <code>Market.betslipLine</code> and <code>Event.betslipLine</code> values.</td>
+<td>string</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>group</td>
+<td>Relevant for Handicap and Over/Under markets. Groups the selections by point line. For example, &quot;Over 2.5&quot; and &quot;Under 2.5&quot; selections in a market will belong to the same group, &quot;Over 3.5&quot; and &quot;Under 3.5&quot; selections will belong to another group.</td>
+<td>number</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Specifies the name of the team/player in the selection.</td>
+<td>sting</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>title</td>
+<td>Specifies the title of the event.</td>
+<td>string</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>displayOdds</td>
+<td>Specifies the odds as they should be displayed in all different styles. See the separate table below for details.</td>
+<td>Dictionary</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>trueOdds</td>
+<td>Specifies the mathematically correct odds for the selection. Will be -1 for &quot;Starting price&quot; selections, -2 for &quot;Non runner&quot; selections, - 3 for &quot;Without&quot; selections in racing markets.</td>
+<td>number</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>points</td>
+<td>Specifies the points in the event.</td>
+<td>number</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=points eq -2.5</td>
+</tr>
+<tr>
+<td>status</td>
+<td>Specifies the status of the selection. Possible values are “Active”, “Disabled”, “NonRunner” (for racing sports).</td>
+<td>string</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>participantMapping</td>
+<td>Specifies relation of the selection to a specific participant in the event. Used in Outright markets and in some specific market types where two otherwise similar selections are distinguished only by their relation to one of the teams participating in the fixture (for example, &quot;Team goals Odd/Even&quot;, where two pairs of &quot;Odd&quot; and &quot;Even&quot; selections are available -- one per team).</td>
+<td>string</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>isDisabled</td>
+<td>Specifies if the selection is available for betting.</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Specifies additional information for the selection.</td>
+<td>array</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>Dictionary of ad hoc parameters which are not part of the general object model.</td>
+<td>Dictionary</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+</tbody>
+</table>
+<h2 id="outcometype">outcomeType</h2>
+<p>The possible values for the @outcomeType@ parameter are meant to provide an internal structure to the markets to facilitate their presentation. In a very general way, you can think of these as grouping selections by column. Of course, for individual market types, different approaches are possible and it is up to the client implementation to choose the best presentation.</p>
+<p>Any of the following combinations of @outcomeType@ values are possible inside the various market types:</p>
+<ul>
+<li>Home | Tie | Away (used for Moneylines, Handicaps, Exact scores; multiple home/tie/away selections are possible, in which case you will have to group them additionally by points, group or other properties)</li>
+<li>1X | X2 | 12 (used for Double chance)</li>
+<li>Over | Exactly | Under (used for Over/Under)</li>
+<li>Yes | No (used for Yes/No markets; multiple yes/no selections are possible, in which case they will need to be paired by some additional criteria like <code>participantMapping</code> or <code>title</code> properties)</li>
+<li>Odd | Even (used for Odd/Even markets; multiple odd/even selections are possible, in which case they will need to be paired by some additional criteria like <code>participantMapping</code> or <code>title</code> properties)</li>
+<li>ToScoreFirst | ToScoreLast | ToScoreAnyTime (used for Goalscorer markets)</li>
+<li>ToScoreFirstOrLast | ToScore2OrMore | ToScore3OrMore (used for Goalscorer Premier markets)</li>
+<li>PlaceOnly2 | PlaceOnly3 (used in Place Only markets for Horse racing, to differentiate selections for 2 and 3 places, respectively)</li>
+</ul>
+<p>If no @outcomeType@ value is assigned to a selection, this means that there is no inherent structure for the selections inside the respective market. Notably this will be the case for Outrights and many Specials.</p>
+<h2 id="displayodds">displayOdds</h2>
+<p>Note that this attribute is nullable, as some special types of selections have no determined odds. Examples would be the &quot;Place&quot; selections (which are dependent on the respective win selection's odds and the Each way terms of the Outright market). In addition, values in all attributes (odds styles) will be &quot;SP&quot; for starting price selections, &quot;NR&quot; for non-runner selections and &quot;W/O&quot; for &quot;without&quot; selections (in &quot;Betting without favourite&quot; markets in racing events).</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Format</th>
+<th>Queryable</th>
+<th>Returnable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>decimal</td>
+<td>Specifies how to display the selection odds in decimal style.</td>
+<td>string</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>american</td>
+<td>Specifies how to display the selection odds in American style. Note that for negative American odds presentation we tend to use the &quot;MINUS SIGN&quot; &quot;U+2212&quot;:http://unicode.org/cldr/utility/character.jsp?a=2212 unicode character to facilitate consistent display layout. You should take special care if you want to process this value as number, which is anyway not recommended and should be avoided. For mathematical operations you should always use the Selection.trueOdds value.</td>
+<td>string</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>fractional</td>
+<td>Specifies how to display the selection odds in fractional style.</td>
+<td>string</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>indo</td>
+<td>Specifies how to display the selection odds in Indonesian style.</td>
+<td>string</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>malay</td>
+<td>Specifies how to display the selection odds in Malaysian style.</td>
+<td>string</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>hk</td>
+<td>Specifies how to display the selection odds in Hong Kong style.</td>
+<td>string</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tags">Tags</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Place</td>
+<td>Indicates that this is a Place selection. These are included into markets where Each way betting is possible and normally should not be displayed to the user. You should rather indicate the Each-way terms on the UI (provided separately in the &quot;placeTermsId&quot; and &quot;oddsTermsId&quot; properties of the Market entity's metadata.</td>
+</tr>
+<tr>
+<td>SPPlace</td>
+<td>Indicates that this is a Special price and Place selection.</td>
+</tr>
+<tr>
+<td>SP</td>
+<td>Indicates that this is a Special price selection.</td>
+</tr>
+<tr>
+<td>MainPointLine</td>
+<td>Specifies the selections representing the main line.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="metadata">Metadata</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Format</th>
+<th>Queryable</th>
+<th>Returnable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>idSBTech</td>
+<td>Legacy identifier exposed for compatibility reasons.</td>
+<td>string</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>previousOddsFractional</td>
+<td>&quot;Previous odds&quot; presented in fractional odds style. Served only for fixed price Win selection in Horse racing and Greyhounds races.</td>
+<td>string</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>previousOddsDecimal</td>
+<td>&quot;Previous odds&quot; presented in decimal odds style. Served only for fixed price Win selection in Horse racing and Greyhounds races.</td>
+<td>string</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>previousOddsAmerican</td>
+<td>&quot;Previous odds&quot; presented in american odds style. Served only for fixed price Win selection in Horse racing and Greyhounds races.</td>
+<td>string</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>runnerStatus</td>
+<td>Served for Horse racing and Greyhounds events. Possible values are &quot;Ante-post&quot; (for selections from Ante-post races), &quot;DOE&quot; (for fixed price selections from DOE races), &quot;SP&quot; (for starting price selections from DOE races), &quot;NR&quot; (for selections related to a non-running participant)</td>
+<td>string</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           

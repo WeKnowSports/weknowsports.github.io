@@ -387,26 +387,108 @@
 <h2 id="selection">Selection</h2>
 <p>This object is also specified on separate endpoint /selections. Its whole description you can see via this <a href="https://weknowsports.github.io/sports-data/endpoints/selections/pull-contract.html">link</a>.</p>
 <h2 id="markettags">Market.tags</h2>
-<p>Possible Market.tags entries:
-| Tag | Description |
-| --- | --- |
-|Default| Specifies markets which are always supposed to be one market per event. |
-|Cashout| Cashout will be available for bets with selections from this market, under some additional conditions. |
-|PulseMarket| For Pulse markets. |
-|MBNX| Minimum number of combo selections for the market, where &quot;X&quot; should be replaced by 1, 2, 3 etc. |
-|YourBetEligible| Specifies the ability to access Yourbet for the market. |</p>
+<p>Possible Market.tags entries:<br></p>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Default</td>
+<td>Specifies markets which are always supposed to be one market per event.</td>
+</tr>
+<tr>
+<td>Cashout</td>
+<td>Cashout will be available for bets with selections from this market, under some additional conditions.</td>
+</tr>
+<tr>
+<td>PulseMarket</td>
+<td>For Pulse markets.</td>
+</tr>
+<tr>
+<td>MBNX</td>
+<td>Minimum number of combo selections for the market, where &quot;X&quot; should be replaced by 1, 2, 3 etc.</td>
+</tr>
+<tr>
+<td>YourBetEligible</td>
+<td>Specifies the ability to access Yourbet for the market.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="marketmetadata">Market.metadata</h2>
-<p>Possible Market.metadata dictionary entries:
-| Parameter |	Description | Format | Returnable | Queryable |
-| --- | --- | --- | --- | --- |
-|oddsTermsId| Only served for markets in Outright events. Specifies the denominator of the each-way fraction of the each-way terms, when such bets are enabled. | number | Yes | No |
-|placeTermsId| Only served for markets in Outright events. Specifies the number of places for the place part of the each-way bets, when such bets are enabled. | number | Yes | No |
-|fastMarketMinutes| Specifies the minute's range of Soccer fast markets. Example value is &quot;61:00 - 61:59&quot; (to be interpreted as mm:ss - mm:ss). | string | Yes | No |
-|fastMarketPeriod| Specifies the period length of Soccer fast markets. Example values are &quot;1m&quot; or &quot;5m&quot;. | string | Yes | No |
-|fastMarketSet| Specifies the set number in Tennis fast markets. | string | Yes | No |
-|fastMarketGame| Specifies the game number in Tennis fast markets. | string | Yes | No |
-|fastMarketPoint| Specifies the point number in Tennis fast markets, if relevant. | string | Yes | No |
-|pulseLength| Specifies the period in Pulse markets. Possible values: 30s, 1m, 5m, 10m. | string | Yes | No |</p>
+<p>Possible Market.metadata dictionary entries:<br></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Format</th>
+<th>Returnable</th>
+<th>Queryable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>oddsTermsId</td>
+<td>Only served for markets in Outright events. Specifies the denominator of the each-way fraction of the each-way terms, when such bets are enabled.</td>
+<td>number</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>placeTermsId</td>
+<td>Only served for markets in Outright events. Specifies the number of places for the place part of the each-way bets, when such bets are enabled.</td>
+<td>number</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>fastMarketMinutes</td>
+<td>Specifies the minute's range of Soccer fast markets. Example value is &quot;61:00 - 61:59&quot; (to be interpreted as mm:ss - mm:ss).</td>
+<td>string</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>fastMarketPeriod</td>
+<td>Specifies the period length of Soccer fast markets. Example values are &quot;1m&quot; or &quot;5m&quot;.</td>
+<td>string</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>fastMarketSet</td>
+<td>Specifies the set number in Tennis fast markets.</td>
+<td>string</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>fastMarketGame</td>
+<td>Specifies the game number in Tennis fast markets.</td>
+<td>string</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>fastMarketPoint</td>
+<td>Specifies the point number in Tennis fast markets, if relevant.</td>
+<td>string</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>pulseLength</td>
+<td>Specifies the period in Pulse markets. Possible values: 30s, 1m, 5m, 10m.</td>
+<td>string</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           

@@ -5,24 +5,17 @@
 | Option | Example | Description |
 | --- | --- | --- |
 |$filter|$filter=sportId eq '12'|Allows clients to filter a collection of resources that are addressed by a request URL.|
-|$top|$top=10|The $top system query option requests the number of items in the queried collection to be included in the result.
-*100* is max value.|
+|$top|$top=10|The $top system query option requests the number of items in the queried collection to be included in the result. **100** is max value.|
 |$skip|$skip=3|The $skip query option requests the number of items in the queried collection that are to be skipped and not included in the result.|
-|$orderby|$orderby=totalMarketsCount desc 
-$orderby=sportOrder asc| The $orderby system query option allows clients to request resources in either ascending order using asc or descending order using desc. If asc or desc not specified, then the resources will be ordered in ascending order.|
-|  |All available 2 fields ordering variants:
-- startEventDate asc, then leagueOrder asc
-- startEventDate asc, then totalMarketsCount desc
-- startEventDate asc, then totalBets desc
-- startEventDate asc, then totalDeposit desc|We can **sort only by 1 or max 2** fields.|
+|$orderby|$orderby=totalMarketsCount desc <br />$orderby=sportOrder asc| The $orderby system query option allows clients to request resources in either ascending order using asc or descending order using desc. If asc or desc not specified, then the resources will be ordered in ascending order.|
+|  |All available 2 fields ordering variants: - startEventDate asc, then leagueOrder asc <br />- startEventDate asc, t en totalMarketsCount desc <br />- startEventDate asc, then totalBets desc <br />- startEventDate asc, then totalDeposit desc | We can **sort only by 1 or max 2** fields. |
 
 ## Time range queries
 
 | Option | Example | Description |
 | --- | --- | --- |
 |from|from=2018-02-28|When 'from' field is not empty, we should specify the value of 'timerange'.|
-|timeRange|timeRange=SixHours|	The timeRange query option requests the data for specified period.
-*Possible values:* OneHour, TwoHours, ThreeHours, SixHours, TwelveHours, OneDay, TwoDays, ThreeDays, FourDays, FiveDays, SixDays, SevenDays |
+|timeRange|timeRange=SixHours|	The timeRange query option requests the data for specified period. <br /> **Possible values:** OneHour, TwoHours, ThreeHours, SixHours, TwelveHours, OneDay, TwoDays, ThreeDays, FourDays, FiveDays, SixDays, SevenDays |
 
 ## HTTP parameter: includeMarkets
 
@@ -32,7 +25,7 @@ $orderby=sportOrder asc| The $orderby system query option allows clients to requ
 | none | includeMarkets=none | If the includeMarkets query has value 'none',  this query'll return only the events with the empty list of  markets. |
 | empty filter | includeMarkets=$filter= | If the includeMarkets query has value '$filter=',  this query'll return the events with all the list of markets. |
 | marketType | includeMarkets=$filter=marketType/id eq '1_0' | You'll receive the events and the markets with needed value of market type parameter ('id', 'name' or 'isCastMarket'). |
-| market.tags | includeMarkets=$filter=Tags/any(s: s eq 'Default') |  |
+| market.tags | includeMarkets=$filter=Tags/any(s: s eq 'Default') | You'll receive the events and the markets with needed value of market tag parameter. |
 | *Attention!* | includeMarkets=marketType/id eq '1_39' or marketType/name eq 'Live Betting 1X2’ | Combinations of includeMarkets options is is forbidden |
 
 

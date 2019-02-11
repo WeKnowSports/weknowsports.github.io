@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/wc/Sweknowsports.github.io_93/src",
+  "source_base_path": "C:/wc/Sweknowsports.github.io_95/src",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -256,7 +256,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/regions/filtering-and-querying.html",
-          "hash": "N5SE5Ctd54BfOrYd+Acqmg=="
+          "hash": "3HgxWbTJdvFgYhv0zCJNag=="
         }
       },
       "is_incremental": false,
@@ -340,7 +340,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/sports/pull-contract.html",
-          "hash": "U5Dv9K+rECAvoqBQAQrHpQ=="
+          "hash": "ak+hkcleWQoBQZorntnCag=="
         }
       },
       "is_incremental": false,
@@ -352,7 +352,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/sports/push-contract.html",
-          "hash": "AtrzhvZ9fUPtxousqV3pYQ=="
+          "hash": "TP1pJfZtOE6WdG0v52dAjw=="
         }
       },
       "is_incremental": false,

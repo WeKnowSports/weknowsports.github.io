@@ -100,7 +100,8 @@ type InMarketGroups = {
 This object is also specified on separate endpoint /selections. Its whole description you can see via this [link](https://weknowsports.github.io/sports-data/endpoints/selections/pull-contract.html).
 
 ## Market.tags
-Possible Market.tags entries:
+Possible Market.tags entries:</br>
+
 | Tag | Description |
 | --- | --- |
 |Default| Specifies markets which are always supposed to be one market per event. |
@@ -110,7 +111,8 @@ Possible Market.tags entries:
 |YourBetEligible| Specifies the ability to access Yourbet for the market. |
 
 ## Market.metadata
-Possible Market.metadata dictionary entries:
+Possible Market.metadata dictionary entries:</br>
+
 | Parameter |	Description | Format | Returnable | Queryable |
 | --- | --- | --- | --- | --- |
 |oddsTermsId| Only served for markets in Outright events. Specifies the denominator of the each-way fraction of the each-way terms, when such bets are enabled. | number | Yes | No |

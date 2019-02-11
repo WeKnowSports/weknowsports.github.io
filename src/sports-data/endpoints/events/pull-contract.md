@@ -1,4 +1,5 @@
 # Event
+## Event object
 
 ```typescript
 type Event = {
@@ -156,20 +157,16 @@ type LiveGameState = {
 _NB: These values are intended as keys or identifiers, not as display values. They are not localised and they cannot be modified to serve specific display needs (like full or shortened/abbreviated presentation). Such issues have to be addressed client side._
 
 
-#### Soccer
-
+<details>
+<summary><b>Soccer</b></summary>
 FirstHalf
 BreakAfterFirstHalf
 SecondHalf
 Overtime
-<!--
-FirstOvertime
-BreakAfterFirstOvertime
-SecondOvertime
--->
+</details>
 
-#### Basketball
-
+<details>  
+<summary><b>Basketball</b></summary>
 FirstQuarter
 BreakAfterFirstQuarter
 SecondQuarter
@@ -181,23 +178,26 @@ BreakAfterFourthQuarter
 FirstOvertime
 BreakAfterFirstOvertime
 SecondOvertime
+</details>
 
-#### Tennis
-
+<details>
+<summary><b>Tennis</b></summary>
 FirstSet
 SecondSet
 ThirdSet
 FourthSet
 FifthSet
+</details>
 
-#### Handball
-
+<details>
+<summary><b>Handball</b></summary>
 FirstHalf
 BreakAfterFirstHalf
 SecondHalf
+</details>
 
-#### Ice hockey
-
+<details>
+<summary><b>Ice hockey</b></summary>
 FirstPeriod
 BreakAfterFirstPeriod
 SecondPeriod
@@ -205,9 +205,10 @@ BreakAfterSecondPeriod
 ThirdPeriod
 BreakAfterThirdPeriod
 Overtime
+</details>
 
-#### American Football
-
+<details>
+<summary><b>American Football</b></summary>
 FirstQuarter
 BreakAfterFirstQuarter
 SecondQuarter
@@ -217,27 +218,30 @@ BreakAfterThirdQuarter
 FourthQuarter
 BreakAfterFourthQuarter
 Overtime
+</details>
 
-#### Rugby League
-
+<details>
+<summary><b>Rugby League</b></summary>
 FirstHalf
 BreakAfterFirstHalf
 SecondHalf
+</details>
 
-#### Rugby Union
-
+<details>
+<summary><b>Rugby Union</b></summary>
 FirstHalf
 BreakAfterFirstHalf
 SecondHalf
-<br>
-#### Volleyball
+</details>
 
+<details>
+<summary><b>Volleyball</b></summary>
 FirstSet
 SecondSet
 ThirdSet
 FourthSet
 FifthSet
-
+</details>
 
 
 ## MarketGroup
@@ -285,8 +289,8 @@ Below is a list of possible parameters which will appear under the additionalSco
 - The only exception is the `onServe" property, which will appear for several sports and will have a _value_ of 1 or 2. The pattern is the same -- `onServe: 1` for a Volleyball game means that the Home team is serving. We use the `onServe` parameter also for Baseball and Cricket events to allow easier, more generalised implementation, realising that it is not the correct technical term.
 - Not all properties will be always returned. Missing pair of properties means that there is no score of the respective game part or (in rare cases) that we don't have the respective data. For example, during the third quarter of a basketball game, we will not return `BasketballFourthQuarterScore1` and `BasketballFourthQuarterScore2` parameters.
 
-#### Soccer
-
+<details>
+<summary><b>Soccer</b></summary>
 - FirstHalfScore1
 - FirstHalfScore2
 - SecondHalfScore1
@@ -301,9 +305,10 @@ Below is a list of possible parameters which will appear under the additionalSco
 - CornersTeam2
 - PenaltiesTeam1
 - PenaltiesTeam2
+</details>
 
-#### Basketball
-
+<details>
+<summary><b>Basketball</b></summary>
 - BasketballFirstQuarterScore1
 - BasketballFirstQuarterScore2
 - BasketballSecondQuarterScore1
@@ -320,9 +325,10 @@ Below is a list of possible parameters which will appear under the additionalSco
 - InputForPeriod
 - BasketballOverTimeScore1
 - BasketballOverTimeScore2
+</details>
 
-#### Tennis
-
+<details>
+<summary><b>Tennis</b></summary>
 - onServe
 - FirstSetScore1
 - FirstSetScore2
@@ -336,9 +342,10 @@ Below is a list of possible parameters which will appear under the additionalSco
 - FifthSetScore2
 - CurrentGameScore1
 - CurrentGameScore2
+</details>
 
-#### American Football
-
+<details>
+<summary><b>American Football</b></summary>
 - AmericanFootball1QScore1
 - AmericanFootball1QScore2
 - AmericanFootball2QScore1
@@ -351,9 +358,9 @@ Below is a list of possible parameters which will appear under the additionalSco
 - AmericanFootball1HScore2
 - AmericanFootball2HScore1
 - AmericanFootball2HScore2
-
-#### Baseball
-
+</details>
+<details>
+<summary><b>Baseball</b></summary>
 - onServe
 - FirstInningScore1
 - FirstInningScore2
@@ -373,18 +380,20 @@ Below is a list of possible parameters which will appear under the additionalSco
 - EighthInningScore2
 - NinthInningScore1
 - NinthInningScore2
+</details>
 
-#### Ice hockey
-
+<details>
+<summary><b>Ice hockey</b></summary>
 - IceHockeyFirstPeriodScore1
 - IceHockeyFirstPeriodScore2
 - IceHockeySecondPeriodScore1
 - IceHockeySecondPeriodScore2
 - IceHockeyThirdPeriodScore1
 - IceHockeyThirdPeriodScore2
+</details>
 
-#### Volleyball
-
+<details>
+<summary><b>Volleyball</b></summary>
 - onServe
 - VolleyballFirstSetScore1
 - VolleyballFirstSetScore2
@@ -396,9 +405,10 @@ Below is a list of possible parameters which will appear under the additionalSco
 - VolleyballFourthSetScore2
 - VolleyballFifthSetScore1
 - VolleyballFifthSetScore2
+</details>
 
-#### Aussie rules
-
+<details>
+<summary><b>Aussie rules</b></summary>
 - AussieRules1HScore1
 - AussieRules1HScore2
 - AussieRules2HScore1
@@ -431,9 +441,9 @@ Below is a list of possible parameters which will appear under the additionalSco
 - AussieRulesBehindsTotal1
 - AussieRulesGoalScoreTotal2
 - AussieRulesBehindsTotal2
-
-#### Rugby league
-
+</details>
+<details>
+<summary><b>Rugby league</b></summary>
 - RugbyLeague1HScore1
 - RugbyLeague1HScore2
 - RugbyLeague2HScore1
@@ -444,11 +454,11 @@ Below is a list of possible parameters which will appear under the additionalSco
 - RugbyLeagueTries1HScore2
 - RugbyLeagueTries2HScore1
 - RugbyLeagueTries2HScore2
-
-#### Cricket
-
+</details>
+<details>
+<summary><b>Cricket</b></summary>
 - onServe
-
+</details>
 
 
 ## Tags

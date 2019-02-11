@@ -1,68 +1,35 @@
-## Selection
+# Filtering and querying Markets
 
-```typescript
-export interface Selection {
-    id: string
+## HTTP parameter: query
 
-    outcomeType: OutcomeType | null
+| Option | Example | Description |
+| --- | --- | --- |
+|$filter|$filter=sportId eq '12'|Allows clients to filter a collection of resources that are addressed by a request URL.|
+|$top|$top=10|The $top system query option requests the number of items in the queried collection to be included in the result.
+*100* is max value.|
+|$skip|$skip=3|The $skip query option requests the number of items in the queried collection that are to be skipped and not included in the result.|
 
-    group: number
 
-    name: string
+## HTTP parameter: projection (only for Pull API)
 
-    title: string | null
+| Option | Example | Description |
+| --- | --- | --- |
+| projection | projection=onlyid | With such query, the response should contain only ids |
 
-    betslipLine: string
 
-    participantMapping: string | null
+## HTTP parameter: count (only for Pull API)
 
-    displayOdds: Dictionary<string>
+| Option | Example | Description |
+| --- | --- | --- |
+| count | count=true | Calculates count to corresponding top and skip values (OData operator like $orderBy is ignored and not applied). |
+|  | count=false | By default. It doesn't make any impact on the response. |
 
-    trueOdds: number
+##  
 
-    points: number | null
-
-    /* Win or Place for outrights */
-    tags: string[]
-
-    /* idsbtech: string */
-    metadata: Dictionary<any>
-
-    isDisabled: boolean
-
-    entityType: EntityType
-
-    marketId: string
-}
-
-export interface SelectionChange {
-    id: string,    
-    displayOdds: Dictionary<string>,
-    trueOdds: number,
-    isDisabled: boolean,
-    metadata: Dictionary<any>
-}
-
-export enum OutcomeType {
-    Home = "Home",
-    Tie = "Tie",
-    Draw = "Draw",
-    Away = "Away",
-    OneOrX = "1X",
-    XOrTwo = "X2",
-    OneTwo = "12",
-    Over = "Over",
-    Exactly = "Exactly",
-    Under = "Under",
-    Yes = "Yes",
-    No = "No",
-    Odd = "Odd",
-    Even = "Even",
-    ToScoreFirst = "ToScoreFirst",
-    ToScoreLast = "ToScoreLast",
-    ToScoreAnyTime = "ToScoreAnyTime",
-    ToScoreFirstOrLast = "ToScoreFirstOrLast",
-    ToScore2OrMore = "ToScore2OrMore",
-    ToScore3OrMore = "ToScore3OrMore"
-}
-```
+| Option | Description | Example | Value Type |
+| --- | --- | --- | --- |
+| in | in | $filter=sportId in (‘1’,'2') | string |
+| eq | Equal | $filter=sportId eq '1' | boolean, string, int |
+| ne | Not equal | $filter=sportId ne ‘1’ | boolean, string, int |
+| and | Logical and | $filter=sportId eq ‘1’ and leagueId eq ‘13761’ | boolean, string, int |
+| or | Logical or | $filter=sportId eq ‘1’ or sportId eq ‘5’ | boolean, string, int |

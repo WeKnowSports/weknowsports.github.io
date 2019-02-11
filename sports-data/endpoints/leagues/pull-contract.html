@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Event | SBTech API </title>
+    <title>Leagues Pull contract | SBTech API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Event | SBTech API ">
+    <meta name="title" content="Leagues Pull contract | SBTech API ">
     <meta name="generator" content="docfx 2.40.9.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -77,194 +77,184 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h2 id="event">Event</h2>
+<h1 id="leagues-pull-contract">Leagues Pull contract</h1>
 
-<pre><code class="lang-typescript">export type EventType = &quot;Fixture&quot; | &quot;Outright&quot;
-
-/**
-    * Queryable entity
-    */
-export interface SportEvent {
+<h2 id="league-object">League object</h2>
+<pre><code class="lang-typescript">type League = {
     id: string
-    /** Type of SportEvent. */
-    type: EventType
-    /** Sport ID. */
+    name: string
     sportId: string
-    /** Sport name (translated). */
     sportName: string
-    /** Sorting order of Sport. */
-    sportOrder: number
-    /** Region ID. */
     regionId: string
-    /** ISO country code or (for regions in country) region code. */
     regionCode: string
-    /** Region name (translated). */
-    regionName: string
-    /** League ID. */
-    leagueId: string
-    /** League name (translated). */
-    leagueName: string
-    /** Sorting order of League. */
-    leagueOrder: number
-    /** Is league marked with top flag. */
+    defaultOrder: number
     isTopLeague: boolean
-    /** participants in the event. */
-    participants: Participant[]
-    /** Name of event, for league events */
-    eventName: string
-    // betslipLine
-    betslipLine: string
-    // not queriable
-    totalMarketsCount: number
-
-    marketLinesCount: number
-    // not queriable
-    marketGroups: MarketGroup[]
-    /** date/time of game start */
-    startEventDate: ISODateTimeString
-    /**  Status of game serving*/
-    status: GameStatus
-    /**  Score in game*/
-    score: GameScore | null
-    /** is it live game */
-    isLive: boolean
-    /** will this game go live when started, for pre-live only and eventType = Game */
-    isGoingLive: boolean
-
-    liveGameState: LiveGameState | null
-
-    /** Is event suspended for some reason */
-    isSuspended: boolean
-
-    isTeamSwap: boolean
-
-    tags: string[]
-
+    masterLeagueId: string
+    liveFixturesTotalCount: number
+    fixturesTotalCount: number
+    fixturesCount: number
+    outrightsTotalCount: number
     entityType: EntityType
-
-    metadata: Dictionary&lt;any&gt;
-
-    media: MediaProvider[]
-}
-
-export interface SportEventChange {
-    id: string,
-    participants: Participant[],
-    totalMarketsCount: number,
-    marketLinesCount: number,
-    status: GameStatus,
-    score: GameScore | null,
-    isLive: boolean,
-    liveGameState: LiveGameState | null,
-    isSuspended: boolean,
-    metadata: Dictionary&lt;any&gt;
-}
-
-export interface MediaProvider {
-    providerName: string
-    providerEventId: string
-    mediaType: string
-}
-
-export interface MarketGroup {
-    id: string
-    name: string
-    order: number
-}
-
-export type VenueRole = &quot;Home&quot; | &quot;Away&quot;
-
-export interface Participant {
-    id: string
-    name: string
-    /** Home | Away */
-    venueRole: VenueRole | null
-    /** ISO code */
-    country: string | null
-    /** runnerNumber: number, imageUrl: string, weight: string, age: number, form: string */
-    metadata: Dictionary&lt;any&gt;
-}
-
-export interface ParticipantChange {
-    metadata: Dictionary&lt;any&gt;
-}
-
-export enum GameStatus {
-    NotStarted = &quot;NotStarted&quot;,
-    InProgress = &quot;InProgress&quot;
-}
-
-export enum ClockDirection {
-    Stopwatch = &quot;Stopwatch&quot;,
-    Timer = &quot;Timer&quot;
-}
-
-export interface GameScore {
-    /** Home team/player top level score */
-    homeScore: string
-
-    /** Away team/player top level score */
-    awayScore: string
-
-    additionalScores: Dictionary&lt;string&gt;
-
-    combinedSecondTierScores: string[]
-}
-
-export interface LiveGameState {
-    clockRunning: boolean
-    clockDirection: ClockDirection
-    gameTime: number | null
-    gamePart: GamePart | null
-}
-
-export enum GamePart {
-    FirstOvertime = &quot;FirstOvertime&quot;,
-    BreakAfterFirstOvertime = &quot;BreakAfterFirstOvertime&quot;,
-    SecondOvertime = &quot;SecondOvertime&quot;,
-    FirstSet = &quot;FirstSet&quot;,
-    SecondSet = &quot;SecondSet&quot;,
-    ThirdSet = &quot;ThirdSet&quot;,
-    FourthSet = &quot;FourthSet&quot;,
-    FifthSet = &quot;FifthSet&quot;,
-    FirstPeriod = &quot;FirstPeriod&quot;,
-    BreakAfterFirstPeriod = &quot;BreakAfterFirstPeriod&quot;,
-    SecondPeriod = &quot;SecondPeriod&quot;,
-    BreakAfterSecondPeriod = &quot;BreakAfterSecondPeriod&quot;,
-    ThirdPeriod = &quot;ThirdPeriod&quot;,
-    BreakAfterThirdPeriod = &quot;BreakAfterThirdPeriod&quot;,
-    FirstQuarter = &quot;FirstQuarter&quot;,
-    BreakAfterFirstQuarter = &quot;BreakAfterFirstQuarter&quot;,
-    SecondQuarter = &quot;SecondQuarter&quot;,
-    BreakAfterSecondQuarter = &quot;BreakAfterSecondQuarter&quot;,
-    ThirdQuarter = &quot;ThirdQuarter&quot;,
-    BreakAfterThirdQuarter = &quot;BreakAfterThirdQuarter&quot;,
-    FourthQuarter = &quot;FourthQuarter&quot;,
-    BreakAfterFourthQuarter = &quot;BreakAfterFourthQuarter&quot;,
-    Overtime = &quot;Overtime&quot;,
-    FirstHalf = &quot;FirstHalf&quot;,
-    SecondHalf = &quot;SecondHalf&quot;,
-    BreakAfterFirstHalf = &quot;BreakAfterFirstHalf&quot;,
-    FirstInning = &quot;FirstInning&quot;,
-    SecondInning = &quot;SecondInning&quot;,
-    ThirdInning = &quot;ThirdInning&quot;,
-    FourthInning = &quot;FourthInning&quot;,
-    FifthInning = &quot;FifthInning&quot;,
-    SixthInning = &quot;SixthInning&quot;,
-    SeventhInning = &quot;SeventhInning&quot;,
-    EighthInning = &quot;EighthInning&quot;,
-    NinthInning = &quot;NinthInning&quot;,
-    BreakAfterFirstInning = &quot;BreakAfterFirstInning&quot;,
-    BreakAfterSecondInning = &quot;BreakAfterSecondInning&quot;,
-    BreakAfterThirdInning = &quot;BreakAfterThirdInning&quot;,
-    BreakAfterFourthInning = &quot;BreakAfterFourthInning&quot;,
-    BreakAfterFifthInning = &quot;BreakAfterFifthInning&quot;,
-    BreakAfterSixthInning = &quot;BreakAfterSixthInning&quot;,
-    BreakAfterSeventhInning = &quot;BreakAfterSeventhInning&quot;,
-    BreakAfterEighthInning = &quot;BreakAfterEighthInning&quot;,
-    BreakAfterNinthInning = &quot;BreakAfterNinthInning&quot;
+    tags: array
 }
 </code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Format</th>
+<th>Returnable</th>
+<th>Queryable</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>Specifies the Identifier of the league.</td>
+<td>number</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=id eq '46'</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Specifies the name of the league in the particular translation.</td>
+<td>string</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=name eq 'Bangor'</td>
+</tr>
+<tr>
+<td>sportId</td>
+<td>Specifies the identifier of the sport.</td>
+<td>string</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=sportId eq '61'</td>
+</tr>
+<tr>
+<td>sportName</td>
+<td>Specifies the name of the sport.</td>
+<td>number</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=sportName eq 'Horse Racing'</td>
+</tr>
+<tr>
+<td>regionId</td>
+<td>Specifies the identifier of the region.</td>
+<td>number</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=regionId eq '225'</td>
+</tr>
+<tr>
+<td>regionCode</td>
+<td>ISO country code or (for regions in country) region code.</td>
+<td>number</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=regionId eq '225'</td>
+</tr>
+<tr>
+<td>order</td>
+<td>Specifies the sorting order.</td>
+<td>number</td>
+<td>Yes</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>istopLeague</td>
+<td>Specifies if the league is marked as top.</td>
+<td>boolean</td>
+<td>Yes</td>
+<td>query (using eq, ne)</td>
+<td>$filter=isTopLeague eq false</td>
+</tr>
+<tr>
+<td>liveFixturesTotalCount</td>
+<td>Specifies the number of in-play events.</td>
+<td>number</td>
+<td>Yes</td>
+<td>$orderby (only desc) <br> query (using eq, ne, or, and, in)</td>
+<td>$orderby=liveFixturesTotalCount desc <br> $filter=liveFixturesTotalCount eq 0</td>
+</tr>
+<tr>
+<td>fixturesTotalCount</td>
+<td>Specifies the total number of games, both live and pre-live.</td>
+<td>number</td>
+<td>Yes</td>
+<td>$orderby (only desc) <br>query (using eq, ne, or, and, in)</td>
+<td>$orderby=fixturesTotalCount desc <br>$filter=fixturesTotalCount eq 1</td>
+</tr>
+<tr>
+<td>fixturesCount</td>
+<td>Specifies the number of games, both live and pre-live, filtered by time range.</td>
+<td>number</td>
+<td>Yes</td>
+<td>$orderby (only desc) <br>query (using eq, ne, or, and, in)</td>
+<td>$orderby=fixturesCount desc <br> $filter=fixturesCount eq 1</td>
+</tr>
+<tr>
+<td>outrightsTotalCount</td>
+<td>Specifies the number of active outrights in a league.</td>
+<td>number</td>
+<td>Yes</td>
+<td>$orderby (only desc) <br>query (using eq, ne, or, and, in)</td>
+<td>$orderby=outrightsTotalCount desc <br>$filter=outrightsTotalCount eq 1</td>
+</tr>
+<tr>
+<td>entityType</td>
+<td>Specifies the entity type. Always 2 for leagues.</td>
+<td>entitytype</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+</tr>
+<tr>
+<td>defaultOrder</td>
+<td>Specifies the sorting order.</td>
+<td>number</td>
+<td>Yes</td>
+<td>$orderby (only asc)</td>
+<td>$orderby=defaultOrder asc</td>
+</tr>
+<tr>
+<td>masterLeagueId</td>
+<td></td>
+<td>string</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=masterLeagueId eq '10411'</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Specifies additional information on different aspects of the league.</td>
+<td>array</td>
+<td>Yes</td>
+<td>query (using lambda, eq, ne, or, and, in)</td>
+<td>$filter=tags/any(s: s eq 'LiveStream')</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tags">Tags</h2>
+<table>
+<thead>
+<tr>
+<th>Tag</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LiveStream</td>
+<td>Integration with live streaming provider is available for at least one event belonging to this league.</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           

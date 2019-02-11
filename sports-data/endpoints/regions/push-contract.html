@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Region | SBTech API </title>
+    <title>Regions Push contract | SBTech API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Region | SBTech API ">
+    <meta name="title" content="Regions Push contract | SBTech API ">
     <meta name="generator" content="docfx 2.40.9.0">
     
     <link rel="shortcut icon" href="../../../favicon.ico">
@@ -77,47 +77,105 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h2 id="region">Region</h2>
+<h1 id="regions-push-contract">Regions Push contract</h1>
 
-<pre><code class="lang-typescript">export interface Region {
-    /** region ID */
+<pre><code class="lang-typescript">type Region = {
+    //The properties with value null are not returning in contract.
     id: string
-
-    /** ISO country code or (for regions in country) region code */
-    code: string
-
-    /** translated region name */
-    name: string
-
-    activeSports: string[]
-
-    activeSportsCount: number
-
-    /** number of live (in-game) active games */
     liveFixturesTotalCount: number
-
-    /** total number of games, both live and pre-live */
     fixturesTotalCount: number
-
-    /** number of games, both live and pre-live filtered by time range*/
     fixturesCount: number
-
-    /** number of active outrights league bound markets */
     outrightsTotalCount: number
-
-    entityType: EntityType
-}
-
-export interface RegionChange {
-    id: string,
-    activeSports: string[],
-    activeSportsCount: number,
-    liveFixturesTotalCount: number,
-    fixturesTotalCount: number,
-    fixturesCount: number,
-    outrightsTotalCount: number
+    activeSports: array //list of strings referring to Sport.id values
+    activeSportsCount: number
 }
 </code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Format</th>
+<th>Returnable</th>
+<th>Queryable</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>Specifies the identifier of the region.</td>
+<td>string</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=id eq '46'</td>
+</tr>
+<tr>
+<td>code</td>
+<td>Specifies the country code or (for regions in the country) the region code, according to the International Organization for Standardization ( ISO).</td>
+<td>string</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=code eq 'AU'</td>
+</tr>
+<tr>
+<td>name</td>
+<td>Specifies the name of the region.</td>
+<td>string</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=name eq 'Australia'</td>
+</tr>
+<tr>
+<td><strong>liveFixturesTotalCount</strong></td>
+<td>Specifies the number of in-play events.</td>
+<td>number</td>
+<td>Yes</td>
+<td>$orderby (only desc) <br>query (using eq, ne, or, and, in)</td>
+<td>$orderby=liveFixturesTotalCount desc <br> $filter=liveFixturesTotalCount eq 0</td>
+</tr>
+<tr>
+<td><strong>fixturesTotalCount</strong></td>
+<td>Specifies the total number of games, both live and pre-live.</td>
+<td>number</td>
+<td>Yes</td>
+<td>$orderby (only desc) <br> query (using eq, ne, or, and, in)</td>
+<td>$orderby=fixturesTotalCount desc <br>$filter=fixturesTotalCount eq 1</td>
+</tr>
+<tr>
+<td><em>fixturesCount</em></td>
+<td>Specifies the number of games, both live and pre-live, filtered by time range.</td>
+<td>number</td>
+<td>Yes</td>
+<td>$orderby (only desc) <br>query (using eq, ne, or, and, in)</td>
+<td>$orderby=fixturesCount desc <br>$filter=fixturesCount eq 1</td>
+</tr>
+<tr>
+<td><em>outrightsTotalCount</em></td>
+<td>Specifies the number of active outrights in a league.</td>
+<td>number</td>
+<td>Yes</td>
+<td>$orderby (only desc) <br>query (using eq, ne, or, and, in)</td>
+<td>$orderby=outrightsTotalCount desc <br>$filter=outrightsTotalCount eq 1</td>
+</tr>
+<tr>
+<td><em>activeSports</em></td>
+<td>Specifies a list of sport IDs from which there are available events taking place in leagues from this region, filtered by time range.</td>
+<td>array</td>
+<td>Yes</td>
+<td>query (using lambda, eq, ne, or, and, in)</td>
+<td>$filter=activeSports/any(s: s eq '6')</td>
+</tr>
+<tr>
+<td><em>activeSportsCount</em></td>
+<td>Specifies the number of items returned in the <code>actriveSports</code> array.</td>
+<td>number</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=activeSportsCount eq 2</td>
+</tr>
+</tbody>
+</table>
 </article>
           </div>
           

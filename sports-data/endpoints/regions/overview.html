@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Push contract | SBTech API </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Push contract | SBTech API ">
+    <meta name="generator" content="docfx 2.40.9.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    <meta property="docfx:rel" content="../../../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../images/logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="push-contract">Push contract</h1>
+
+<pre><code class="lang-json">{
+    //The properties with value null are not returning in contract.
+    id: string
+    participants: Participant[]
+    totalMarketsCount: number
+    marketLinesCount: number
+    status: string
+    score: GameScore | null
+    isLive: boolean
+    liveGameState?: LiveGameState
+    isSuspended: boolean
+    metadata: Dictionary&lt;any&gt;
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Format</th>
+<th>Returnable</th>
+<th>Queryable</th>
+<th>Example</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>id</strong></td>
+<td>Specifies the identifier of the sports event.</td>
+<td>string</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=Id eq '11754652'</td>
+<td></td>
+</tr>
+<tr>
+<td>type</td>
+<td>Specifies the type of the sports event. Possible values are &quot;Fixture&quot; and &quot;Outright&quot; for most sports and &quot;AntePostRace&quot; and &quot;DayOfEventRace&quot; for racing sports.</td>
+<td>string</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=type eq (ne) 'Fixture'</td>
+<td></td>
+</tr>
+<tr>
+<td>sportId</td>
+<td>Specifies the identifier of the sport.</td>
+<td>string</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=sportId eq (ne) '12'</td>
+<td></td>
+</tr>
+<tr>
+<td>sportName</td>
+<td>Specifies the name of the sport (translated).</td>
+<td>string</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=sportName eq 'Soccer'</td>
+<td></td>
+</tr>
+<tr>
+<td>sportOrder</td>
+<td>Specifies the sorting order of the sport.</td>
+<td>number</td>
+<td>No</td>
+<td>$orderby (only <em>asc</em>)</td>
+<td>$orderby=sportOrder asc</td>
+<td></td>
+</tr>
+<tr>
+<td>regionId</td>
+<td>Specifies the identifier of the region.</td>
+<td>string</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=regionId eq '260'</td>
+<td></td>
+</tr>
+<tr>
+<td>regionCode</td>
+<td>Specifies ISO country code or (for regions in country) region code.</td>
+<td>string</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=regionCode eq 'EN'</td>
+<td></td>
+</tr>
+<tr>
+<td>regionName</td>
+<td>Specifies the name of the region.</td>
+<td>string</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=regionName eq 'England'</td>
+<td></td>
+</tr>
+<tr>
+<td>leagueId</td>
+<td>Specifies the identifier of the league.</td>
+<td>string</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=leagueId eq '36690'</td>
+<td></td>
+</tr>
+<tr>
+<td>leagueName</td>
+<td>Specifies the name (translated) of the league.</td>
+<td>string</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=leagueName eq 'English Football League Cup'</td>
+<td></td>
+</tr>
+<tr>
+<td>leagueOrder</td>
+<td>Specifies the sorting order of the league.</td>
+<td>number</td>
+<td>No</td>
+<td>(using eq, ne, or, and, in)</td>
+<td>$filter=leagueOrder eq 580150</td>
+<td></td>
+</tr>
+<tr>
+<td>isTopLeague</td>
+<td>Specifies if the league is marked with a top flag.</td>
+<td>Boolean</td>
+<td>No</td>
+<td>query (using eq, ne)</td>
+<td>$filter=isTopLeague eq false</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>participants</strong></td>
+<td>Specifies the participants in the event. Parameters of the Participant object are described in a separate table below.</td>
+<td>Array</td>
+<td>Yes</td>
+<td>query (using lambda, eq, ne, or, and, in)</td>
+<td>$filter=participants/any(p: p/id eq '357')</td>
+<td></td>
+</tr>
+<tr>
+<td>eventName</td>
+<td>Specifies the name of the event. For events of type &quot;Fixture&quot; it is composed of participants name, e.g. &quot;ParticipantHome vs ParticipantAway&quot;. Order of teams is reversed if <code>swapTeams: true</code>. If you want, you can ignore this value and compose it locally in a different format.</td>
+<td>string</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=eventName eq 'Chelsea vs Bournemouth'</td>
+<td></td>
+</tr>
+<tr>
+<td>betslipLine</td>
+<td>Specifies the presentation of the event in the bet slip in the context of each of its selections. To be used in conjunction with the respective <code>Market.selections[].betslipLine</code> and <code>Market.betslipLine</code> values.</td>
+<td>string</td>
+<td>No</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=betslipLine eq 'Clonmel: 12:15'</td>
+<td></td>
+</tr>
+<tr>
+<td>marketGroups</td>
+<td>Specifies the market groups defined within the event.</td>
+<td>MarketGroup</td>
+<td>No</td>
+<td>query (using lambda, eq, ne, or, and, in)</td>
+<td>Сan't query this together with marketTypes.</td>
+<td>$filter=marketGroups/any(p: p/name eq 'Corners')</td>
+</tr>
+<tr>
+<td><strong>totalMarketsCount</strong></td>
+<td>Specifies the total markets count. Not affected by the IncludeMarkets filter, i.e. always returns the total count of available markets for the event.</td>
+<td>number</td>
+<td>Yes</td>
+<td>$orderby (only desc)</td>
+<td>$orderby=totalMarketsCount desc</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>marketLinesCount</strong></td>
+<td>Specifies the total number of markets, with point lines counted as separate markets. Not affected by the IncludeMarkets filter, i.e. always returns the total count of available markets for the event.</td>
+<td>number</td>
+<td>Yes</td>
+<td>query (using lambda, eq, ne, or, and, in)</td>
+<td>$filter=marketLinesCount eq 0</td>
+<td></td>
+</tr>
+<tr>
+<td>totalBets</td>
+<td>Number of bets placed for entity.</td>
+<td>number</td>
+<td>No</td>
+<td>$orderby (only desc)</td>
+<td>$orderby=totalBets desc</td>
+<td></td>
+</tr>
+<tr>
+<td>totalDeposit</td>
+<td>Total deposit of all bets placed for entity.</td>
+<td>number</td>
+<td>No</td>
+<td>$orderby (only asc)</td>
+<td>$orderby=startEventDate asc</td>
+<td></td>
+</tr>
+<tr>
+<td>startEventDate</td>
+<td>Specifies the date and time of the beginning of the event.</td>
+<td>ISODateTimeString</td>
+<td>No</td>
+<td>$orderby (only asc)</td>
+<td>$orderby=startEventDate asc</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>status</strong></td>
+<td>Specifies the status of the event. Possible values are &quot;NotStarted&quot;, &quot;InProgress&quot; (for most sports), &quot;RaceOff&quot; (for racing sports), &quot;Resulted&quot; (supported only for racing sports got now; events from other sports will be removed before moving into this status).</td>
+<td>string</td>
+<td>Yes</td>
+<td>query (using eq, ne, or, and, in)</td>
+<td>$filter=status eq 'NotStarted'</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>score</strong></td>
+<td>Specifies the current score of the event.</td>
+<td>GameScore</td>
+<td>Yes</td>
+<td>query (using lambda, eq, ne, or, and, in)</td>
+<td>$filter=score/awayScore eq '0'</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>isLive</strong></td>
+<td>Specifies if the event is currently traded live.</td>
+<td>Boolean</td>
+<td>Yes</td>
+<td>query (using eq, ne)</td>
+<td>$filter=isLive eq false</td>
+<td></td>
+</tr>
+<tr>
+<td>isGoingLive</td>
+<td>Specifies if the event is going live when started, can be true for pre-match events only.</td>
+<td>Boolean</td>
+<td>No</td>
+<td>query (using eq, ne)</td>
+<td>$filter=isGoingLive eq false</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>liveGameState</strong></td>
+<td>Specifies additional information on the event such as status, score, current time. See all parameters in a table below.</td>
+<td>LiveGameState</td>
+<td>Yes</td>
+<td>query (using lambda, eq, ne, or, and, in)</td>
+<td>$filter=liveGameState/gamePart eq 'SecondHalf'</td>
+<td></td>
+</tr>
+<tr>
+<td>tags</td>
+<td>Specifies additional information on the event.</td>
+<td>string</td>
+<td>No</td>
+<td>query (using lambda, eq, ne, or, and, in)</td>
+<td>$filter=tags/any(s: s eq 'LiveStream')</td>
+<td></td>
+</tr>
+<tr>
+<td>media</td>
+<td>Specifies list of available mapping data to external media providers for the event, such us live streaming, statistics, match tracker widgets etc.</td>
+<td>Media</td>
+<td>No</td>
+<td>query (using lambda, eq, ne, or, and, in)</td>
+<td>$filter=media/any(p: p/mediaType eq 'LiveStreaming')</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>metadata</strong></td>
+<td>Specifies additional information on the event.</td>
+<td>string</td>
+<td>Yes</td>
+<td>No</td>
+<td>--</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>isSuspended</strong></td>
+<td>Specifies if the event is suspended.</td>
+<td>boolean</td>
+<td>Yes</td>
+<td>query (using eq, ne)</td>
+<td>$filter=isSuspended eq false</td>
+<td></td>
+</tr>
+<tr>
+<td>isTeamSwap</td>
+<td>Specifies if the suggested presentation of the event implies to show the away team first. Relevant only for Fixture events.</td>
+<td>boolean</td>
+<td>No</td>
+<td>query (using eq, ne)</td>
+<td>$filter=isTeamSwap eq false</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/WeKnowSports/weknowsports.github.io/blob/master/src/sports-data/endpoints/regions/overview.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            Copyright © 2018 SBTech
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

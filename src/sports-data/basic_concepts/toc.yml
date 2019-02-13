@@ -1,2 +1,11 @@
 - name: Authentication
   href: authentication.md
+
+- name: API usage
+  href: authentication.md
+
+- name: OData query syntax
+  href: odata_query_syntax.md
+
+- name: Error messages
+  href: error_messages.md

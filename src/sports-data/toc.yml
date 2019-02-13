@@ -10,3 +10,6 @@
 - name: Best Practices
   href: best-practices/toc.yml  
   
+- name: Examples
+  href: examples/toc.yml    
+  

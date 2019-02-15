@@ -34,7 +34,7 @@
 |title| Specifies the title of the event. | string | Yes | No | -- |
 |displayOdds| Specifies the odds as they should be displayed in all different styles. See the separate table below for details. | Dictionary | Yes | No | -- |
 |trueOdds| Specifies the mathematically correct odds for the selection. Will be -1 for "Starting price" selections, -2 for "Non runner" selections, - 3 for "Without" selections in racing markets. | number | Yes | No | -- |
-|points| Specifies the points in the event. | number |	Yes | query (using eq, ne, or, and, in) | $filter=points eq -2.5 |
+|points| Specifies the points in the event. | number |	Yes | No | -- |
 |status| Specifies the status of the selection. Possible values are “Active”, “Disabled”, “NonRunner” (for racing sports).| string | Yes | No | -- |
 |participantMapping| Specifies relation of the selection to a specific participant in the event. Used in Outright markets and in some specific market types where two otherwise similar selections are distinguished only by their relation to one of the teams participating in the fixture (for example, "Team goals Odd/Even", where two pairs of "Odd" and "Even" selections are available -- one per team). | string | Yes | No | -- |
 |isDisabled| Specifies if the selection is available for betting. | Boolean | Yes | No | -- |
@@ -62,14 +62,14 @@ If no @outcomeType@ value is assigned to a selection, this means that there is n
 
 Note that this attribute is nullable, as some special types of selections have no determined odds. Examples would be the "Place" selections (which are dependent on the respective win selection's odds and the Each way terms of the Outright market). In addition, values in all attributes (odds styles) will be "SP" for starting price selections, "NR" for non-runner selections and "W/O" for "without" selections (in "Betting without favourite" markets in racing events).
 
-|Parameter|	Description|Format|Queryable|Returnable|
+|Parameter|	Description|Format|Returnable|Queryable|
 | --- | --- | --- | --- | --- |
-|decimal |Specifies how to display the selection odds in decimal style.|string|	No |Yes |
-|american |Specifies how to display the selection odds in American style. Note that for negative American odds presentation we tend to use the "MINUS SIGN" "U+2212":http://unicode.org/cldr/utility/character.jsp?a=2212 unicode character to facilitate consistent display layout. You should take special care if you want to process this value as number, which is anyway not recommended and should be avoided. For mathematical operations you should always use the Selection.trueOdds value.|string|	No |Yes |
-|fractional |Specifies how to display the selection odds in fractional style.|string|	No |Yes |
-|indo |Specifies how to display the selection odds in Indonesian style.|string|	No |Yes |
-|malay |Specifies how to display the selection odds in Malaysian style.|string|	No |Yes |
-|hk |Specifies how to display the selection odds in Hong Kong style.|string|	No |Yes |
+|decimal |Specifies how to display the selection odds in decimal style.|string|Yes |No |
+|american |Specifies how to display the selection odds in American style. Note that for negative American odds presentation we tend to use the "MINUS SIGN" "U+2212":http://unicode.org/cldr/utility/character.jsp?a=2212 unicode character to facilitate consistent display layout. You should take special care if you want to process this value as number, which is anyway not recommended and should be avoided. For mathematical operations you should always use the Selection.trueOdds value.|string|Yes |	No |
+|fractional |Specifies how to display the selection odds in fractional style.|string|Yes |	No |
+|indo |Specifies how to display the selection odds in Indonesian style.|string|Yes |No |
+|malay |Specifies how to display the selection odds in Malaysian style.|string|Yes |No |
+|hk |Specifies how to display the selection odds in Hong Kong style.|string|Yes |No |
 
 ## Tags
 
@@ -82,10 +82,10 @@ Note that this attribute is nullable, as some special types of selections have n
 
 ## Metadata
 
-|Parameter|	Description|Format|Queryable|Returnable|
+|Parameter|	Description|Format|Returnable|Queryable|
 | --- | --- | --- | --- | --- |
-|idSBTech| Legacy identifier exposed for compatibility reasons.|string|	Yes|Yes|
-|previousOddsFractional| "Previous odds" presented in fractional odds style. Served only for fixed price Win selection in Horse racing and Greyhounds races.|string|	Yes|Yes|
-|previousOddsDecimal| "Previous odds" presented in decimal odds style. Served only for fixed price Win selection in Horse racing and Greyhounds races.|string|	Yes|Yes|
-|previousOddsAmerican| "Previous odds" presented in american odds style. Served only for fixed price Win selection in Horse racing and Greyhounds races.|string|	Yes|Yes|
-|runnerStatus| Served for Horse racing and Greyhounds events. Possible values are "Ante-post" (for selections from Ante-post races), "DOE" (for fixed price selections from DOE races), "SP" (for starting price selections from DOE races), "NR" (for selections related to a non-running participant)|string|	Yes|Yes|
+|idSBTech| Legacy identifier exposed for compatibility reasons.|string|	Yes|No|
+|previousOddsFractional| "Previous odds" presented in fractional odds style. Served only for fixed price Win selection in Horse racing and Greyhounds races.|string|	Yes|No|
+|previousOddsDecimal| "Previous odds" presented in decimal odds style. Served only for fixed price Win selection in Horse racing and Greyhounds races.|string|	Yes|No|
+|previousOddsAmerican| "Previous odds" presented in american odds style. Served only for fixed price Win selection in Horse racing and Greyhounds races.|string|	Yes|No|
+|runnerStatus| Served for Horse racing and Greyhounds events. Possible values are "Ante-post" (for selections from Ante-post races), "DOE" (for fixed price selections from DOE races), "SP" (for starting price selections from DOE races), "NR" (for selections related to a non-running participant)|string|	Yes|No|

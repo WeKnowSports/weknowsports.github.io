@@ -1,6 +1,6 @@
 # Push contract
 
-```json
+```typescript
 {
     //The properties with value null are not returning in contract.
     id: string
@@ -44,7 +44,7 @@
 | **isLive** | Specifies if the event is currently traded live. | Boolean | Yes | query (using eq, ne) | $filter=isLive eq false |
 |isGoingLive| Specifies if the event is going live when started, can be true for pre-match events only. | Boolean | No | query (using eq, ne) | $filter=isGoingLive eq false |
 | **liveGameState** |	Specifies additional information on the event such as status, score, current time. See all parameters in a table below. | LiveGameState | Yes | query (using lambda, eq, ne, or, and, in) | $filter=liveGameState/gamePart eq 'SecondHalf' |
-| tags | Specifies additional information on the event. | string | No |	query (using lambda, eq, ne, or, and, in) | $filter=tags/any(s: s eq 'LiveStream') |
+| tags | Specifies additional information on the event. | string | No |	query (using lambda, eq, ne, or, and, in) | $filter=tags/any(s: s eq 'LiveStreaming') |
 | media |	Specifies list of available mapping data to external media providers for the event, such us live streaming, statistics, match tracker widgets etc. | Media | No | query (using lambda, eq, ne, or, and, in) | $filter=media/any(p: p/mediaType eq 'LiveStreaming') |
 | **metadata** | Specifies additional information on the event. | string | Yes | No | -- |
 | **isSuspended** | Specifies if the event is suspended. | boolean | Yes | query (using eq, ne) | $filter=isSuspended eq false |

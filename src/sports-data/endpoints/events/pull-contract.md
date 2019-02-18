@@ -65,7 +65,7 @@ type Event = {
 | isLive | Specifies if the event is currently traded live. | Boolean | Yes | query (using eq, ne) | $filter=isLive eq false |
 | isGoingLive | Specifies if the event is going live when started, can be true for pre-match events only. | Boolean | Yes | query (using eq, ne) | $filter=isGoingLive eq false |
 | liveGameState |	Specifies additional information on the event such as status, score, current time. See all parameters in a table below. | LiveGameState | Yes | query (using lambda, eq, ne, or, and, in) | $filter=liveGameState/gamePart eq 'SecondHalf' |
-| tags | Specifies additional information on the event. | string | Yes |	query (using lambda, eq, ne, or, and, in) | $filter=tags/any(s: s eq 'LiveStream') |
+| tags | Specifies additional information on the event. | string | Yes |	query (using lambda, eq, ne, or, and, in) | $filter=tags/any(s: s eq 'LiveStreaming') |
 | media |	Specifies list of available mapping data to external media providers for the event, such us live streaming, statistics, match tracker widgets etc. | Media | Yes | query (using lambda, eq, ne, or, and, in) | $filter=media/any(p: p/mediaType eq 'LiveStreaming') |
 | metadata | Specifies additional information on the event. | string | Yes | No | -- |
 | isSuspended | Specifies if the event is suspended. | boolean | Yes | query (using eq, ne) | $filter=isSuspended eq false |
@@ -465,7 +465,7 @@ Below is a list of possible parameters which will appear under the additionalSco
 | Name | Description |
 | --- | --- |
 |Stats| Integration with statistics provider is available for the event. |
-|LiveStream| Integration with live streaming provider is available for the event. |
+|LiveStreaming| Integration with live streaming provider is available for the event. |
 |MatchTracker| MatchTracker widget is switched on for the event. |
 |Scoreboard| Scoreboard widget is switched on for the event. |
 |ToteGreyhounds| For Tote events, that have Greyhound trackType. |

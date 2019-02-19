@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/wc/Sweknowsports.github.io_106/src",
+  "source_base_path": "C:/wc/Sweknowsports.github.io_109/src",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -40,7 +40,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "GMWnDSN0qKysuZfFvAxi7w=="
+          "hash": "2Q+e4Sv3SroL7fIz5pot/g=="
         }
       },
       "is_incremental": false,
@@ -52,7 +52,7 @@
       "output": {
         ".html": {
           "relative_path": "lookup/index.html",
-          "hash": "jf2//ORET3F853nBVEZUgg=="
+          "hash": "AG6CaG+yv42DlQCB77W2vw=="
         }
       },
       "is_incremental": false,
@@ -64,7 +64,7 @@
       "output": {
         ".html": {
           "relative_path": "search/entities_contracts.html",
-          "hash": "NjbpHwdC/EZwMizm7Zb9ew=="
+          "hash": "/KReN/onOn1Soq2PttBaRQ=="
         }
       },
       "is_incremental": false,
@@ -76,7 +76,7 @@
       "output": {
         ".html": {
           "relative_path": "search/index.html",
-          "hash": "441vRbbSMn8OEYVpe2nhFQ=="
+          "hash": "STbH0mpLAY/9x4SenHh3/Q=="
         }
       },
       "is_incremental": false,
@@ -88,7 +88,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/basic_concepts/api_usage.html",
-          "hash": "OOwuRDwYBUplEIxgOsTiOg=="
+          "hash": "Zbsa+9+8vKiTQ6S94kz1Rw=="
         }
       },
       "is_incremental": false,
@@ -100,7 +100,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/basic_concepts/authentication.html",
-          "hash": "JqjMRBKUOSbxqhVGu3PpVA=="
+          "hash": "KBNJqK8PDN9cgvaSsU44uw=="
         }
       },
       "is_incremental": false,
@@ -112,7 +112,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/basic_concepts/error_messages.html",
-          "hash": "Par3IiUzbRaj9yqRfoQuEg=="
+          "hash": "qPDme2jKxonN0eZEvzMGHg=="
         }
       },
       "is_incremental": false,
@@ -124,7 +124,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/basic_concepts/odata_query_syntax.html",
-          "hash": "wR1YPsx89qn8ZoYI4V2DqQ=="
+          "hash": "mlDeDfQU72HOIWwEwC5Ycg=="
         }
       },
       "is_incremental": false,
@@ -136,7 +136,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/best-practices/serialization-format.html",
-          "hash": "Zrs/qw0yGyslTZnkFKrAyQ=="
+          "hash": "Y40X4ymz67mhJTMWLjdTzQ=="
         }
       },
       "is_incremental": false,
@@ -148,7 +148,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/events/filtering-and-querying.html",
-          "hash": "Ac2SZmENE0EifJcoee3dww=="
+          "hash": "TlXySNtBy5Hjo4Sq9/V6Iw=="
         }
       },
       "is_incremental": false,
@@ -160,7 +160,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/events/overview.html",
-          "hash": "Agq23F3U1/INCwXO9aaeWQ=="
+          "hash": "5/4kIExT8vZTYh+XAjLEfw=="
         }
       },
       "is_incremental": false,
@@ -172,7 +172,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/events/pull-contract.html",
-          "hash": "uOuUQ1a/xB/zoaR7aSqT6Q=="
+          "hash": "afNbTO66Dw1Ch3cOqpfGaA=="
         }
       },
       "is_incremental": false,
@@ -184,7 +184,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/events/push-contract.html",
-          "hash": "LGdlFqJmZOKCh/fQq9emyg=="
+          "hash": "tTitGRUP722mc+a/ntMlsQ=="
         }
       },
       "is_incremental": false,
@@ -196,7 +196,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/incidents/filtering-and-querying.html",
-          "hash": "a2gecQYCf/Y2IAl7SGnqwg=="
+          "hash": "TKtOSIAiRyr01Cx3Rcw+Gw=="
         }
       },
       "is_incremental": false,
@@ -208,7 +208,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/incidents/overview.html",
-          "hash": "0CUrzimsedZV3aG90J7HjQ=="
+          "hash": "j0GUfjfvA9BBzILVZ6RVmA=="
         }
       },
       "is_incremental": false,
@@ -220,7 +220,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/incidents/pull-contract.html",
-          "hash": "EGSjf+2LPj83QytA4gMTMw=="
+          "hash": "PF9F0csJKW71WZcvmJnywA=="
         }
       },
       "is_incremental": false,
@@ -232,7 +232,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/incidents/push-contract.html",
-          "hash": "aU+3n2v1Po+z9P8OdTGCgg=="
+          "hash": "EMgDCfpH8v2iKLsgfbG5wQ=="
         }
       },
       "is_incremental": false,
@@ -244,7 +244,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/leagues/filtering-and-querying.html",
-          "hash": "jq4SIWNvBjVGubNfIM0TwQ=="
+          "hash": "RBSNqC9G8JED1+VjxC00xA=="
         }
       },
       "is_incremental": false,
@@ -256,7 +256,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/leagues/overview.html",
-          "hash": "qoCnLMnB+Evg7c33dVnEqg=="
+          "hash": "Wyw5tcAYEZ0Ch89l+7mUGw=="
         }
       },
       "is_incremental": false,
@@ -268,7 +268,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/leagues/pull-contract.html",
-          "hash": "FseyffBRFSibMQFRKOmFKw=="
+          "hash": "BzknhL6Ip+MWWOnG7yrU4g=="
         }
       },
       "is_incremental": false,
@@ -280,7 +280,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/leagues/push-contract.html",
-          "hash": "DxjBcFm99cdNCI6kB4NbEQ=="
+          "hash": "ye0Rm3kgz8UWEdf5AkVXlQ=="
         }
       },
       "is_incremental": false,
@@ -292,7 +292,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/markets/filtering-and-querying.html",
-          "hash": "Gxx6euo76cJoI4jMrAyLpw=="
+          "hash": "2iJCFQs2gQ7GNjRx/HfvGg=="
         }
       },
       "is_incremental": false,
@@ -304,7 +304,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/markets/overview.html",
-          "hash": "/uHniy6y4WyO9PYd3x5zJw=="
+          "hash": "1Hgb3rp9CGwqi1I2tDhvbA=="
         }
       },
       "is_incremental": false,
@@ -316,7 +316,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/markets/pull-contract.html",
-          "hash": "wYmGYso2hqXQtLiv1w0+rg=="
+          "hash": "DGKaB3eWYhDA5o+U0Uw77A=="
         }
       },
       "is_incremental": false,
@@ -328,7 +328,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/markets/push-contract.html",
-          "hash": "UDL42qu4ZuYPYtUOCSdyow=="
+          "hash": "h/QYzEFuzVv80lq0MDgeBg=="
         }
       },
       "is_incremental": false,
@@ -340,7 +340,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/regions/filtering-and-querying.html",
-          "hash": "3HgxWbTJdvFgYhv0zCJNag=="
+          "hash": "PT4EZwgNFdE6huRKSAiSZw=="
         }
       },
       "is_incremental": false,
@@ -352,7 +352,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/regions/overview.html",
-          "hash": "rbVV3uUeXQiTSeYSuOl5Fw=="
+          "hash": "3acqwwbH1gQenIYXY3HkMA=="
         }
       },
       "is_incremental": false,
@@ -364,7 +364,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/regions/pull-contract.html",
-          "hash": "zDGY5f974SPFUHMVoRCCrA=="
+          "hash": "Qu392m3IOIjGrNIOsfIrQw=="
         }
       },
       "is_incremental": false,
@@ -376,7 +376,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/regions/push-contract.html",
-          "hash": "eTX0URZ7XlDNL5tWeZJoHw=="
+          "hash": "RaeojSXSYo38X2Tu4VN8AQ=="
         }
       },
       "is_incremental": false,
@@ -388,7 +388,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/selections/filtering-and-querying.html",
-          "hash": "y3LM3anUrzqDNE3lH/RTvg=="
+          "hash": "dxle+2ADc6qGxRVD55AwQg=="
         }
       },
       "is_incremental": false,
@@ -400,7 +400,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/selections/overview.html",
-          "hash": "eL9RDLqh4SE81u2Y1m0y0A=="
+          "hash": "+yqX9bQWS/Vg0en8uMGZ7g=="
         }
       },
       "is_incremental": false,
@@ -412,7 +412,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/selections/pull-contract.html",
-          "hash": "Xro2vS2WLQo6aG5MENBkOg=="
+          "hash": "JhPOsvyUvGXlSq9hx/I6Wg=="
         }
       },
       "is_incremental": false,
@@ -424,7 +424,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/selections/push-contract.html",
-          "hash": "42xgNSu4TnxsE4MNqu4cEQ=="
+          "hash": "1QBHSifqAtsn7CX8JJbHUw=="
         }
       },
       "is_incremental": false,
@@ -436,7 +436,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/sports/filtering-and-querying.html",
-          "hash": "z5JOYmLOUz0QkbvyeixczA=="
+          "hash": "T30qpKWipNgq/DMQfjOkeQ=="
         }
       },
       "is_incremental": false,
@@ -448,7 +448,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/sports/overview.html",
-          "hash": "c6fVc2KOX3N22TZ1XA5PeA=="
+          "hash": "4Dhm4ni4atGCEBFMTA3kBw=="
         }
       },
       "is_incremental": false,
@@ -460,7 +460,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/sports/pull-contract.html",
-          "hash": "ak+hkcleWQoBQZorntnCag=="
+          "hash": "vzbKNmetJxuYC18EmIKsmw=="
         }
       },
       "is_incremental": false,
@@ -472,7 +472,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/endpoints/sports/push-contract.html",
-          "hash": "TP1pJfZtOE6WdG0v52dAjw=="
+          "hash": "Ycgy85II+m6SMeKqwxCOdw=="
         }
       },
       "is_incremental": false,
@@ -484,7 +484,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/examples/building_simple_event_view.html",
-          "hash": "isncK9+bLMBRA1aWOZvgUw=="
+          "hash": "Fq8vTlV+clmFe2QRhJlLCg=="
         }
       },
       "is_incremental": false,
@@ -499,7 +499,7 @@
       "output": {
         ".html": {
           "relative_path": "sports-data/index.html",
-          "hash": "R2ErGmhyxbQmR0M0USUJkw=="
+          "hash": "Zvf9k08jPfIE7Nk2qncY9w=="
         }
       },
       "is_incremental": false,
@@ -535,7 +535,7 @@
       "output": {
         ".html": {
           "relative_path": "your-bet/index.html",
-          "hash": "8YWhoBckDRkTktJ0kwVJBQ=="
+          "hash": "vBytN/Vn96YHXANNjxNq7Q=="
         }
       },
       "is_incremental": false,
@@ -571,17 +571,17 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 40,
-          "skipped_file_count": 0
-        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 40,
           "skipped_file_count": 0
         }
       }

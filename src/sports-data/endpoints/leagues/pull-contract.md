@@ -35,7 +35,7 @@ type League = {
 |fixturesTotalCount| Specifies the total number of games, both live and pre-live. |number| Yes | $orderby (only desc) </br>query (using eq, ne, or, and, in) | $orderby=fixturesTotalCount desc </br>$filter=fixturesTotalCount eq 1 |
 |fixturesCount|	Specifies the number of games, both live and pre-live, filtered by time range. | number	| Yes |	$orderby (only desc) </br>query (using eq, ne, or, and, in) | $orderby=fixturesCount desc </br> $filter=fixturesCount eq 1 |
 |outrightsTotalCount| Specifies the number of active outrights in a league. | number | Yes | $orderby (only desc) </br>query (using eq, ne, or, and, in) | $orderby=outrightsTotalCount desc </br>$filter=outrightsTotalCount eq 1 |
-|entityType| Specifies the entity type. Always 2 for leagues. |	entitytype | Yes | No | -- |
+|entityType| Specifies the entity type. Always 3 for leagues. |	entitytype | Yes | No | -- |
 |defaultOrder| Specifies the sorting order. | number | Yes | $orderby (only asc) | $orderby=defaultOrder asc |
 |masterLeagueId|  | string | Yes | query (using eq, ne, or, and, in) | $filter=masterLeagueId eq '10411' |
 |tags| Specifies additional information on different aspects of the league. | array | Yes | query (using lambda, eq, ne, or, and, in) | $filter=tags/any(s: s eq 'LiveStream') |

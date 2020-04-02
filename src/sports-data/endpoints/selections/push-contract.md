@@ -23,6 +23,6 @@
 | name | Specifies the name of the team/player in the selection. | sting | Yes | No | -- |
 | displayOdds | Specifies the odds as they should be displayed in all different styles. See the separate table below for details. | Dictionary | Yes | No | -- |
 | trueOdds | Specifies the mathematically correct odds for the selection. Will be -1 for "Starting price" selections, -2 for "Non runner" selections, - 3 for "Without" selections in racing markets. | number | Yes | No | -- |
-|points| Specifies the points in the event. | number |	Yes |No | -- |
+|points| Specifies the points in the event. | number |	No |No | -- |
 | isDisabled | Specifies if the selection is available for betting. | Boolean | Yes | No | -- |
 | metadata | Dictionary of ad hoc parameters which are not part of the general object model. | Dictionary | Yes |	No | -- |

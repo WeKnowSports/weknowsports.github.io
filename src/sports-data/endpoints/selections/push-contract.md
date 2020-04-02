@@ -10,6 +10,7 @@
     displayOdds: Dictionary<string>
     trueOdds: number
     isDisabled: Boolean
+    points: number
     metadata: Dictionary
 }
 ```
